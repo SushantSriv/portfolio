@@ -206,3 +206,61 @@
 					});
 
 })(jQuery);
+
+
+	function updateClock() {
+			const options = {
+		timeZone: 'Europe/Oslo',
+	hour: '2-digit',
+	minute: '2-digit',
+	second: '2-digit',
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric',
+			};
+	const now = new Date().toLocaleString('en-GB', options);
+	document.getElementById('clock').textContent = `Oslo Time: ${now}`;
+		}
+	setInterval(updateClock, 1000);
+	updateClock();
+	
+
+function updateLanguage(lang) {
+	document.querySelectorAll('[data-lang-no], [data-lang-en]').forEach(el => {
+		const translation = el.getAttribute(`data-lang-${lang}`);
+		if (translation) el.innerText = translation;
+	});
+}
+
+window.onload = () => {
+	const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+	updateLanguage(savedLang);
+	document.getElementById("languageBtn").innerHTML =
+		`<img src="images/${savedLang}.png" width="24" height="16" /> ` +
+		(savedLang === "no" ? "Norsk" : "English") +
+		` <i class="fa fa-caret-down"></i>`;
+};
+
+
+function toggleDropdown() {
+	const dropdown = document.getElementById("dropdown");
+	dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+}
+
+function setLanguage(lang) {
+	localStorage.setItem('preferredLanguage', lang);
+	updateLanguage(lang);
+	document.getElementById("dropdown").style.display = "none";
+
+	// Flag-mapping
+	const flagFile = lang === "en" ? "gb.png" : "no.png";
+	const label = lang === "no" ? "Norsk" : "English";
+
+	document.getElementById("languageBtn").innerHTML =
+		`<img src="images/${flagFile}" width="24" height="16" /> ${label} <i class="fa fa-caret-down"></i>`;
+}
+
+
+
+
+

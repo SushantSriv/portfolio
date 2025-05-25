@@ -3880,3 +3880,98 @@ input, select, textarea {
 		}
 
 	}
+
+	.language-selector select {
+		font-size: 1rem;
+		background-color:HighlightText;
+		border: 1px solid #ccc;
+		cursor: pointer;
+	}
+
+.content {
+	position: relative;
+}
+
+.language-selector {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 100;
+}
+
+	.language-selector button {
+		background: white;
+		border: 1px solid #ccc;
+		padding: 0.5rem;
+		border-radius: 6px;
+		font-weight: bold;
+		cursor: pointer;
+	}
+
+	.language-selector .dropdown-content {
+		position: absolute;
+		right: 0;
+		background-color: white;
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		min-width: 120px;
+		z-index: 101;
+	}
+
+	.language-selector .dropdown-content a {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			padding: 0.4rem;
+			text-decoration: none;
+			color: black;
+	}
+
+	.language-selector .dropdown-content a:hover {
+				background-color: #eee;
+			}
+
+.project-categories {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+	padding: 2rem 0;
+}
+
+.project-card {
+	position: relative;
+	width: 300px;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 12px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+	.project-card:hover {
+		transform: scale(1.05);
+	}
+
+	.project-card img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.project-card .overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.75);
+		color: #fff;
+		padding: 1rem;
+		transform: translateY(100%);
+		transition: transform 0.3s ease;
+	}
+
+	.project-card:hover .overlay {
+		transform: translateY(0);
+	}
