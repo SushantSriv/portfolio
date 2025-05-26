@@ -219,7 +219,7 @@
 	day: 'numeric',
 			};
 	const now = new Date().toLocaleString('en-GB', options);
-	document.getElementById('clock').textContent = `Oslo Time: ${now}`;
+	document.getElementById('clock').textContent = `Current TimeZone: ${now}`;
 		}
 	setInterval(updateClock, 1000);
 	updateClock();

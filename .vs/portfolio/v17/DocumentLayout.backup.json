@@ -25,19 +25,6 @@
           "SelectedChildIndex": 12,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "main.css",
-              "DocumentMoniker": "C:\\AibelProgs\\side prosjekt\\portfolio\\assets\\css\\main.css",
-              "RelativeDocumentMoniker": "assets\\css\\main.css",
-              "ToolTip": "C:\\AibelProgs\\side prosjekt\\portfolio\\assets\\css\\main.css",
-              "RelativeToolTip": "assets\\css\\main.css",
-              "ViewState": "AgIAABoPAAAAAAAAAAAIwDQPAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-24T16:37:26.993Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
@@ -79,16 +66,27 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.css",
+              "DocumentMoniker": "C:\\AibelProgs\\side prosjekt\\portfolio\\assets\\css\\main.css",
+              "RelativeDocumentMoniker": "assets\\css\\main.css",
+              "ToolTip": "C:\\AibelProgs\\side prosjekt\\portfolio\\assets\\css\\main.css",
+              "RelativeToolTip": "assets\\css\\main.css",
+              "ViewState": "AgIAAEsPAAAAAAAAAAAIwGEPAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-24T16:37:26.993Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "main.js",
               "DocumentMoniker": "C:\\AibelProgs\\side prosjekt\\portfolio\\assets\\js\\main.js",
               "RelativeDocumentMoniker": "assets\\js\\main.js",
               "ToolTip": "C:\\AibelProgs\\side prosjekt\\portfolio\\assets\\js\\main.js",
               "RelativeToolTip": "assets\\js\\main.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPMAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAIwPoAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-24T16:40:06.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T16:40:06.259Z"
             },
             {
               "$type": "Document",
@@ -98,7 +96,7 @@
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "C:\\AibelProgs\\side prosjekt\\portfolio\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADkAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAAJkAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-05-23T18:19:38.561Z",
               "EditorCaption": ""
