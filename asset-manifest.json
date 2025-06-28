@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.76868b2d.chunk.css",
-    "main.js": "./static/js/main.7484578a.chunk.js",
-    "main.js.map": "./static/js/main.7484578a.chunk.js.map",
+    "main.css": "./static/css/main.3f9b4bf6.chunk.css",
+    "main.js": "./static/js/main.7ddfc3ee.chunk.js",
+    "main.js.map": "./static/js/main.7ddfc3ee.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.fa9e825f.js",
     "runtime-main.js.map": "./static/js/runtime-main.fa9e825f.js.map",
     "static/js/2.8ebe658d.chunk.js": "./static/js/2.8ebe658d.chunk.js",
     "static/js/2.8ebe658d.chunk.js.map": "./static/js/2.8ebe658d.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.8ae41cc330903b209caeb91c87e71e6c.js": "./precache-manifest.8ae41cc330903b209caeb91c87e71e6c.js",
+    "precache-manifest.2b8b7e067c852470dc8daa0cfbc150e7.js": "./precache-manifest.2b8b7e067c852470dc8daa0cfbc150e7.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.76868b2d.chunk.css.map": "./static/css/main.76868b2d.chunk.css.map",
+    "static/css/main.3f9b4bf6.chunk.css.map": "./static/css/main.3f9b4bf6.chunk.css.map",
     "static/media/index.css": "./static/media/Montserrat-Regular.ee653992.ttf",
     "static/media/UC_davis_logo.png": "./static/media/UC_davis_logo.a8a9460f.png",
     "static/media/address_image.svg": "./static/media/address_image.16559172.svg",
@@ -63,7 +63,7 @@
   "entrypoints": [
     "static/js/runtime-main.fa9e825f.js",
     "static/js/2.8ebe658d.chunk.js",
-    "static/css/main.76868b2d.chunk.css",
-    "static/js/main.7484578a.chunk.js"
+    "static/css/main.3f9b4bf6.chunk.css",
+    "static/js/main.7ddfc3ee.chunk.js"
   ]
 }
