@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.931ea2ce.chunk.css",
-    "main.js": "/portfolio/static/js/main.1e0d0f88.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.1e0d0f88.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.2a623e32.chunk.css",
+    "main.js": "/portfolio/static/js/main.27bd01b1.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.27bd01b1.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.96f3f6f3.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.96f3f6f3.js.map",
     "static/js/2.366a13ea.chunk.js": "/portfolio/static/js/2.366a13ea.chunk.js",
     "static/js/2.366a13ea.chunk.js.map": "/portfolio/static/js/2.366a13ea.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.b49c23dd1c026ed1c6a47554ca780845.js": "/portfolio/precache-manifest.b49c23dd1c026ed1c6a47554ca780845.js",
+    "precache-manifest.8d72477a3bb88270bd82133e06daab43.js": "/portfolio/precache-manifest.8d72477a3bb88270bd82133e06daab43.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.931ea2ce.chunk.css.map": "/portfolio/static/css/main.931ea2ce.chunk.css.map",
+    "static/css/main.2a623e32.chunk.css.map": "/portfolio/static/css/main.2a623e32.chunk.css.map",
     "static/media/index.css": "/portfolio/static/media/Montserrat-Regular.ee653992.ttf",
     "static/media/UC_davis_logo.png": "/portfolio/static/media/UC_davis_logo.a8a9460f.png",
     "static/media/address_image.svg": "/portfolio/static/media/address_image.16559172.svg",
@@ -63,7 +63,7 @@
   "entrypoints": [
     "static/js/runtime-main.96f3f6f3.js",
     "static/js/2.366a13ea.chunk.js",
-    "static/css/main.931ea2ce.chunk.css",
-    "static/js/main.1e0d0f88.chunk.js"
+    "static/css/main.2a623e32.chunk.css",
+    "static/js/main.27bd01b1.chunk.js"
   ]
 }
