@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter } from "react-router-dom";            // ★ new import
+import { BrowserRouter } from "react-router-dom";      // ← change
 import { BaseProvider, LightTheme } from "baseui";
 import { Provider as StyletronProvider } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
@@ -13,15 +13,14 @@ import "./assets/font-awesome/css/all.css";
 const engine = new Styletron();
 
 ReactDOM.render(
-    <HashRouter>                                           {/* ★ wrapper */}
+    <BrowserRouter basename={process.env.PUBLIC_URL}>     {/* ← change */}
         <StyletronProvider value={engine}>
             <BaseProvider theme={LightTheme}>
                 <App />
             </BaseProvider>
         </StyletronProvider>
-    </HashRouter>,
-    document.getElementById("root")
+    </BrowserRouter>, {/* ← change */ }
+  document.getElementById("root")
 );
 
-// Want offline support? change unregister() to register() below.
 serviceWorker.unregister();

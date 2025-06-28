@@ -2,9 +2,9 @@
   "private": true,
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://sushantsriv.github.io/portfolio",
   "scripts": {
-    "build": "react-scripts --openssl-legacy-provider build",
+    "build": "react-scripts --openssl-legacy-provider build && cp build/index.html build/404.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b gh-pages -d build",
     "eject": "react-scripts eject",
