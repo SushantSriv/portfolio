@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";            // ★ new import
 import { BaseProvider, LightTheme } from "baseui";
 import { Provider as StyletronProvider } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
@@ -13,16 +13,15 @@ import "./assets/font-awesome/css/all.css";
 const engine = new Styletron();
 
 ReactDOM.render(
-    <HashRouter>
+    <HashRouter>                                           {/* ★ wrapper */}
         <StyletronProvider value={engine}>
             <BaseProvider theme={LightTheme}>
                 <App />
             </BaseProvider>
         </StyletronProvider>
-    </HashRouter>,              // second argument starts here
+    </HashRouter>,
     document.getElementById("root")
 );
 
-// If you want your app to work offline and load faster,
-// change unregister() to register() below.
+// Want offline support? change unregister() to register() below.
 serviceWorker.unregister();
