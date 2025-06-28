@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+  "id": "R_kgDOO7jbdg",
+  "name": "Geo-Risk Prediction Dashboard",
+  "createdAt": "2025-06-14T12:39:30Z",
+  "url": "https://github.com/SushantSriv/Risikoprediksjon_for_Transport_og_Landbruk",
+  "description": "Interactive dashboard that combines 34 years of Norwegian accident data with real-time MET Norway forecasts to predict road & farmland risk. Models (Random Forest) served through FastAPI, visualised with React + Leaflet, bundled in Docker.",
+  "isFork": false,
+
+  "languages": [
+    { "name": "Python",     "iconifyClass": "logos-python" },
+    { "name": "FastAPI",    "iconifyClass": "simple-icons:fastapi", "color": "#009688" },
+    { "name": "React",      "iconifyClass": "simple-icons:react" ,   "color": "#61DAFB"},
+    { "name": "Vite",       "iconifyClass": "simple-icons:vite" },
+    { "name": "Leaflet",    "iconifyClass": "simple-icons:leaflet" },
+    { "name": "Docker",     "iconifyClass": "simple-icons:docker" }
+  ],
+
+  "dataSources": [
+  { "name": "MET Norway API",  "imageSrc": "met_norway.png" },
+  { "name": "Statens vegvesen", "imageSrc": "vegvesen.png" },
+  { "name": "OpenStreetMap",   "imageSrc": "osm.png" }
+  ],
+
+  "demoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    }
+  
+  ]
+}
