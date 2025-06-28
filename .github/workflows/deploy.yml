@@ -1,0 +1,28 @@
+﻿name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]          # kjør hver gang du pusher til main
+
+permissions:
+  contents: write             # så Action får lov å pushe
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Publish 🚀
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build          # hva som skal lastes opp
+          publish_branch: gh-pages      # behold dagens oppsett
