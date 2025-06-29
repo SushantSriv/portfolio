@@ -48,7 +48,7 @@ const socialMediaLinks = [
   },
   {
     name: "LinkedIn",
-    link: "ttps://www.linkedin.com/in/sushant-srivastava-b72331219/",
+    link: "https://www.linkedin.com/in/sushant-srivastava-b72331219/",
     fontAwesomeIcon: "fa-linkedin-in", // Reference https://fontawesome.com/icons/linkedin-in?style=brands
     backgroundColor: "#0077B5", // Reference https://simpleicons.org/?q=linkedin
   },

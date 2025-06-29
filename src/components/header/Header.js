@@ -8,13 +8,23 @@ import { greeting, settings } from "../../portfolio.js";
 import SeoHeader from "../seoHeader/SeoHeader";
 import { LanguageContext } from "../../LanguageContext";
 
+// Flaggbilder – plasser no.svg + gb.svg i src/assets/flags/
+import noFlag from "../../assets/flags/no.png";
+import gbFlag from "../../assets/flags/gb.png";
+
 class Header extends Component {
     static contextType = LanguageContext;
 
-    state = { langMenuOpen: false };
+    state = {
+        langMenuOpen: false,
+        showHint: true, // viser hint første gang
+    };
 
     toggleLangMenu = () => {
-        this.setState((s) => ({ langMenuOpen: !s.langMenuOpen }));
+        this.setState((s) => ({
+            langMenuOpen: !s.langMenuOpen,
+            showHint: false, // skjul hint etter første klikk
+        }));
     };
 
     selectLang = (lang) => {
@@ -27,7 +37,7 @@ class Header extends Component {
     render() {
         const { language } = this.context;
         const theme = this.props.theme;
-        const link = settings.isSplash ? "/splash" : "/home";
+        const baseLink = settings.isSplash ? "/splash" : "/home";
 
         const menuItems = [
             { path: "/home", label: language === "no" ? "Hjem" : "Home" },
@@ -37,18 +47,26 @@ class Header extends Component {
             { path: "/contact", label: language === "no" ? "Kontakt" : "Contact" },
         ];
 
+        // Lokaliser hint-teksten
+        const hintText =
+            language === "no"
+                ? "👆 Need to Change Language?"
+                : "👆 Trykk her for å bytte språk?";
+
         return (
             <Fade top duration={1000} distance="20px">
                 <SeoHeader />
                 <header className="header">
-                    <NavLink to={link} className="logo" tag={Link}>
-                        <span style={{ color: theme.text }}> &lt;</span>
+                    {/* Logo */}
+                    <NavLink to={baseLink} className="logo" tag={Link}>
+                        <span style={{ color: theme.text }}>{"<"}</span>
                         <span className="logo-name" style={{ color: theme.text }}>
                             {greeting.logo_name}
                         </span>
-                        <span style={{ color: theme.text }}>/&gt;</span>
+                        <span style={{ color: theme.text }}>{"/>"}</span>
                     </NavLink>
 
+                    {/* Hamburger‐trick for mobil */}
                     <input className="menu-btn" type="checkbox" id="menu-btn" />
                     <label className="menu-icon" htmlFor="menu-btn">
                         <span className="navicon"></span>
@@ -62,56 +80,51 @@ class Header extends Component {
                                     tag={Link}
                                     activeStyle={{ fontWeight: "bold" }}
                                     style={{ color: theme.text }}
-                                    onMouseEnter={(e) =>
-                                        (e.target.style.backgroundColor = theme.highlight)
-                                    }
-                                    onMouseOut={(e) =>
-                                        (e.target.style.backgroundColor = "transparent")
-                                    }
+                                    onMouseEnter={(e) => (e.target.style.backgroundColor = theme.highlight)}
+                                    onMouseOut={(e) => (e.target.style.backgroundColor = "transparent")}
                                 >
                                     {item.label}
                                 </NavLink>
                             </li>
                         ))}
 
-                        {/* Språk‐velger */}
                         <li className="lang-item">
+                            {/* Vis hint før første klikk OG mens dropdown er åpen */}
+                            {this.state.showHint && !this.state.langMenuOpen && (
+                                <div
+                                    className="lang-hint"
+                                    style={{
+                                        backgroundColor: theme.body,
+                                        color: theme.text,
+                                        border: `1px solid ${theme.text}`,
+                                    }}
+                                >
+                                    {hintText}
+                                </div>
+                            )}
+
                             <button
                                 className="lang-btn"
                                 onClick={this.toggleLangMenu}
                                 style={{ color: theme.text, borderColor: theme.text }}
                             >
-                                {/* Wrappet emoji i span med role og aria-label */}
-                                {language === "no" ? (
-                                    <>
-                                        <span role="img" aria-label="Norwegian flag" className="flag">
-                                            🇳🇴
-                                        </span>{" "}
-                                        Norsk
-                                    </>
-                                ) : (
-                                    <>
-                                        <span role="img" aria-label="British flag" className="flag">
-                                            🇬🇧
-                                        </span>{" "}
-                                        English
-                                    </>
-                                )}
+                                <img
+                                    src={language === "no" ? noFlag : gbFlag}
+                                    alt={language === "no" ? "Norsk flagg" : "British flag"}
+                                    className="flag-icon-img"
+                                />
+                                {language === "no" ? "Norsk" : "English"}
                                 <span className="arrow">▾</span>
                             </button>
 
                             {this.state.langMenuOpen && (
                                 <ul className="lang-dropdown" style={{ backgroundColor: theme.body }}>
                                     <li onClick={() => this.selectLang("en")}>
-                                        <span role="img" aria-label="British flag" className="flag">
-                                            🇬🇧
-                                        </span>{" "}
+                                        <img src={gbFlag} alt="British flag" className="flag-icon-img" />
                                         English
                                     </li>
                                     <li onClick={() => this.selectLang("no")}>
-                                        <span role="img" aria-label="Norwegian flag" className="flag">
-                                            🇳🇴
-                                        </span>{" "}
+                                        <img src={noFlag} alt="Norsk flagg" className="flag-icon-img" />
                                         Norsk
                                     </li>
                                 </ul>
