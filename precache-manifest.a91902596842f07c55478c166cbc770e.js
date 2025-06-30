@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ac134a81c8a8d1efb613d1b07bbfaa46",
+    "revision": "93c0bef25f7e464cc91a060b0bc1326c",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "f11eb86aa54b02c7ed6c",
+    "revision": "0014b407a94c7d7b23ac",
     "url": "/portfolio/static/css/main.281e8e53.chunk.css"
   },
   {
-    "revision": "e2686a3691b818f51201",
-    "url": "/portfolio/static/js/2.4b9abb03.chunk.js"
+    "revision": "ca8890a047e806165c5d",
+    "url": "/portfolio/static/js/2.3a8a2a7b.chunk.js"
   },
   {
-    "revision": "f11eb86aa54b02c7ed6c",
-    "url": "/portfolio/static/js/main.dec5267f.chunk.js"
+    "revision": "0014b407a94c7d7b23ac",
+    "url": "/portfolio/static/js/main.9a78a201.chunk.js"
   },
   {
     "revision": "e73ac9e279836ecdfedf",
@@ -26,10 +26,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "344ec7b3b64fd6b9dd82f8bef6dfbe47",
     "url": "/portfolio/static/media/481E004B-8E6D-42F9-944B-65B470FF1094.344ec7b3.jpg"
-  },
-  {
-    "revision": "6489bfa7b097c8eb925a2601da32279d",
-    "url": "/portfolio/static/media/842BE21A-FA80-471D-B3F1-368B231ED69A.6489bfa7.JPG"
   },
   {
     "revision": "21f233e19402cc4a66866a7f31191f0d",
@@ -250,6 +246,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c597fbded5de799dfb9abc3fc4f1c26f",
     "url": "/portfolio/static/media/legato_logo.c597fbde.png"
+  },
+  {
+    "revision": "6489bfa7b097c8eb925a2601da32279d",
+    "url": "/portfolio/static/media/logo_master.6489bfa7.png"
   },
   {
     "revision": "83ac24fb968a474c6a63f7a4e9a8f62c",

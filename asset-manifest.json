@@ -1,19 +1,18 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.281e8e53.chunk.css",
-    "main.js": "/portfolio/static/js/main.dec5267f.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.dec5267f.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.9a78a201.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.9a78a201.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.aa1db941.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.aa1db941.js.map",
-    "static/js/2.4b9abb03.chunk.js": "/portfolio/static/js/2.4b9abb03.chunk.js",
-    "static/js/2.4b9abb03.chunk.js.map": "/portfolio/static/js/2.4b9abb03.chunk.js.map",
+    "static/js/2.3a8a2a7b.chunk.js": "/portfolio/static/js/2.3a8a2a7b.chunk.js",
+    "static/js/2.3a8a2a7b.chunk.js.map": "/portfolio/static/js/2.3a8a2a7b.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.ea65045f978a54a3155979b42bbd3756.js": "/portfolio/precache-manifest.ea65045f978a54a3155979b42bbd3756.js",
+    "precache-manifest.a91902596842f07c55478c166cbc770e.js": "/portfolio/precache-manifest.a91902596842f07c55478c166cbc770e.js",
     "service-worker.js": "/portfolio/service-worker.js",
     "static/css/main.281e8e53.chunk.css.map": "/portfolio/static/css/main.281e8e53.chunk.css.map",
     "static/media/3D188CA0-F1DE-44B6-9339-2140EE009B2F.jpg": "/portfolio/static/media/3D188CA0-F1DE-44B6-9339-2140EE009B2F.3e128c1b.jpg",
     "static/media/481E004B-8E6D-42F9-944B-65B470FF1094.jpg": "/portfolio/static/media/481E004B-8E6D-42F9-944B-65B470FF1094.344ec7b3.jpg",
-    "static/media/842BE21A-FA80-471D-B3F1-368B231ED69A.JPG": "/portfolio/static/media/842BE21A-FA80-471D-B3F1-368B231ED69A.6489bfa7.JPG",
     "static/media/index.css": "/portfolio/static/media/Montserrat-Regular.ee653992.ttf",
     "static/media/FF92BA86-7986-49EE-9FAD-141BF84EEE4A.jpg": "/portfolio/static/media/FF92BA86-7986-49EE-9FAD-141BF84EEE4A.040eac8e.jpg",
     "static/media/IMG_1652.jpg": "/portfolio/static/media/IMG_1652.4a17a197.jpg",
@@ -48,6 +47,7 @@
     "static/media/johnhopkins_logo.png": "/portfolio/static/media/johnhopkins_logo.88d15129.png",
     "static/media/jsFramework.svg": "/portfolio/static/media/jsFramework.5b4a6449.svg",
     "static/media/legato_logo.png": "/portfolio/static/media/legato_logo.c597fbde.png",
+    "static/media/logo_master.png": "/portfolio/static/media/logo_master.6489bfa7.png",
     "static/media/manOnTable.svg": "/portfolio/static/media/manOnTable.83ac24fb.svg",
     "static/media/mittbilde.jpg": "/portfolio/static/media/mittbilde.7c9ea338.jpg",
     "static/media/muffito_logo.png": "/portfolio/static/media/muffito_logo.069938a8.png",
@@ -68,8 +68,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.aa1db941.js",
-    "static/js/2.4b9abb03.chunk.js",
+    "static/js/2.3a8a2a7b.chunk.js",
     "static/css/main.281e8e53.chunk.css",
-    "static/js/main.dec5267f.chunk.js"
+    "static/js/main.9a78a201.chunk.js"
   ]
 }
