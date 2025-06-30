@@ -1,226 +1,251 @@
-/* ===== Header (src/components/header/Header.css) ===== */
-
-/* Sticky øverst */
+/* ===== Generell header ===== */
 .header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: var(--body-bg, #e3f2fd); /* bruk din tema‐bakgrunn her */
-  display: block;
-  max-width: 90%;
-  padding: 20px 10px;
-  margin: 0 auto;
+    position: relative; /* slik at dropdown og hint vises over innhold */
+    z-index: 1000;
+    display: block;
+    max-width: 90%;
+    padding: 20px 10px;
+    margin: 0 auto;
 }
 
-/* Felles for alle menyer */
-.header ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  overflow: visible; /* dropdown skal komme utenfor */
+    .header ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: visible; /* tillat dropdown utenfor */
+    }
+
+    /* Logo */
+    .header .logo {
+        display: block;
+        float: left;
+        font-size: 1.5em;
+        margin-top: 10px;
+        text-decoration: none;
+    }
+
+    .header .logo-name {
+        font-family: "Agustina Regular";
+        font-weight: bold;
+        padding: 0 10px;
+    }
+
+/* Meny‐oppsett */
+.menu {
+    font-family: "Google Sans Regular";
 }
 
-/* Logo */
-.header .logo {
-  display: block;
-  float: left;
-  font-size: 1.5em;
-  margin-top: 10px;
-  text-decoration: none;
-}
-.header .logo-name {
-  font-family: "Agustina Regular";
-  font-weight: bold;
-  padding: 0 10px;
-}
-
-/* Hamburger‐ikon (mobil) */
-.header .menu-icon {
-  cursor: pointer;
-  display: inline-block;
-  float: right;
-  padding: 28px 20px;
-  position: relative;
-  user-select: none;
-}
-.header .navicon {
-  background: currentColor;
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background 0.2s ease-out;
-  width: 18px;
-}
-.header .navicon:before,
-.header .navicon:after {
-  background: currentColor;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
-}
-.header .navicon:before {
-  top: 5px;
-}
-.header .navicon:after {
-  top: -5px;
-}
-
-/* Skjul checkbox‐input (mobilmeny‐trigger) */
-.menu-btn {
-  position: absolute !important;
-  opacity: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  pointer-events: none !important;
-}
-
-/* Meny (mobil) kollaps/expand */
 .header .menu {
-  clear: both;
-  max-height: 0;
-  transition: max-height 0.2s ease-out;
-  font-family: "Google Sans Regular";
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
 }
+/* hamburger‐ikon */
+.header .menu-icon {
+}
+
+.header .navicon {
+}
+
 .header .menu-btn:checked ~ .menu {
-  max-height: 370px;
-}
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-}
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
+    max-height: 370px;
 }
 
-/* Lenker */
+/* Lenker i meny */
 .header li a {
-  display: block;
-  padding: 20px;
-  text-decoration: none;
-}
-.header li a:hover {
-  /* valgfri hover‐effekt */
+    display: block;
+    padding: 20px;
+    text-decoration: none;
 }
 
-/* Desktop‐layout */
+    .header li a:hover {
+    }
+
+/* Desktop‐layout for meny */
 @media (min-width: 48em) {
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .header .menu {
-    display: flex;
-    align-items: center;
-    max-height: none;
-  }
-  .header .menu li {
-    float: none;
-    margin-right: 1.5rem;
-  }
-  .header .menu li.lang-item {
-    margin-left: auto; /* skyv språk‐knapp til høyre */
-  }
-  .header .menu-icon {
-    display: none; /* ingen hamburger på desktop */
-  }
-}
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-/* Gjør hamburger‐ikon større på mobil */
-@media (max-width: 48em) {
-  .header .menu-icon {
-    padding: 16px;
-  }
-  .header .navicon,
-  .header .navicon:before,
-  .header .navicon:after {
-    width: 24px;
-    height: 3px;
-    background: currentColor !important;
-  }
-}
+        .header .menu {
+            display: flex;
+            align-items: center;
+            max-height: none;
+        }
 
-/* ===== Språk‐velger ===== */
+            .header .menu li {
+                float: none;
+                margin-right: 1.5rem; /* avstand mellom lenker */
+            }
 
-.menu .lang-item {
-  position: relative;
-  list-style: none;
-}
+                .header .menu li.lang-item {
+                    margin-left: auto; /* skyv språk‐item til høyre */
+                }
 
-/* Hint‐bubble */
-.lang-hint {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-8px);
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  border: 1px solid currentColor;
-  background: inherit;
-  white-space: nowrap;
-  z-index: 1002;
-}
-/* Skjul hint på liten skjerm */
-@media (max-width: 48em) {
-  .lang-hint {
-    display: none;
-  }
+        .header .menu-icon {
+            display: none;
+        }
 }
 
 /* Språk‐knapp */
-.menu .lang-btn {
-  background: transparent;
-  border: 1px solid currentColor;
-  border-radius: 4px;
-  padding: 0.3rem 1rem;
-  font-size: 0.9rem;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-.menu .lang-btn .arrow {
-  margin-left: 0.4rem;
-  font-size: 0.8rem;
+.menu .lang-item {
+    position: relative;
+    list-style: none;
 }
 
-/* Flaggbilde */
+.menu .lang-btn {
+    background: transparent;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    padding: 0.3rem 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+    .menu .lang-btn .arrow {
+        margin-left: 0.4rem;
+        font-size: 0.8rem;
+    }
+
+/* Hint‐boks */
+.menu .lang-hint {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 0.4rem;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 10000;
+}
+
+    .menu .lang-hint::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        right: 0.6rem;
+        border-width: 6px;
+        border-style: solid;
+        border-color: rgba(0,0,0,0.7) transparent transparent transparent;
+    }
+
+/* Flaggbilder */
 .flag-icon-img {
-  width: 1.2em;
-  height: 1.2em;
-  margin-right: 0.4rem;
-  vertical-align: middle;
+    width: 2em;
+    height: 2em;
+    margin-right: 0.4rem;
+    vertical-align: middle;
 }
 
 /* Dropdown‐meny */
 .menu .lang-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  left: auto;
-  margin-top: 4px;
-  padding: 4px 0;
-  border: 1px solid currentColor;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  min-width: 140px;
-  z-index: 1001;
-  background: inherit;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    margin-top: 4px;
+    padding: 4px 0;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    min-width: 140px;
+    z-index: 9999;
 }
-.menu .lang-dropdown li {
-  padding: 0.5rem 0.8rem;
-  cursor: pointer;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  font-size: 0.9rem;
+
+    .menu .lang-dropdown li {
+        padding: 0.5rem 0.8rem;
+        cursor: pointer;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+    }
+
+        .menu .lang-dropdown li:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+.menu .lang-item {
+    position: relative;
 }
-.menu .lang-dropdown li:hover {
-  background-color: rgba(255,255,255,0.2);
+
+.menu .lang-hint {
+    position: absolute;
+    /* Flytt boksen under knappen */
+    top: 100%; /* på toppen av dropdown‐boksen */
+    bottom: auto; /* fjern tidligere bottom:100% */
+    margin-top: 0.4rem; /* litt avstand over knappen */
+    right: 0;
+    background-color: var(--hint-bg, #fff); /* du kan overstyre med inline style fra theme */
+    color: var(--hint-color, #000); /* samme her */
+    border: 1px solid currentColor;
+    padding: 0.3rem 0.6rem;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    z-index: 10000;
+    animation: langHintBounce 1s ease-in-out infinite;
+}
+
+    .menu .lang-hint::before {
+        content: "";
+        position: absolute;
+        /* pilen skal nå være øverst på boksen og peke oppover */
+        bottom: 100%;
+        top: auto;
+        right: 0.6rem;
+        border-width: 6px;
+        border-style: solid;
+        border-color: transparent transparent currentColor transparent;
+    }
+/* Bounce‐keyframes */
+@keyframes langHintBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Skjul checkbox-input fullstendig */
+.menu-btn {
+    position: absolute !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Gjør hamburger-ikonet mer synlig på mobil */
+@media (max-width: 48em) {
+    .header .menu-icon {
+        display: inline-block;
+        padding: 16px 16px; /* mer klikkflate */
+        cursor: pointer;
+    }
+
+    .header .navicon {
+        background: currentColor !important;
+        width: 24px;
+        height: 3px;
+    }
+
+        .header .navicon:before,
+        .header .navicon:after {
+            background: currentColor !important;
+            width: 24px;
+            height: 3px;
+        }
 }
