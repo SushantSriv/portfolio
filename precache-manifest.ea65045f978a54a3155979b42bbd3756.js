@@ -1,27 +1,43 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6283207c9fb475610eff7abcd471eca5",
+    "revision": "ac134a81c8a8d1efb613d1b07bbfaa46",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "91985475d8a1e622dfd6",
-    "url": "/portfolio/static/css/main.d49d959f.chunk.css"
+    "revision": "f11eb86aa54b02c7ed6c",
+    "url": "/portfolio/static/css/main.281e8e53.chunk.css"
   },
   {
-    "revision": "c2bdccbe131f765a294c",
-    "url": "/portfolio/static/js/2.32ecacb5.chunk.js"
+    "revision": "e2686a3691b818f51201",
+    "url": "/portfolio/static/js/2.4b9abb03.chunk.js"
   },
   {
-    "revision": "91985475d8a1e622dfd6",
-    "url": "/portfolio/static/js/main.5b209911.chunk.js"
+    "revision": "f11eb86aa54b02c7ed6c",
+    "url": "/portfolio/static/js/main.dec5267f.chunk.js"
   },
   {
     "revision": "e73ac9e279836ecdfedf",
     "url": "/portfolio/static/js/runtime-main.aa1db941.js"
   },
   {
+    "revision": "3e128c1bc91c0e266ab1f2e5268f9e2b",
+    "url": "/portfolio/static/media/3D188CA0-F1DE-44B6-9339-2140EE009B2F.3e128c1b.jpg"
+  },
+  {
+    "revision": "344ec7b3b64fd6b9dd82f8bef6dfbe47",
+    "url": "/portfolio/static/media/481E004B-8E6D-42F9-944B-65B470FF1094.344ec7b3.jpg"
+  },
+  {
+    "revision": "6489bfa7b097c8eb925a2601da32279d",
+    "url": "/portfolio/static/media/842BE21A-FA80-471D-B3F1-368B231ED69A.6489bfa7.JPG"
+  },
+  {
     "revision": "21f233e19402cc4a66866a7f31191f0d",
     "url": "/portfolio/static/media/Agustina.21f233e1.woff"
+  },
+  {
+    "revision": "040eac8e21ce45cb0ac1095bd0016826",
+    "url": "/portfolio/static/media/FF92BA86-7986-49EE-9FAD-141BF84EEE4A.040eac8e.jpg"
   },
   {
     "revision": "4457817ac2b9993c65e81aa05828fe9c",
@@ -46,6 +62,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b5c77a6aed75cdad9489effd0d5ea411",
     "url": "/portfolio/static/media/GoogleSans-Regular.b5c77a6a.ttf"
+  },
+  {
+    "revision": "4a17a1978670d31baec31e7e6efb3c93",
+    "url": "/portfolio/static/media/IMG_1652.4a17a197.jpg"
+  },
+  {
+    "revision": "396d4d3da515aac395abf80372b35a74",
+    "url": "/portfolio/static/media/IMG_5713.396d4d3d.jpg"
   },
   {
     "revision": "ee6539921d713482b8ccd4d0d23961bb",
