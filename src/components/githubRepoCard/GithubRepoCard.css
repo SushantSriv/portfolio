@@ -1,186 +1,202 @@
+/* src/components/githubRepoCard/GithubRepoCard.css */
+
+/* --------- Kort-oppsett --------- */
 .repo-card-div {
-  color: rgb(88, 96, 105);
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
-  padding: 2rem;
-  cursor: pointer;
-  flex: 1 1 25%;
-}
-.repo-card-div:hover {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
+    color: rgb(88, 96, 105);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
+    padding: 2rem;
+    cursor: pointer;
+    flex: 1 1 25%;
 }
 
+    .repo-card-div:hover {
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
+    }
+
+/* Tittel */
+.repo-name {
+    text-align: left;
+    color: rgb(36, 41, 46);
+    font-family: "Google Sans Regular";
+    margin: 0 0 0.75rem;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    overflow: hidden;
+    line-height: 1.2;
+}
+
+/* Beskrivelse */
+.repo-description {
+    overflow: hidden;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: 0.8rem;
+    font-family: "Google Sans Regular";
+}
+
+/* Stats-linje (valgfritt) */
 .repo-stats {
-  display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  font-size: 13px;
-  color: rgb(106, 115, 125);
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: rgb(106, 115, 125);
 }
 
 .repo-left-stat {
-  -webkit-box-flex: 1;
-  flex-grow: 1;
-  display: flex;
+    flex-grow: 1;
+    display: flex;
 }
 
 .language-color {
-  width: 10px;
-  height: 10px;
-  background-color: blue;
-  margin-right: 0.25rem;
-  border-radius: 100%;
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    margin-right: 0.25rem;
+    border-radius: 100%;
 }
 
 .repo-left-stat span {
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  margin-right: 0.75rem;
+    display: flex;
+    align-items: center;
+    margin-right: 0.75rem;
 }
 
-.repo-name-div {
-  display: flex;
-  align-items: center;
-}
-
-.repo-svg {
-  margin-right: 0.5rem;
-  min-width: 16px;
-}
-
-.repo-name {
-  text-align: left;
-  color: rgb(36, 41, 46);
-  font-family: "Google Sans Regular";
-  margin-bottom: 0.75rem;
-  font-size: 25px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  overflow: hidden;
-  line-height: 1.2;
-  margin: 0px;
-}
-
-.repo-star-svg {
-  margin-right: 0.3rem;
-}
-
-.repo-description {
-  overflow: hidden;
-  text-align: left;
-  display: -webkit-box;
-  font-family: "Google Sans Regular";
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  margin-top: 0.8rem;
-}
-
-.repo-details {
-  display: flex;
-  flex-direction: row;
-}
-
-.repo-creation-date {
-  margin: 0;
-  font-family: "Google Sans Regular";
-  font-weight: 400;
-  margin-left: 0px;
-  margin-right: auto;
-}
-
-.repo-languages {
-  margin-left: auto;
-  margin-right: 0px;
-}
-
-@media (max-width: 1200px) {
-  .repo-card-div {
-    flex: 1 1 40%;
-  }
-}
-
-@media (max-width: 768px) {
-  .repo-card-div {
-    flex: 1 1 100%;
-  }
-
-  .repo-name {
-    font-size: 16px;
-  }
-
-  .repo-description {
-    font-size: 14px;
-  }
-
-  .repo-details {
-    flex-direction: column;
-  }
-
-  .repo-creation-date {
-    font-size: 14px;
-  }
-}
-
-/* --- ny rad for data-kilde-ikoner --- */
+/* Data-kilde-ikoner */
 .repo-datas {
-  margin-top: 4px;
-}
-.repo-data-icon {
-  font-size: 30px;
-  margin-right: 6px;
-  color: inherit;
-}
-
-/* --- knapp-rad --- */
-.repo-btn-row {
-  margin-top: 12px;
-  display: flex;
-  gap: 8px;
-}
-
-
-/* --- modal overlay --- */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.modal-content {
-  width: 100%;
-  max-width: 1500px;       /* ↑  fra 760 → 960  */
-  aspect-ratio: 16 / 9;
-  background: #000;
-}
-
-.modal-content iframe {
-  width: 100%;
-  height: 100%;
+    margin-top: 4px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
 }
 
 .repo-data-img {
-  width: 100px;            /* ↑  fra 22 → 32  */
-  height: 100px;
-  object-fit:cover;
-  margin-right: 4px;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin: 0;
 }
+
 .repo-data-icon {
-  font-size: 28px;        /* hvis du bruker Iconify istedenfor bilde */
-  margin-right: 8px;
+    font-size: 32px;
+    margin: 0;
+    color: inherit;
+}
+
+/* Knapp-rad */
+.repo-btn-row {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
 }
 
 .main-button {
-  padding: 14px 32px;
-  border: none;
-  border-radius: 6px;
-  font-family: "Google Sans Medium";
-  transition: transform 0.2s ease;
-  cursor: pointer;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 6px;
+    font-family: "Google Sans Medium";
+    transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
-.main-button:hover {
-  transform: translateY(-3px);
+    .main-button:hover {
+        transform: translateY(-3px);
+    }
+
+/* --------- Modal-overlay --------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal-innhold */
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+/* Lukkeknapp */
+.modal-close-btn {
+    position:absolute;
+    top: 8px;
+    right: 8px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    background-color: red;
+    border:solid;
+    border-radius: 100%;
+    font-size: 2rem;
+    line-height:1 ;
+    color:black ;
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Video-iframe */
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Bildegalleri */
+.modal-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding: 16px;
+}
+
+.modal-gallery-img {
+    width: calc(50% - 12px);
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Responsive justeringer */
+@media (max-width: 1200px) {
+    .repo-card-div {
+        flex: 1 1 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .repo-card-div {
+        flex: 1 1 100%;
+    }
+
+    .repo-name {
+        font-size: 16px;
+    }
+
+    .repo-description {
+        font-size: 14px;
+    }
+
+    .repo-details {
+        flex-direction: column;
+    }
+
+    .repo-creation-date {
+        font-size: 14px;
+    }
 }
