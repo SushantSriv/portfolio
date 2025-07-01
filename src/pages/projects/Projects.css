@@ -1,4 +1,4 @@
-.projects-main {
+﻿.projects-main {
     width: 100%;
     text-align: center;
 }
@@ -117,4 +117,27 @@
         margin-right: 10px;
         margin-top: 30px;
     }
+}
+
+/* --- override for data‐kilde‐bilder i repo‐kort --- */
+.repo-card-div .repo-datas {
+    width: 80%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 10px; /* justér avstand mellom ikonene */
+    margin-top: 15px; /* litt ekstra plass over */
+}
+
+.repo-card-div .repo-data-img {
+    width: 100px !important; /* større bilder */
+    height: 100px !important;
+    object-fit:fill;
+    border-radius: 15px;
+    margin: 0 !important;
+}
+
+.repo-card-div .repo-data-icon {
+    font-size: 100px !important; /* match med bilde‐størrelsen */
+    margin: 0 !important;
 }
