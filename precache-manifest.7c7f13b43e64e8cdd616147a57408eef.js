@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aa9ad81f22efaa71798d5e202893206e",
+    "revision": "1186dac9aab5a5da2f2ccb545254f71d",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "20f9bb166cfc12135cf6",
-    "url": "/portfolio/static/css/main.ae4de148.chunk.css"
+    "revision": "81e8da6829c3a6bfe9e8",
+    "url": "/portfolio/static/css/main.94f1d263.chunk.css"
   },
   {
-    "revision": "a603000d96164031a89e",
-    "url": "/portfolio/static/js/2.c76f1729.chunk.js"
+    "revision": "d447c214f86d55714758",
+    "url": "/portfolio/static/js/2.6a49077c.chunk.js"
   },
   {
-    "revision": "20f9bb166cfc12135cf6",
-    "url": "/portfolio/static/js/main.5a0a0e26.chunk.js"
+    "revision": "81e8da6829c3a6bfe9e8",
+    "url": "/portfolio/static/js/main.1d05c9dd.chunk.js"
   },
   {
     "revision": "e73ac9e279836ecdfedf",
@@ -68,6 +68,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/media/IMG_5713.396d4d3d.jpg"
   },
   {
+    "revision": "6a77a572cffdfe8ac441cd25a9b344d0",
+    "url": "/portfolio/static/media/JohnsHopkins.6a77a572.png"
+  },
+  {
     "revision": "ee6539921d713482b8ccd4d0d23961bb",
     "url": "/portfolio/static/media/Montserrat-Regular.ee653992.ttf"
   },
@@ -82,6 +86,26 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dcd6dee2bd7458a4a576dc131506fd83",
     "url": "/portfolio/static/media/animated_logo.dcd6dee2.svg"
+  },
+  {
+    "revision": "f4f6b428f249d00be6a9895dcc679585",
+    "url": "/portfolio/static/media/bilde1.f4f6b428.png"
+  },
+  {
+    "revision": "553ecf70e88e53dc77c5b5a0e9098175",
+    "url": "/portfolio/static/media/bilde2.553ecf70.png"
+  },
+  {
+    "revision": "619e907ce89958f2450dbb5bbf126788",
+    "url": "/portfolio/static/media/bilde3.619e907c.png"
+  },
+  {
+    "revision": "1c65b1bc6ad1ee7c68ddc460fa3ed4c3",
+    "url": "/portfolio/static/media/bilde4.1c65b1bc.png"
+  },
+  {
+    "revision": "2ed88598227b07ec9316d8927470383e",
+    "url": "/portfolio/static/media/bilde5.2ed88598.png"
   },
   {
     "revision": "058eca4cbdc03a1dad9a6bb943ac7831",
