@@ -138,7 +138,11 @@
         }
       ],
 
-      "demoUrl": "https://www.youtube.com/embed/kN1Czs0POfw"
+      "demoImages": [
+        "covid_project_1.png",
+        "covid_project_2.png",
+        "covid_project_3.png"
+      ]
     },
     {
       "id": "R_kgDObR5ysg",

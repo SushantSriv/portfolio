@@ -8,13 +8,11 @@ import Button from "../button/Button";
 import ProjectLanguages from "../projectLanguages/ProjectLanguages";
 
 export default function GithubRepoCard({ repo, theme }) {
-    // Åpne GitHub-repo i ny fane
     const openRepo = (url) => {
         const win = window.open(url, "_blank", "noopener,noreferrer");
         if (win) win.focus();
     };
 
-    // Klikk på kort (unntatt knappene)
     const handleCardClick = useCallback(
         (e) => {
             if (e.target.closest(".repo-btn-row")) return;
@@ -23,19 +21,32 @@ export default function GithubRepoCard({ repo, theme }) {
         [repo.url]
     );
 
-    // Modal state
     const [open, setOpen] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-    // Lukk modal ved Escape-tast
+    // Reset gallery index når modal åpnes
+    useEffect(() => {
+        if (open) setCurrentIndex(0);
+    }, [open]);
+
+    // Escape-tast
     useEffect(() => {
         const handleKey = (e) => {
-            if (e.key === "Escape" && open) {
-                setOpen(false);
-            }
+            if (e.key === "Escape" && open) setOpen(false);
         };
         document.addEventListener("keydown", handleKey);
         return () => document.removeEventListener("keydown", handleKey);
     }, [open]);
+
+    const hasImages = repo.demoImages && repo.demoImages.length > 0;
+    const imageCount = hasImages ? repo.demoImages.length : 0;
+
+    const showPrev = () => {
+        setCurrentIndex((i) => (i - 1 + imageCount) % imageCount);
+    };
+    const showNext = () => {
+        setCurrentIndex((i) => (i + 1) % imageCount);
+    };
 
     return (
         <div
@@ -51,11 +62,7 @@ export default function GithubRepoCard({ repo, theme }) {
                     <p className="repo-description" style={{ color: theme.secondaryText }}>
                         {repo.description}
                     </p>
-
-                    {repo.languages?.length > 0 && (
-                        <ProjectLanguages logos={repo.languages} />
-                    )}
-
+                    {repo.languages?.length > 0 && <ProjectLanguages logos={repo.languages} />}
                     {repo.dataSources?.length > 0 && (
                         <div className="repo-datas">
                             {repo.dataSources.map((src) =>
@@ -81,14 +88,11 @@ export default function GithubRepoCard({ repo, theme }) {
 
                     <div className="repo-btn-row">
                         <Button text="Code" href={repo.url} newTab theme={theme} />
-                        {(repo.demoUrl || repo.demoImages?.length > 0) && (
+                        {(repo.demoUrl || hasImages) && (
                             <button
                                 type="button"
                                 className="main-button"
-                                style={{
-                                    backgroundColor: theme.headerColor,
-                                    color: theme.text,
-                                }}
+                                style={{ backgroundColor: theme.headerColor, color: theme.text }}
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     setOpen(true);
@@ -104,7 +108,7 @@ export default function GithubRepoCard({ repo, theme }) {
             {open && (
                 <div className="modal-overlay" onClick={() => setOpen(false)}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        {/* Lukkeknapp */}
+                        {/* Close-knapp */}
                         <button
                             className="modal-close-btn"
                             onClick={() => setOpen(false)}
@@ -121,16 +125,23 @@ export default function GithubRepoCard({ repo, theme }) {
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                             />
-                        ) : repo.demoImages && repo.demoImages.length > 0 ? (
-                            <div className="modal-gallery">
-                                {repo.demoImages.map((imgSrc, idx) => (
-                                    <img
-                                        key={idx}
-                                        src={require(`../../assets/images/${imgSrc}`)}
-                                        alt={`${repo.name} screenshot ${idx + 1}`}
-                                        className="modal-gallery-img"
-                                    />
-                                ))}
+                        ) : hasImages ? (
+                            <div className="modal-single-image-wrapper">
+                                {imageCount > 1 && (
+                                    <button className="modal-nav-btn modal-nav-prev" onClick={showPrev}>
+                                        ‹
+                                    </button>
+                                )}
+                                <img
+                                    src={require(`../../assets/images/${repo.demoImages[currentIndex]}`)}
+                                    alt={`${repo.name} screenshot ${currentIndex + 1}`}
+                                    className="modal-single-image"
+                                />
+                                {imageCount > 1 && (
+                                    <button className="modal-nav-btn modal-nav-next" onClick={showNext}>
+                                        ›
+                                    </button>
+                                )}
                             </div>
                         ) : (
                             <p style={{ color: theme.text }}>Ingen demo tilgjengelig</p>

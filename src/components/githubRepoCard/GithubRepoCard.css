@@ -8,10 +8,9 @@
     cursor: pointer;
     flex: 1 1 25%;
 }
-
-    .repo-card-div:hover {
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
-    }
+.repo-card-div:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
+}
 
 /* Tittel */
 .repo-name {
@@ -44,20 +43,17 @@
     font-size: 13px;
     color: rgb(106, 115, 125);
 }
-
 .repo-left-stat {
     flex-grow: 1;
     display: flex;
 }
-
 .language-color {
     width: 10px;
     height: 10px;
     background-color: blue;
     margin-right: 0.25rem;
-    border-radius: 100%;
+    border-radius: 50%;
 }
-
 .repo-left-stat span {
     display: flex;
     align-items: center;
@@ -73,7 +69,6 @@
     align-items: center;
     gap: 8px;
 }
-
 .repo-data-img {
     width: 32px;
     height: 32px;
@@ -81,7 +76,6 @@
     border-radius: 4px;
     margin: 0;
 }
-
 .repo-data-icon {
     font-size: 32px;
     margin: 0;
@@ -94,7 +88,6 @@
     display: flex;
     gap: 8px;
 }
-
 .main-button {
     padding: 14px 32px;
     border: none;
@@ -103,10 +96,9 @@
     transition: transform 0.2s ease;
     cursor: pointer;
 }
-
-    .main-button:hover {
-        transform: translateY(-3px);
-    }
+.main-button:hover {
+    transform: translateY(-3px);
+}
 
 /* --------- Modal-overlay --------- */
 .modal-overlay {
@@ -119,43 +111,90 @@
     justify-content: center;
 }
 
-/* Modal-innhold */
+/* --------- Modal-innhold --------- */
 .modal-content {
     position: relative;
-    width: 100%;
-    max-width: 1500px;
-    aspect-ratio: 16 / 9;
-    background: #000;
+    width: 90vw;          /* fylle store del av bredden */
+    max-width: 1500px;     /* begrense maksimal bredde */
+    aspect-ratio: 16 / 9;  /* beholde bredde/høydeforhold */
+    background: #000;      /* svart bakgrunn */
+    overflow: hidden;
 }
 
-/* Lukkeknapp */
+/* --------- Lukkeknapp --------- */
 .modal-close-btn {
-    position:absolute;
+    position: absolute;   /* plassert i modal-content */
     top: 8px;
     right: 8px;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    background-color: red;
-    border:solid;
-    border-radius: 100%;
-    font-size: 2rem;
-    line-height:1 ;
-    color:black ;
-    cursor:pointer;
+    width: 40px;
+    height: 40px;
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 1001;
+}
+.modal-close-btn:hover {
+    transform: scale(1.2);
 }
 
-/* Video-iframe */
+/* --------- Video-iframe --------- */
 .modal-content iframe {
     width: 100%;
     height: 100%;
+    display: block;
 }
 
-/* Bildegalleri */
+/* --------- Enkelt-bilde-galleri med prev/next --------- */
+.modal-single-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-single-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Navigasjonsknapper for bildegalleri */
+.modal-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    transition: transform 0.2s ease, background 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+.modal-nav-btn:hover {
+    transform: scale(1.2);
+    background: #c0392b;
+}
+.modal-nav-prev {
+    left: 24px;
+}
+.modal-nav-next {
+    right: 24px;
+}
+
+/* --------- Fallback galleri (flere bilder) --------- */
 .modal-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -163,7 +202,6 @@
     justify-content: center;
     padding: 16px;
 }
-
 .modal-gallery-img {
     width: calc(50% - 12px);
     max-width: 400px;
@@ -172,7 +210,7 @@
     border-radius: 6px;
 }
 
-/* Responsive justeringer */
+/* --------- Responsive justeringer --------- */
 @media (max-width: 1200px) {
     .repo-card-div {
         flex: 1 1 40%;
@@ -183,19 +221,15 @@
     .repo-card-div {
         flex: 1 1 100%;
     }
-
     .repo-name {
         font-size: 16px;
     }
-
     .repo-description {
         font-size: 14px;
     }
-
     .repo-details {
         flex-direction: column;
     }
-
     .repo-creation-date {
         font-size: 14px;
     }
