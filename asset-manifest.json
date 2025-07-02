@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.bf8d1672.chunk.css",
-    "main.js": "/portfolio/static/js/main.b1dada18.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.b1dada18.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.ae4de148.chunk.css",
+    "main.js": "/portfolio/static/js/main.5a0a0e26.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.5a0a0e26.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.aa1db941.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.aa1db941.js.map",
-    "static/js/2.27121a72.chunk.js": "/portfolio/static/js/2.27121a72.chunk.js",
-    "static/js/2.27121a72.chunk.js.map": "/portfolio/static/js/2.27121a72.chunk.js.map",
+    "static/js/2.c76f1729.chunk.js": "/portfolio/static/js/2.c76f1729.chunk.js",
+    "static/js/2.c76f1729.chunk.js.map": "/portfolio/static/js/2.c76f1729.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.0ee0880e152d88a69c997ea20e743b6d.js": "/portfolio/precache-manifest.0ee0880e152d88a69c997ea20e743b6d.js",
+    "precache-manifest.95d20659040af6c172ad14f9b1762800.js": "/portfolio/precache-manifest.95d20659040af6c172ad14f9b1762800.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.bf8d1672.chunk.css.map": "/portfolio/static/css/main.bf8d1672.chunk.css.map",
+    "static/css/main.ae4de148.chunk.css.map": "/portfolio/static/css/main.ae4de148.chunk.css.map",
     "static/media/3D188CA0-F1DE-44B6-9339-2140EE009B2F.jpg": "/portfolio/static/media/3D188CA0-F1DE-44B6-9339-2140EE009B2F.3e128c1b.jpg",
     "static/media/481E004B-8E6D-42F9-944B-65B470FF1094.jpg": "/portfolio/static/media/481E004B-8E6D-42F9-944B-65B470FF1094.344ec7b3.jpg",
     "static/media/index.css": "/portfolio/static/media/Montserrat-Regular.ee653992.ttf",
@@ -25,6 +25,9 @@
     "static/media/cloud_infrastructure.svg": "/portfolio/static/media/cloud_infrastructure.cacbc42b.svg",
     "static/media/codeInLogo.png": "/portfolio/static/media/codeInLogo.fee92c18.png",
     "static/media/contactMail.png": "/portfolio/static/media/contactMail.5f915405.png",
+    "static/media/covid_project_1.png": "/portfolio/static/media/covid_project_1.1ca35ac4.png",
+    "static/media/covid_project_2.png": "/portfolio/static/media/covid_project_2.b4c675de.png",
+    "static/media/covid_project_3.png": "/portfolio/static/media/covid_project_3.5c7bb77f.png",
     "static/media/data_science.svg": "/portfolio/static/media/data_science.ebf35d7f.svg",
     "static/media/deeplearning_ai_logo.png": "/portfolio/static/media/deeplearning_ai_logo.75a7107b.png",
     "static/media/deeplearningai_logo.png": "/portfolio/static/media/deeplearningai_logo.1d3d0533.png",
@@ -56,8 +59,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.aa1db941.js",
-    "static/js/2.27121a72.chunk.js",
-    "static/css/main.bf8d1672.chunk.css",
-    "static/js/main.b1dada18.chunk.js"
+    "static/js/2.c76f1729.chunk.js",
+    "static/css/main.ae4de148.chunk.css",
+    "static/js/main.5a0a0e26.chunk.js"
   ]
 }
