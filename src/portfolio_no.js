@@ -25,7 +25,7 @@ const greeting = {
     subTitle:
         "En engasjert utvikler som brenner for å lage komplette løsninger fra idé til produksjon – med fokus på bærekraftige og skalerbare systemer.",
     resumeLink:
-        "https://drive.google.com/file/d/18uUmev7woQ7IKSjSwXwuvGHFGTmwBYJC/view?usp=sharing",
+        "https://drive.google.com/file/d/1X-oyEqM_jspzMgQOEEyjlrrtExeBXLeL/view?usp=sharing",
     portfolio_repository: "https://sushantsriv.github.io/portfolio/",
     githubProfile: "https://github.com/SushantSriv",
 };
