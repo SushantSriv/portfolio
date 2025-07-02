@@ -86,3 +86,41 @@
     text-align: center;
   }
 }
+
+/* Legg dette til i Experience.css */
+
+.recommendations-section {
+    padding: 0rem 1rem;
+    max-width: 1600px;
+    margin: 0 auto 2rem; /* Sentrerer seksjonen og gir luft under */
+    text-align: left;
+}
+
+    .recommendations-section h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        color: var(--text-color); /* Bruker temaets tekstfarge */
+    }
+
+.recommendation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .recommendation-list li {
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+    }
+
+.recommendation-link {
+    display: inline-block;
+    color: var(--secondary-text-color);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+    .recommendation-link:hover {
+        opacity: 0.7;
+    }

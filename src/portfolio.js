@@ -54,7 +54,7 @@ const socialMediaLinks = [
   },
   {
     name: "YouTube",
-    link: "",
+    link: "https://www.youtube.com/@CodeCraftbySushant",
     fontAwesomeIcon: "fa-youtube", // Reference https://fontawesome.com/icons/youtube?style=brands
     backgroundColor: "#FF0000", // Reference https://simpleicons.org/?q=youtube
   },
@@ -93,7 +93,13 @@ const socialMediaLinks = [
     link: "https://www.kaggle.com/sushant198",
     fontAwesomeIcon: "fa-kaggle", // Reference https://fontawesome.com/icons/instagram?style=brands
     backgroundColor: "#20BEFF", // Reference https://simpleicons.org/?q=instagram
-  },
+    },
+    {
+        name: "Hugging Face",
+        link: "https://huggingface.co/Sushant198",
+        iconifyClassname: "simple-icons:huggingface", // Reference https://simpleicons.org/icons/huggingface
+        backgroundColor: "#1099D7",
+    },
 
 ];
 
@@ -413,7 +419,7 @@ const experience = {
           color: "#00B388",
         },
       ],
-    },
+      },
     //----------------------------------------------------
     {
       title: "Volunteerships",
@@ -451,9 +457,16 @@ const experience = {
             "Managed social media, press releases and cultural events for international student community.",
           color: "#4CAF50",
         },
-      ],
-    },
-  ],
+      ]
+      }
+
+    ],
+    recommendationLetters: [
+        {
+            label: "DNV – Letter of Recommendation",
+            fileUrl: "https://drive.google.com/file/d/1L7tqOIx0YCXmPRXZ0ifb55enKqOgxJNJ/view"
+        }
+    ]
 };
 
 // Projects Page
@@ -467,11 +480,15 @@ const projectsHeader = {
 const contactPageData = {
     contactSection: {
         title: "Get in touch",
-        profile_image_path: "mittbilde.jpg",        // replace with your own file
-        description:
-            "Questions about data-science projects, CAD automation, or ML pipelines? Drop me a message—​I usually reply the same day.",
+        profile_image_path: "mittbilde.jpg",    // replace with your own file
+        description: `
+      I build end-to-end solutions in data science, ML pipelines and CAD automation. 
+      Based in Norway since 2022, I’m passionate about tackling local challenges and creating 
+      sustainable, scalable systems that make a difference. 
+      Outside of work, you’ll find me trail running, playing tennis, strength training or hiking. 
+      Drop me a message — I usually reply the same day.
+    `,
     },
-
 
     addressSection: {
         title: "Office location",

@@ -15,6 +15,16 @@
           "color": "#3776AB"
         },
         {
+          "name": "Pandas",
+          "iconifyClass": "simple-icons:pandas",
+          "color": "#150458"
+        },
+        {
+          "name": "GeoPandas",
+          "iconifyClass": "simple-icons:geopandas",
+          "color": "#29B7C9"
+        },
+        {
           "name": "FastAPI",
           "iconifyClass": "simple-icons:fastapi",
           "color": "#009688"
@@ -69,7 +79,8 @@
       "languages": [
         {
           "name": "Python",
-          "iconifyClass": "logos:python"
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
         },
         {
           "name": "FastAPI",
@@ -77,8 +88,13 @@
           "color": "#009688"
         },
         {
+          "name": "React",
+          "iconifyClass": "simple-icons:react",
+          "color": "#61DAFB"
+        },
+        {
           "name": "Docker",
-          "iconifyClass": "logos:docker-icon",
+          "iconifyClass": "simple-icons:docker",
           "color": "#2496ED"
         },
         {
@@ -90,12 +106,12 @@
 
       "dataSources": [
         {
-          "name": "StatBank bolig-CSV",
-          "iconifyClass": "mdi:database"
+          "name": "StatBank",
+          "imageSrc": "statbank.png"
         }
       ],
 
-      "demoUrl": "https://www.youtube.com/embed/H8nCziM2JCs"
+      "demoUrl": "https://www.youtube.com/embed/kSOjQf3MPO8"
     },
     {
       "id": "R_kgDOc8nVFA",
@@ -112,7 +128,32 @@
           "color": "#E25A1C"
         },
         {
-          "name": "AWS",
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "Pandas",
+          "iconifyClass": "simple-icons:pandas",
+          "color": "#150458"
+        },
+        {
+          "name": "Boto3",
+          "iconifyClass": "simple-icons:amazonaws",
+          "color": "#FF9900"
+        },
+        {
+          "name": "AWS S3",
+          "iconifyClass": "simple-icons:amazonaws",
+          "color": "#FF9900"
+        },
+        {
+          "name": "AWS Glue",
+          "iconifyClass": "simple-icons:amazonaws",
+          "color": "#FF9900"
+        },
+        {
+          "name": "AWS Athena",
           "iconifyClass": "simple-icons:amazonaws",
           "color": "#FF9900"
         },
@@ -120,21 +161,17 @@
           "name": "Power BI",
           "iconifyClass": "simple-icons:powerbi",
           "color": "#F2C811"
-        },
-        {
-          "name": "Python",
-          "iconifyClass": "logos:python"
         }
       ],
 
       "dataSources": [
         {
           "name": "Johns Hopkins CSSE",
-          "iconifyClass": "mdi:virus"
+          "imageSrc": "JohnsHopkins.png"
         },
         {
           "name": "Our World in Data",
-          "iconifyClass": "mdi:chart-line"
+          "imageSrc": "WorldData.png"
         }
       ],
 
@@ -144,6 +181,100 @@
         "covid_project_3.png"
       ]
     },
+
+    {
+      "id": "R_kgDOc8nVFA",
+      "name": "Traffic Accident Data Analysis Norway",
+      "createdAt": "2023-09-02T08:44:19Z",
+      "url": "https://github.com/SushantSriv/TrafikkulykkeDataanalyse_Norge",
+      "description": "Analysis of traffic accidents in Norway (1990–2024) using open data from Statens vegvesen. This project uncovers patterns in time, location, weather, gender, and road conditions to support better road safety measures.",
+      "isFork": false,
+
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "pandas",
+          "iconifyClass": "simple-icons:pandas",
+          "color": "#150458"
+        },
+        {
+          "name": "NumPy",
+          "iconifyClass": "simple-icons:numpy",
+          "color": "#013243"
+        },
+        {
+          "name": "matplotlib",
+          "iconifyClass": "simple-icons:matplotlib",
+          "color": "#11557C"
+        },
+        {
+          "name": "Jupyter Notebook",
+          "iconifyClass": "simple-icons:jupyter",
+          "color": "#F37626"
+        }
+      ],
+
+      "dataSources": [
+        {
+          "name": "Statens vegvesen",
+          "imageSrc": "vegvesen.png"
+        }
+      ],
+
+      "demoImages": [
+        "covid_project_1.png",
+        "covid_project_2.png",
+        "covid_project_3.png"
+      ]
+    },
+
+    {
+      "id": "R_kgDOc8nVFA",
+      "name": "Power BI report on Injuries & Accidents",
+      "createdAt": "2023-09-02T08:44:19Z",
+      "url": "https://github.com/SushantSriv/Vegvesen_data_analyse_BI",
+      "description": "Power BI report analyzing traffic injuries and accidents based on Statens vegvesen open CSV data (1990 to 2024).",
+      "isFork": false,
+
+      "languages": [
+        {
+          "name": "Power BI",
+          "iconifyClass": "simple-icons:powerbi",
+          "color": "#F2C811"
+        },
+        {
+          "name": "DAX",
+          "iconifyClass": "simple-icons:dax",
+          "color": "#0078D4"
+        },
+        {
+          "name": "M (Power Query)",
+          "iconifyClass": "simple-icons:m",
+          "color": "#C1272D"
+        }
+      ],
+
+      "dataSources": [
+        {
+          "name": "Statens vegvesen",
+          "imageSrc": "vegvesen.png"
+        }
+      ],
+
+      "demoImages": [
+        "bilde1.png",
+        "bilde2.png",
+        "bilde3.png",
+        "bilde4.png",
+        "bilde5.png"
+
+      ]
+    },
+
     {
       "id": "R_kgDObR5ysg",
       "name": "EXE Files Auto-Remover",
@@ -169,6 +300,8 @@
 
       "demoUrl": "https://www.youtube.com/embed/v7V3Cz2a7Y4"
     },
+
+
     {
       "id": "R_kgDOdk7Yhg",
       "name": "Text Summarizer (Thesis)",

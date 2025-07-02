@@ -19,6 +19,7 @@
     margin-top: 2rem;
 }
 
+
 /* Gjør tekst-kolonnen til et vertikalt flex-container */
 .contact-heading-text-div {
     flex: 1 1 300px;
@@ -122,4 +123,22 @@
     .address-heading-text {
         font-size: 1.6rem;
     }
+}
+
+/* Legg i ContactComponent.css */
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.subTitle {
+    display: inline-block; /* Viktig for transform */
+    animation: pulse 3s ease-in-out infinite;
+    margin: 0 auto 1.5em;
 }

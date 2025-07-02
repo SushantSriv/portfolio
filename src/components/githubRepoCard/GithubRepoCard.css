@@ -27,7 +27,7 @@
 
 /* Beskrivelse */
 .repo-description {
-    overflow: hidden;
+    overflow:auto;
     text-align: left;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -210,6 +210,18 @@
     border-radius: 6px;
 }
 
+/* YouTube-ikon i knapp */
+.demo-btn .btn-icon-youtube {
+    font-size: 1.4rem;
+    margin-right: 8px;
+    color: #FF0000; /* ekte YouTube-rød */
+}
+
+/* Galleri-ikon holder seg i standardfarge */
+.demo-btn .btn-icon {
+    font-size: 1.2rem;
+    margin-right: 6px;
+}
 /* --------- Responsive justeringer --------- */
 @media (max-width: 1200px) {
     .repo-card-div {

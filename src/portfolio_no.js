@@ -46,7 +46,7 @@ const socialMediaLinks = [
     },
     {
         name: "YouTube",
-        link: "",
+        link: "https://www.youtube.com/@CodeCraftbySushant",
         fontAwesomeIcon: "fa-youtube",
         backgroundColor: "#FF0000",
     },
@@ -85,6 +85,12 @@ const socialMediaLinks = [
         link: "https://www.kaggle.com/sushant198",
         fontAwesomeIcon: "fa-kaggle",
         backgroundColor: "#20BEFF",
+    },
+    {
+        name: "Hugging Face",
+        link: "https://huggingface.co/Sushant198",
+        iconifyClassname: "simple-icons:huggingface", // Reference https://simpleicons.org/icons/huggingface
+        backgroundColor: "#1099D7",
     },
 ];
 
@@ -428,6 +434,12 @@ const experience = {
             ],
         },
     ],
+    recommendationLetters: [
+        {
+            label: "DNV – Anbefalingsbrev",
+            fileUrl: "https://drive.google.com/file/d/1L7tqOIx0YCXmPRXZ0ifb55enKqOgxJNJ/view"
+        }
+    ]
 };
 
 /* ---------- Prosjekter ---------- */
@@ -441,10 +453,15 @@ const projectsHeader = {
 /* ---------- Kontakt ---------- */
 const contactPageData = {
     contactSection: {
-        title: "Kontakt",
-        profile_image_path: "mittbilde.jpg",
-        description:
-            "Lurer du på noe rundt data-science, CAD-automatisering eller ML-pipelines? Send meg en melding – jeg svarer som regel samme dag.",
+        title: "Kontakt meg",
+        profile_image_path: "mittbilde.jpg",    // erstatt med din egen fil
+        description: `
+      Jeg bygger helhetlige løsninger innen datavitenskap, ML-pipelines og CAD-automatisering. 
+      Bosatt i Norge siden 2022, brenner jeg for å løse lokale utfordringer og skape 
+      bærekraftige, skalerbare systemer som gjør en forskjell. 
+      På fritiden finner du meg gjerne på sti-løp, tennisbanen, styrketrening eller på tur. 
+      Send meg en melding — jeg svarer som regel samme dag.
+    `,
     },
 
     addressSection: {

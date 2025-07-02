@@ -126,12 +126,12 @@
     justify-content:flex-start;
     align-items: center;
     gap: 10px; /* justér avstand mellom ikonene */
-    margin-top: 15px; /* litt ekstra plass over */
+    margin-top: 30px; /* litt ekstra plass over */
 }
 
 .repo-card-div .repo-data-img {
-    width: 100px !important; /* større bilder */
-    height: 100px !important;
+    width: 180px !important; /* større bilder */
+    height: 130px !important;
     object-fit:fill;
     border-radius: 15px;
     margin: 0 !important;
