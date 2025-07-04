@@ -1,8 +1,4 @@
-﻿/* src/pages/projects/Projects.css */
-
-/* ─────────────────────────────────────────────────────────────────────────────
-   Wrapper & Heading
-───────────────────────────────────────────────────────────────────────────── */
+﻿/* ────────────────── Wrapper & Headings ────────────────── */
 .projects-main {
     width: 100%;
     text-align: center;
@@ -17,23 +13,9 @@
     flex-wrap: wrap;
 }
 
-    .projects-heading-div > * {
-        flex: 1;
-    }
-
-.projects-heading-img-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+.projects-heading-img-div,
 .projects-heading-text-div {
-    text-align: center;
-}
-
-.projects-heading-img-div > * {
-    max-width: 100%;
-    height: auto;
+    flex: 1;
 }
 
 .projects-heading-text {
@@ -44,27 +26,19 @@
     margin-top: 80px;
 }
 
-.projects-heading-sub-text {
-    font-size: 30px;
-    font-family: "Google Sans Regular";
-    margin-bottom: 10px;
-}
-
-.projects-header-detail-text {
-    font-size: 20px;
-    line-height: 30px;
-    margin: 0 20px;
+/* ────────────────── Filter Title ────────────────── */
+.filter-title {
+    margin-top: 2rem;
+    font-size: 1.2rem;
     font-family: "Google Sans Medium";
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   Language-Filter Bar
-───────────────────────────────────────────────────────────────────────────── */
+/* ────────────────── Language-Filter Bar ────────────────── */
 .lang-filter-bar {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin: 1.5rem 2rem;
+    margin: 1rem 2rem;
     justify-content: center;
 }
 
@@ -85,21 +59,17 @@
     }
 
     .lang-pill.active {
-        background-color: #0077b5; /* match your theme.highlight */
+        background-color: #0077b5;
         color: #fff;
         border-color: #0077b5;
     }
 
-/* little × on active pills */
-.remove-icon {
+.pill-close {
     margin-left: 0.4rem;
     font-weight: bold;
-    display: inline-block;
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   Repository Cards Grid
-───────────────────────────────────────────────────────────────────────────── */
+/* ────────────────── Repo Cards Grid ────────────────── */
 .repo-cards-div-main {
     display: flex;
     flex-wrap: wrap;
@@ -107,73 +77,25 @@
     margin: 60px 40px 0;
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   Responsive Adjustments
-───────────────────────────────────────────────────────────────────────────── */
-@media (max-width: 1380px) {
-    .projects-heading-text {
-        font-size: 50px;
-        margin-top: 80px;
-    }
-
-    .projects-heading-sub-text {
-        font-size: 25px;
-    }
-}
-
+/* ────────────────── Responsive ────────────────── */
 @media (max-width: 768px) {
-    .projects-heading-text,
-    .publications-heading-text {
+    .projects-heading-text {
         font-size: 30px;
         margin-top: 20px;
     }
 
-    .projects-heading-sub-text {
-        font-size: 20px;
-    }
-
-    .projects-heading-div {
-        flex-direction: column;
-    }
-
     .projects-header-detail-text {
         font-size: 16px;
-        margin: 0;
+        margin: 0 10px;
         line-height: normal;
+    }
+
+    .lang-filter-bar {
+        gap: 0.4rem;
+        margin: 1rem 1rem;
     }
 
     .repo-cards-div-main {
         margin: 30px 10px 0;
     }
-}
-
-/* ─────────────────────────────────────────────────────────────────────────────
-   Override for Repo-card data-source images/icons
-───────────────────────────────────────────────────────────────────────────── */
-.repo-card-div .repo-datas {
-    width: 80%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-    margin-top: 30px;
-}
-
-.repo-card-div .repo-data-img {
-    width: 180px !important;
-    height: 130px !important;
-    object-fit: fill;
-    border-radius: 15px;
-    margin: 0 !important;
-}
-
-.repo-card-div .repo-data-icon {
-    font-size: 100px !important;
-    margin: 0 !important;
-}
-
-.filter-title {
-    font-size: 1.25rem;
-    margin: 1rem 0 0.5rem;
-    font-family: "Google Sans Medium";
 }
