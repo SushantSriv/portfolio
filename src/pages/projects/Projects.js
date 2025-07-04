@@ -1,6 +1,5 @@
-// src/pages/projects/Projects.js
-
-import React, { useContext } from "react";
+ï»¿// src/pages/projects/Projects.js
+import React, { useContext, useState, useMemo } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import GithubRepoCard from "../../components/githubRepoCard/GithubRepoCard";
@@ -16,11 +15,36 @@ export default function Projects(props) {
     const { theme, portfolio } = props;
     const { language } = useContext(LanguageContext);
 
-    // Hent overskriftstekst og beskrivelse fra portfolio
-    const header = portfolio.projectsHeader;
-    const greeting = portfolio.greeting;
+    // track multiple selected languages
+    const [selectedLangs, setSelectedLangs] = useState([]);
 
-    // Knappetekst basert på valgt språk
+    // all unique languages
+    const allLanguages = useMemo(() => {
+        const langs = new Set();
+        ProjectsData.data.forEach(repo =>
+            repo.languages.forEach(l => langs.add(l.name))
+        );
+        return Array.from(langs).sort();
+    }, []);
+
+    // toggle a language on/off
+    const toggleLang = lang => {
+        setSelectedLangs(current => {
+            if (current.includes(lang)) {
+                return current.filter(l => l !== lang);
+            }
+            return [...current, lang];
+        });
+    };
+
+    // filtered repos: if none selected, show all, else any-match
+    const filteredRepos = useMemo(() => {
+        if (selectedLangs.length === 0) return ProjectsData.data;
+        return ProjectsData.data.filter(repo =>
+            repo.languages.some(l => selectedLangs.includes(l.name))
+        );
+    }, [selectedLangs]);
+
     const moreText = language === "no" ? "Flere prosjekter" : "More Projects";
 
     return (
@@ -34,25 +58,49 @@ export default function Projects(props) {
                             <ProjectsImg theme={theme} />
                         </div>
                         <div className="projects-heading-text-div">
-                            <h1
-                                className="projects-heading-text"
-                                style={{ color: theme.text }}
-                            >
-                                {header.title}
+                            <h1 className="projects-heading-text" style={{ color: theme.text }}>
+                                {portfolio.projectsHeader.title}
                             </h1>
                             <p
                                 className="projects-header-detail-text subTitle"
                                 style={{ color: theme.secondaryText }}
                             >
-                                {header.description}
+                                {portfolio.projectsHeader.description}
                             </p>
                         </div>
                     </div>
                 </Fade>
             </div>
 
+            <h2 className="filter-title" style={{ color: theme.text }}>
+                  Filter Projects by Technology
+            </h2>
+            {/* ====== MULTI-SELECT LANGUAGE FILTER ====== */}
+            <div className="lang-filter-bar">
+                <button
+                    className={`lang-pill ${selectedLangs.length === 0 ? "active" : ""}`}
+                    onClick={() => setSelectedLangs([])}
+                >
+                    All
+                </button>
+                {allLanguages.map(lang => {
+                    const active = selectedLangs.includes(lang);
+                    return (
+                        <button
+                            key={lang}
+                            className={`lang-pill ${active ? "active" : ""}`}
+                            onClick={() => toggleLang(lang)}
+                        >
+                            {lang}
+                            {active && <span className="remove-icon">Ã—</span>}
+                        </button>
+                    );
+                })}
+            </div>
+
+            {/* ====== REPO CARDS ====== */}
             <div className="repo-cards-div-main">
-                {ProjectsData.data.map((repo) => (
+                {filteredRepos.map(repo => (
                     <GithubRepoCard key={repo.id} repo={repo} theme={theme} />
                 ))}
             </div>
@@ -61,7 +109,7 @@ export default function Projects(props) {
                 <Button
                     text={moreText}
                     className="project-button"
-                    href={greeting.githubProfile}
+                    href={portfolio.greeting.githubProfile}
                     newTab={true}
                     theme={theme}
                 />
