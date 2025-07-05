@@ -1,6 +1,71 @@
 {
   "data": [
     {
+      "id": "electric_10",
+      "name": "Electricity Price Forecast",
+      "createdAt": "2025-07-05T00:00:00Z",
+      "url": "https://github.com/SushantSriv/Electricity-forecast",
+      "description": "End-to-end pipeline for hourly electricity-price prediction in Norway (NO1 to NO5): from raw API calls to a live Streamlit dashboard with models trained on historical price and weather data.",
+      "isFork": false,
+
+      "languages": [
+        {
+          "name": "Jupyter Notebook",
+          "iconifyClass": "simple-icons:jupyter",
+          "color": "#F37626"
+        },
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "Streamlit",
+          "iconifyClass": "simple-icons:streamlit",
+          "color": "#FF4B4B"
+        },
+        {
+          "name": "Pandas",
+          "iconifyClass": "simple-icons:pandas",
+          "color": "#150458"
+        },
+        {
+          "name": "scikit-learn",
+          "iconifyClass": "simple-icons:scikitlearn",
+          "color": "#F7931E"
+        },
+        {
+          "name": "NumPy",
+          "iconifyClass": "simple-icons:numpy",
+          "color": "#013243"
+        },
+        {
+          "name": "Altair",
+          "iconifyClass": "simple-icons:altair",
+          "color": "#F5B13F"
+        },
+        {
+          "name": "tqdm",
+          "iconifyClass": "simple-icons:tqdm",
+          "color": "#29D17E"
+        }
+      ],
+
+      "dataSources": [
+        {
+          "name": "HvaKosterStrømmen API",
+          "imageSrc": "hvakosterstrommen.png"
+        },
+        {
+          "name": "Frost API",
+          "imageSrc": "met_norway.png"
+        }
+      ],
+
+      "demoUrl": "https://electricity-forecast-sushant.streamlit.app"
+    },
+    
+    {
       "id": "R_kgDOO7jbdg_1",
       "name": "Geo-Risk Prediction Dashboard",
       "createdAt": "2025-06-14T12:39:30Z",
