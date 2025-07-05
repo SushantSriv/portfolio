@@ -9,7 +9,7 @@ const settings = {
 const seo = {
   title: "Sushant's Portfolio",
   description:
-    "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
+    "A passionate engineer who builds end-to-end products and scalable systems to create sustainable social and technical impact.",
   og: {
     title: "Sushant's Portfolio",
     type: "website",
@@ -23,7 +23,7 @@ const greeting = {
   logo_name: "SushantSrivastava",
   nickname: "Sush",
   subTitle:
-    "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
+    "A passionate engineer who builds end-to-end products and scalable systems to create sustainable social and technical impact.",
   resumeLink:
     "https://drive.google.com/file/d/1x_33VBsrV4hLE7EfOxGLbyUmVz32doYB/view?usp=sharing",
   portfolio_repository: "https://sushantsriv.github.io/portfolio/",

@@ -9,7 +9,7 @@ const settings = {
 const seo = {
     title: "Sushants portefølje",
     description:
-        "En engasjert utvikler som brenner for å bygge helhetlige, skalerbare og bærekraftige løsninger – fra idé til produksjon.",
+        "Engasjert i å utvikle helhetlige, skalerbare løsninger som skaper varig sosial og teknisk verdi.",
     og: {
         title: "Sushants portefølje",
         type: "website",
@@ -23,7 +23,7 @@ const greeting = {
     logo_name: "SushantSrivastava",
     nickname: "Sush",
     subTitle:
-        "En engasjert utvikler som brenner for å lage komplette løsninger fra idé til produksjon – med fokus på bærekraftige og skalerbare systemer.",
+        "Engasjert i å utvikle helhetlige, skalerbare løsninger som skaper varig sosial og teknisk verdi",
     resumeLink:
         "https://drive.google.com/file/d/1x_33VBsrV4hLE7EfOxGLbyUmVz32doYB/view?usp=sharing",
     portfolio_repository: "https://sushantsriv.github.io/portfolio/",
