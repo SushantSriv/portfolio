@@ -99,3 +99,28 @@
         margin: 30px 10px 0;
     }
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Override for Repo-card data-source images/icons
+───────────────────────────────────────────────────────────────────────────── */
+.repo-card-div .repo-datas {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.repo-card-div .repo-data-img {
+    width: 180px !important;
+    height: 130px !important;
+    object-fit: fill;
+    border-radius: 15px;
+    margin: 0 !important;
+}
+
+.repo-card-div .repo-data-icon {
+    font-size: 100px !important;
+    margin: 0 !important;
+}
