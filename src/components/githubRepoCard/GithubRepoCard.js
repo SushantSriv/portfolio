@@ -6,7 +6,6 @@ import { Icon } from "@iconify/react";
 
 import Button from "../button/Button";
 import ProjectLanguages from "../projectLanguages/ProjectLanguages";
-import { Col } from "react-bootstrap";
 
 export default function GithubRepoCard({ repo, theme }) {
     /* ---------- kort-klikk ---------- */
