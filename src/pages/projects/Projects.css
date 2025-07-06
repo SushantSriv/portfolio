@@ -124,3 +124,19 @@
     font-size: 100px !important;
     margin: 0 !important;
 }
+
+/* ─── Allow cards to grow vertically ─── */
+.repo-card,
+.repo-card-div {
+    /* remove any hard-coded heights */
+    height: auto !important;
+}
+
+    /* ─── Let the description wrap and expand ─── */
+    .repo-card-div .repo-description,
+    .repo-card .repo-description {
+        white-space: normal !important;
+        overflow: visible !important;
+        /* if you have a flex layout, allow this element to grow */
+        flex-grow: 1;
+    }

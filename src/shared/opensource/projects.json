@@ -1,5 +1,77 @@
 {
   "data": [
+
+    {
+      "id": "explain_public_services_01",
+      "name": "Explain My Document",
+      "createdAt": "2025-07-06T00:00:00Z",
+      "url": "https://github.com/SushantSriv/Forklar-llama",
+      "description": "A Streamlit demo that leverages a local Llama 3 8B model (via Ollama) to simplify public-sector documents (PDF/DOCX). Supports multi-language explanations, PDF-to-text extraction with OCR fallback, parallel inference for fast responses, and performance optimizations for chunking and multithreading. As comparatively new in norway, I found typical, complex official documents very confusing,so I built this tool for myself and others who have wants a quick summary and just imp document stuff.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python 3.10+",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "Streamlit",
+          "iconifyClass": "simple-icons:streamlit",
+          "color": "#FF4B4B"
+        },
+        {
+          "name": "Ollama",
+          "iconifyClass": "simple-icons:ollama",
+          "color": "#F0F0F0"
+        },
+        {
+          "name": "python-dotenv",
+          "iconifyClass": "simple-icons:dotenv",
+          "color": "#000000"
+        },
+        {
+          "name": "Docker",
+          "iconifyClass": "simple-icons:docker",
+          "color": "#2496ED"
+        },
+        {
+          "name": "GitHub Actions",
+          "iconifyClass": "simple-icons:githubactions",
+          "color": "#2088FF"
+        },
+        {
+          "name": "Azure Container Registry",
+          "iconifyClass": "simple-icons:azuredevops",
+          "color": "#0078D4"
+        },
+        {
+          "name": "Custom Domain & TLS",
+          "iconifyClass": "simple-icons:letsencrypt",
+          "color": "#C99700"
+        },
+        {
+          "name": "LoRA-finetuning",
+          "iconifyClass": "simple-icons:pytorch",
+          "color": "#EE4C2C"
+        }
+      ],
+      "dataSources": [
+        {
+          "name": "NAV PDF documents",
+          "imageSrc": "nav_logo.png"
+        },
+        {
+          "name": "Norwegian Tax Administration PDFs",
+          "imageSrc": "skatteetaten_logo.png"
+        },
+        {
+          "name": "Housing Bank PDFs",
+          "imageSrc": "husbanken_logo.png"
+        }
+      ],
+      "demoUrl": "https://explain-public-services.streamlit.app"
+    },
+    
     {
       "id": "electric_10",
       "name": "Electricity Price Forecast",
@@ -252,7 +324,7 @@
       "name": "Traffic Accident Data Analysis Norway",
       "createdAt": "2023-09-02T08:44:19Z",
       "url": "https://github.com/SushantSriv/TrafikkulykkeDataanalyse_Norge",
-      "description": "Analysis of traffic accidents in Norway (1990–2024) using open data from Statens vegvesen. This project uncovers patterns in time, location, weather, gender, and road conditions to support better road safety measures.",
+      "description": "Analysis of traffic accidents in Norway (1990 to 2024) using open data from Statens vegvesen. This project uncovers patterns in time, location, weather, gender, and road conditions to support better road safety measures.",
       "isFork": false,
 
       "languages": [
@@ -290,11 +362,19 @@
         }
       ],
 
-      "demoImages": [
-        "covid_project_1.png",
-        "covid_project_2.png",
-        "covid_project_3.png"
+      "demoPdfs": [
+        "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/Ulykke_tidspunkt_analyse.pdf",
+        "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/Ulykker_temp_analyse.pdf",
+        "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/Ulykker_vaerforhold_analyse_full.pdf",
+        "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/risikom%C3%B8nster_ulykker_rapport.pdf",
+        "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/skade_plassering_analyse.pdf",
+        "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/skadeanalyse_kommune_kj%C3%B8nn.pdf",
+        "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/skadegrad_analyse_med_kode.pdf",
+        "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/skader_kj%C3%B8nn_analyse.pdf",
+        "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/skader_ukedagstype_analyse.pdf",
+        "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/vegtilstand_skader.pdf"
       ]
+
     },
 
     {

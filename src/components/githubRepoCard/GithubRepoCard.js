@@ -6,49 +6,56 @@ import { Icon } from "@iconify/react";
 
 import Button from "../button/Button";
 import ProjectLanguages from "../projectLanguages/ProjectLanguages";
+import { Col } from "react-bootstrap";
 
 export default function GithubRepoCard({ repo, theme }) {
-    // Åpne GitHub-repo i ny fane
+    /* ---------- kort-klikk ---------- */
     const openRepo = (url) => {
         const win = window.open(url, "_blank", "noopener,noreferrer");
         if (win) win.focus();
     };
-
-    // Klikk på kort (unntatt knappene)
     const handleCardClick = useCallback(
         (e) => {
-            if (e.target.closest(".repo-btn-row")) return;
+            if (e.target.closest(".repo-btn-row")) return; // unngå knapper
             openRepo(repo.url);
         },
         [repo.url]
     );
 
-    // Modal state og galleri-index
+    /* ---------- modal-state ---------- */
     const [open, setOpen] = useState(false);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [idx, setIdx] = useState(0);
+    useEffect(() => { if (open) setIdx(0); }, [open]);
 
-    // Reset galleri-index når modal åpnes
     useEffect(() => {
-        if (open) setCurrentIndex(0);
-    }, [open]);
+        const esc = (e) => e.key === "Escape" && setOpen(false);
+        document.addEventListener("keydown", esc);
+        return () => document.removeEventListener("keydown", esc);
+    }, []);
 
-    // Lukk modal ved Escape-tast
-    useEffect(() => {
-        const handleKey = (e) => {
-            if (e.key === "Escape" && open) setOpen(false);
-        };
-        document.addEventListener("keydown", handleKey);
-        return () => document.removeEventListener("keydown", handleKey);
-    }, [open]);
+    /* ---------- demo-kilder ---------- */
+    const hasVideo = !!repo.demoUrl;
+    const hasImgs = repo.demoImages?.length;
+    const hasPdfs = repo.demoPdfs?.length;
 
-    // Sjekk om vi har bilder
-    const hasImages = repo.demoImages?.length > 0;
-    const imageCount = hasImages ? repo.demoImages.length : 0;
+    /* ---------- galleri ---------- */
+    const gallery = hasImgs ? repo.demoImages : hasPdfs ? repo.demoPdfs : [];
+    const count = gallery.length;
+    const prev = () => setIdx((i) => (i - 1 + count) % count);
+    const next = () => setIdx((i) => (i + 1) % count);
 
-    const showPrev = () =>
-        setCurrentIndex((i) => (i - 1 + imageCount) % imageCount);
-    const showNext = () => setCurrentIndex((i) => (i + 1) % imageCount);
+    /* ---------- konverter GitHub-blob → RAW ---------- */
+    const toRaw = (url) => {
+        // https://github.com/user/repo/blob/branch/path/fil.pdf
+        if (url.includes("github.com") && url.includes("/blob/")) {
+            const [repoPart, filePart] = url.split("github.com/")[1].split("/blob/");
+            return `https://raw.githubusercontent.com/${repoPart}/${filePart}`;
+        }
+        return url;
+    };
+    const resolved = hasPdfs ? gallery.map(toRaw) : gallery;
 
+    /* ---------- render ---------- */
     return (
         <div
             className="repo-card-div"
@@ -65,12 +72,12 @@ export default function GithubRepoCard({ repo, theme }) {
                         {repo.description}
                     </p>
 
-                    {/* Språk/teknologi */}
+                    {/* Teknologier */}
                     {repo.languages?.length > 0 && (
                         <ProjectLanguages logos={repo.languages} />
                     )}
 
-                    {/* Data-kilde-ikoner */}
+                    {/* Datasource-ikoner */}
                     {repo.dataSources?.length > 0 && (
                         <div className="repo-datas">
                             {repo.dataSources.map((src) =>
@@ -94,38 +101,21 @@ export default function GithubRepoCard({ repo, theme }) {
                         </div>
                     )}
 
-                    {/* Knapp-rad */}
+                    {/* Knapper */}
                     <div className="repo-btn-row">
                         <Button text="Code" href={repo.url} newTab theme={theme} />
 
-                        {(repo.demoUrl || hasImages) && (
+                        {(hasVideo || hasImgs || hasPdfs) && (
                             <button
                                 type="button"
                                 className="main-button demo-btn"
-                                style={{
-                                    backgroundColor: theme.headerColor,
-                                    color: theme.text,
-                                }}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    setOpen(true);
-                                }}
+                                style={{ backgroundColor: theme.headerColor, color: theme.text }}
+                                onClick={(e) => { e.stopPropagation(); setOpen(true); }}
                             >
-                                {/* YouTube-ikon */}
-                                {repo.demoUrl && (
-                                    <Icon
-                                        icon="simple-icons:youtube"
-                                        className="btn-icon btn-icon-youtube"
-                                    />
-                                )}
-                                {/* Galleri-ikon */}
-                                {hasImages && (
-                                    <Icon
-                                        icon="mdi:image-multiple"
-                                        className="btn-icon"
-                                    />
-                                )}
-                                Demo Video / Pics
+                                {hasVideo && <Icon icon="simple-icons:youtube" className="btn-icon" color="#FF0000" />}
+                                {hasImgs && <Icon icon="mdi:image-multiple" className="btn-icon" />}
+                                {hasPdfs && <Icon icon="mdi:file-pdf-box" className="btn-icon" />}
+                                Demo
                             </button>
                         )}
                     </div>
@@ -136,17 +126,11 @@ export default function GithubRepoCard({ repo, theme }) {
             {open && (
                 <div className="modal-overlay" onClick={() => setOpen(false)}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        {/* Close-knapp */}
-                        <button
-                            className="modal-close-btn"
-                            onClick={() => setOpen(false)}
-                            aria-label="Close modal"
-                        >
+                        <button className="modal-close-btn" onClick={() => setOpen(false)}>
                             ×
                         </button>
 
-                        {/* Video eller galleri */}
-                        {repo.demoUrl ? (
+                        {hasVideo ? (
                             <iframe
                                 src={repo.demoUrl}
                                 title="Demo video"
@@ -154,26 +138,40 @@ export default function GithubRepoCard({ repo, theme }) {
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                             />
-                        ) : hasImages ? (
+                        ) : hasImgs ? (
                             <div className="modal-single-image-wrapper">
-                                {imageCount > 1 && (
-                                    <button
-                                        className="modal-nav-btn modal-nav-prev"
-                                        onClick={showPrev}
-                                    >
+                                {count > 1 && (
+                                    <button className="modal-nav-btn modal-nav-prev" onClick={prev}>
                                         ‹
                                     </button>
                                 )}
                                 <img
-                                    src={require(`../../assets/images/${repo.demoImages[currentIndex]}`)}
-                                    alt={`${repo.name} screenshot ${currentIndex + 1}`}
+                                    src={require(`../../assets/images/${resolved[idx]}`)}
+                                    alt={`${repo.name} screenshot ${idx + 1}`}
                                     className="modal-single-image"
                                 />
-                                {imageCount > 1 && (
-                                    <button
-                                        className="modal-nav-btn modal-nav-next"
-                                        onClick={showNext}
-                                    >
+                                {count > 1 && (
+                                    <button className="modal-nav-btn modal-nav-next" onClick={next}>
+                                        ›
+                                    </button>
+                                )}
+                            </div>
+                        ) : hasPdfs ? (
+                            <div className="modal-single-image-wrapper">
+                                {count > 1 && (
+                                    <button className="modal-nav-btn modal-nav-prev" onClick={prev}>
+                                        ‹
+                                    </button>
+                                )}
+                                <iframe
+                                    className="modal-pdf-iframe"
+                                    title={`${repo.name}-PDF ${idx + 1}`}
+                                    src={`https://docs.google.com/viewer?embedded=true&url=${encodeURIComponent(
+                                        resolved[idx]
+                                    )}`}
+                                />
+                                {count > 1 && (
+                                    <button className="modal-nav-btn modal-nav-next" onClick={next}>
                                         ›
                                     </button>
                                 )}
