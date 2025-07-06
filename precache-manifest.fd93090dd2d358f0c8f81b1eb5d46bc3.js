@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ea623a20d17d90df2416383fc6828ffe",
+    "revision": "3a5b2293c5949c399ed66181e60c3512",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "21882f8aaa4135afa2a0",
-    "url": "/portfolio/static/css/main.df385a23.chunk.css"
+    "revision": "bde459c9c1a0316264c4",
+    "url": "/portfolio/static/css/main.817bccc1.chunk.css"
   },
   {
-    "revision": "b59fd5ae5d623d2e0efd",
-    "url": "/portfolio/static/js/2.e3a7f34e.chunk.js"
+    "revision": "7cd44b416c34899b9728",
+    "url": "/portfolio/static/js/2.60ecbc25.chunk.js"
   },
   {
-    "revision": "21882f8aaa4135afa2a0",
-    "url": "/portfolio/static/js/main.dfdc06a0.chunk.js"
+    "revision": "bde459c9c1a0316264c4",
+    "url": "/portfolio/static/js/main.273a6dcc.chunk.js"
   },
   {
     "revision": "e73ac9e279836ecdfedf",
@@ -244,6 +244,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/media/hpe_logo.6e9e4c7f.png"
   },
   {
+    "revision": "af4c7fdb02689f01f2a4dd1534875b52",
+    "url": "/portfolio/static/media/husbanken_logo.af4c7fdb.png"
+  },
+  {
     "revision": "88d15129e45b2574b3c3a26f4acd5843",
     "url": "/portfolio/static/media/johnhopkins_logo.88d15129.png"
   },
@@ -262,6 +266,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7c9ea338ba58ee2f90574a302b948079",
     "url": "/portfolio/static/media/mittbilde.7c9ea338.jpg"
+  },
+  {
+    "revision": "5a8b38ad28841bd52de415ac5829dd1e",
+    "url": "/portfolio/static/media/nav_logo.5a8b38ad.png"
   },
   {
     "revision": "d400cc08e7a111a5566a9cd2b0779d39",
@@ -286,6 +294,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b8ba948796d7ab532673c5ed2f315e74",
     "url": "/portfolio/static/media/projects_image.b8ba9487.svg"
+  },
+  {
+    "revision": "0e36a14a42e75f83163ba83d81a98ac6",
+    "url": "/portfolio/static/media/skatteetaten_logo.0e36a14a.png"
   },
   {
     "revision": "6ac91b161c2c9934a44f72d75d18142d",
