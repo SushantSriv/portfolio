@@ -249,3 +249,42 @@
     height: 80vh; 
     border: none;
 }
+
+/* ---- blinkende gul prikk for "under utvikling" ---- */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ----- GithubRepoCard.css ----- */
+
+/* Flagget som viser “Under utvikling” / “In development” */
+.repo-dev-flag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #012731;
+    color: #F4D35E;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0.3em 0.8em;
+    border-radius: 0.4em;
+    margin-bottom: 1.5em;
+}
+
+/* Den lille prikka */
+/* Gjør prikk‐elementet blinkende */
+.dev-dot {
+    width: 0.7em;
+    height: 0.7em;
+    background-color: #FFA000;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    /* legg til animasjon: navn, varighet, timing-funksjon, repetisjon */
+    animation: blink 1.2s ease-in-out infinite;
+    box-shadow: 0 0 4px rgba(255, 160, 0, 0.6);
+}

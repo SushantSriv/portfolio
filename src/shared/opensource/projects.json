@@ -1,6 +1,79 @@
 {
   "data": [
+    {
+      "id": "norwegian_pronunciation_coach_12",
+      "name": "Norwegian Pronunciation Coach",
+      "createdAt": "2025-07-07T00:00:00Z",
+      "url": "https://github.com/SushantSriv/norwegian-pronunciation-app",
+      "description": "Light-weight, Dockerised web app that lets learners record themselves, get instant Whisper-based feedback on Norwegian pronunciation, and level-up sentence by sentence. Built because, while learning Norwegian, I found pronunciation especially challenging and existing apps offered no phrase-level, real-time feedback—so I created this tool for myself and other international learners. React + Vite frontend with framer-motion animations; FastAPI backend running a local Whisper-medium ASR model and an IPA-hint pipeline.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python 3.10",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "FastAPI",
+          "iconifyClass": "simple-icons:fastapi",
+          "color": "#009688"
+        },
+        {
+          "name": "React",
+          "iconifyClass": "simple-icons:react",
+          "color": "#61DAFB"
+        },
+        {
+          "name": "TypeScript",
+          "iconifyClass": "simple-icons:typescript",
+          "color": "#3178C6"
+        },
+        {
+          "name": "Vite",
+          "iconifyClass": "simple-icons:vite",
+          "color": "#646CFF"
+        },
+        {
+          "name": "Framer Motion",
+          "iconifyClass": "simple-icons:framermotion",
+          "color": "#0055FF"
+        },
+        {
+          "name": "PyTorch",
+          "iconifyClass": "simple-icons:pytorch",
+          "color": "#EE4C2C"
+        },
+        {
+          "name": "OpenAI",
+          "iconifyClass": "simple-icons:openai",
+          "color": "#412991"
+        },
+        {
+          "name": "FFmpeg",
+          "iconifyClass": "simple-icons:ffmpeg",
+          "color": "#007808"
+        },
+        {
+          "name": "Docker",
+          "iconifyClass": "simple-icons:docker",
+          "color": "#2496ED"
+        }
+      ],
+      "dataSources": [],
+      "demoUrl": "",
+      "technologies": [
+        "openai-whisper",
+        "jiwer",
+        "phonemizer",
+        "pydub",
+        "uvicorn",
+        "fastapi-cors-middleware",
+        "espeak-ng",
+        "react-hook-form"
+      ],
+      "inProgress": true
 
+    },
     {
       "id": "explain_public_services_01",
       "name": "Explain My Document",
@@ -69,9 +142,18 @@
           "imageSrc": "husbanken_logo.png"
         }
       ],
-      "demoUrl": "https://explain-public-services.streamlit.app"
+      "demoUrl": "https://explain-public-services.streamlit.app",
+      "inProgress": true,
+      "technologies": [
+        "pdfminer.six",
+        "pytesseract",
+        "Pillow",
+        "WeasyPrint",
+        "PyMuPDF",
+        "stqdm"
+      ]
     },
-    
+
     {
       "id": "electric_10",
       "name": "Electricity Price Forecast",
@@ -79,7 +161,6 @@
       "url": "https://github.com/SushantSriv/Electricity-forecast",
       "description": "End-to-end pipeline for hourly electricity-price prediction in Norway (NO1 to NO5): from raw API calls to a live Streamlit dashboard with models trained on historical price and weather data.",
       "isFork": false,
-
       "languages": [
         {
           "name": "Jupyter Notebook",
@@ -122,7 +203,6 @@
           "color": "#29D17E"
         }
       ],
-
       "dataSources": [
         {
           "name": "HvaKosterStrømmen API",
@@ -133,10 +213,16 @@
           "imageSrc": "met_norway.png"
         }
       ],
-
-      "demoUrl": "https://electricity-forecast-sushant.streamlit.app"
+      "demoUrl": "https://electricity-forecast-sushant.streamlit.app",
+      "inProgress": true,
+      "technologies": [
+        "joblib",
+        "streamlit-autorefresh",
+        "vega_datasets",
+        "requests"
+      ]
     },
-    
+
     {
       "id": "R_kgDOO7jbdg_1",
       "name": "Geo-Risk Prediction Dashboard",
@@ -144,7 +230,6 @@
       "url": "https://github.com/SushantSriv/Risikoprediksjon_for_Transport_og_Landbruk",
       "description": "Interactive dashboard that combines 34 years of Norwegian accident data with real-time MET Norway forecasts to predict road & farmland risk. Models (Random Forest) served through FastAPI, visualised with React + Leaflet, bundled in Docker.",
       "isFork": false,
-
       "languages": [
         {
           "name": "Python",
@@ -187,7 +272,6 @@
           "color": "#2496ED"
         }
       ],
-
       "dataSources": [
         {
           "name": "MET Norway API",
@@ -202,9 +286,15 @@
           "imageSrc": "osm.png"
         }
       ],
+      "demoUrl": "https://www.youtube.com/embed/lIDKO1tNgUs",
+      "technologies": [
+        "joblib",
+        "react-leaflet",
+        "axios"
+      ]
 
-      "demoUrl": "https://www.youtube.com/embed/lIDKO1tNgUs"
     },
+
     {
       "id": "R_kgDObzB2KQ_2",
       "name": "Housing-Price Prediction API",
@@ -212,7 +302,6 @@
       "url": "https://github.com/SushantSriv/boligprediksjon-fastapi",
       "description": "End-to-end MLOps demo: Scikit-Learn Random-Forest model served via FastAPI, containerised with Docker and auto-deployed by GitHub Actions.",
       "isFork": false,
-
       "languages": [
         {
           "name": "Python",
@@ -240,16 +329,22 @@
           "color": "#2088FF"
         }
       ],
-
       "dataSources": [
         {
           "name": "StatBank",
           "imageSrc": "statbank.png"
         }
       ],
-
-      "demoUrl": "https://www.youtube.com/embed/kSOjQf3MPO8"
+      "demoUrl": "https://www.youtube.com/embed/kSOjQf3MPO8",
+      "technologies": [
+        "uvicorn",
+        "joblib",
+        "requests",
+        "react-dom",
+        "react-scripts"
+      ]
     },
+
     {
       "id": "R_kgDOc8nVFA_3",
       "name": "COVID-19 Data Lake on AWS",
@@ -257,7 +352,6 @@
       "url": "https://github.com/SushantSriv/COVID-19-Data-Pipeline-AWS-Python-Power-BI",
       "description": "Serverless ETL: AWS Glue crawls Johns-Hopkins CSVs into S3, queried via Athena, visualised in Power BI dashboards.",
       "isFork": false,
-
       "languages": [
         {
           "name": "PySpark",
@@ -300,7 +394,6 @@
           "color": "#F2C811"
         }
       ],
-
       "dataSources": [
         {
           "name": "Johns Hopkins CSSE",
@@ -311,11 +404,14 @@
           "imageSrc": "WorldData.png"
         }
       ],
-
       "demoImages": [
         "covid_project_1.png",
         "covid_project_2.png",
         "covid_project_3.png"
+      ],
+      "technologies": [
+        "requests",
+        "pyarrow"
       ]
     },
 
@@ -326,7 +422,6 @@
       "url": "https://github.com/SushantSriv/TrafikkulykkeDataanalyse_Norge",
       "description": "Analysis of traffic accidents in Norway (1990 to 2024) using open data from Statens vegvesen. This project uncovers patterns in time, location, weather, gender, and road conditions to support better road safety measures.",
       "isFork": false,
-
       "languages": [
         {
           "name": "Python",
@@ -354,14 +449,12 @@
           "color": "#F37626"
         }
       ],
-
       "dataSources": [
         {
           "name": "Statens vegvesen",
           "imageSrc": "vegvesen.png"
         }
       ],
-
       "demoPdfs": [
         "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/Ulykke_tidspunkt_analyse.pdf",
         "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/Ulykker_temp_analyse.pdf",
@@ -373,6 +466,11 @@
         "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/skader_kj%C3%B8nn_analyse.pdf",
         "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/skader_ukedagstype_analyse.pdf",
         "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/vegtilstand_skader.pdf"
+      ],
+      "technologies": [
+        "seaborn",
+        "plotly",
+        "geopandas"
       ]
 
     },
@@ -384,7 +482,6 @@
       "url": "https://github.com/SushantSriv/Vegvesen_data_analyse_BI",
       "description": "Power BI report analyzing traffic injuries and accidents based on Statens vegvesen open CSV data (1990 to 2024).",
       "isFork": false,
-
       "languages": [
         {
           "name": "Power BI",
@@ -402,14 +499,12 @@
           "color": "#C1272D"
         }
       ],
-
       "dataSources": [
         {
           "name": "Statens vegvesen",
           "imageSrc": "vegvesen.png"
         }
       ],
-
       "demoImages": [
         "bilde1.png",
         "bilde2.png",
@@ -417,33 +512,97 @@
         "bilde4.png",
         "bilde5.png"
 
+      ],
+      "technologies": [
+        "seaborn",
+        "gdown"
       ]
     },
 
-    {
-      "id": "R_kgDObR5ysg_7",
-      "name": "EXE Files Auto-Remover",
-      "createdAt": "2022-12-15T14:17:44Z",
-      "url": "https://github.com/SushantSriv/exe-files-automatic-remover",
-      "description": "Tiny desktop utility written in C# + PowerShell that scans engineering PCs and deletes obsolete binaries to free disk space.",
-      "isFork": false,
 
+
+    {
+      "id": "semantic_image_captioning_11",
+      "name": "Semantic Image Captioning Enhancements",
+      "createdAt": "2024-01-12T00:00:00Z",
+      "url": "https://github.com/SushantSriv/Semantic-Enhancements-in-Image-Captioning-Leveraging-Neural-Networks-to-Improve-BLIP-and-GPT-2",
+      "description": "Master-thesis codebase that augments BLIP and GPT-2 for image captioning via “Weighted Summarization”. Includes notebooks for COCO & Flickr30k, evaluation scripts and result JSON-files.",
+      "isFork": false,
       "languages": [
         {
-          "name": "C#",
-          "iconifyClass": "simple-icons:csharp",
-          "color": "#239120"
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
         },
         {
-          "name": "PowerShell",
-          "iconifyClass": "simple-icons:powershell",
-          "color": "#5391FE"
+          "name": "PyTorch",
+          "iconifyClass": "simple-icons:pytorch",
+          "color": "#EE4C2C"
+        },
+        {
+          "name": "Hugging Face",
+          "iconifyClass": "simple-icons:huggingface",
+          "color": "#FFBF00"
+        },
+        {
+          "name": "OpenAI",
+          "iconifyClass": "simple-icons:openai",
+          "color": "#412991"
+        },
+        {
+          "name": "Jupyter Notebook",
+          "iconifyClass": "simple-icons:jupyter",
+          "color": "#F37626"
+        },
+        {
+          "name": "Matplotlib",
+          "iconifyClass": "simple-icons:matplotlib",
+          "color": "#11557C"
+        },
+        {
+          "name": "NumPy",
+          "iconifyClass": "simple-icons:numpy",
+          "color": "#013243"
+        },
+        {
+          "name": "Pandas",
+          "iconifyClass": "simple-icons:pandas",
+          "color": "#150458"
+        },
+        {
+          "name": "scikit-learn",
+          "iconifyClass": "simple-icons:scikitlearn",
+          "color": "#F7931E"
+        },
+        {
+          "name": "tqdm",
+          "iconifyClass": "simple-icons:tqdm",
+          "color": "#29D17E"
         }
       ],
+      "dataSources": [
+        {
+          "name": "COCO Dataset",
+          "imageSrc": "coco_logo.png"
+        },
+        {
+          "name": "Flickr30k Dataset",
+          "imageSrc": "flickr_logo.png"
+        }
 
-      "dataSources": [],
-
-      "demoUrl": "https://www.youtube.com/embed/v7V3Cz2a7Y4"
+      ],
+      "demoUrl": "",
+      "technologies": [
+        "evaluate",
+        "huggingface-evaluate",
+        "transformers",
+        "language_tool_python",
+        "Pillow",
+        "scikit-image",
+        "pycocotools",
+        "pycocoevalcap",
+        "torchvision"
+      ]
     },
 
 
@@ -454,7 +613,6 @@
       "url": "https://drive.google.com/file/d/1GvvxxNht4rp2MKw5ImC9OtXaLiz37W4C/view?usp=sharing",
       "description": "Bachelor thesis project: extractive summaries for news & research using TextRank and Gensim; evaluated with ROUGE metrics.",
       "isFork": false,
-
       "languages": [
         {
           "name": "Python",
@@ -471,15 +629,41 @@
           "color": "#3CB371"
         }
       ],
-
       "dataSources": [
         {
           "name": "BBC News Corpus",
           "iconifyClass": "simple-icons:bbc"
         }
       ],
+      "demoUrl": "https://www.youtube.com/embed/2B3p0kF2xlE",
+      "technologies": [
+        "networkx",
+        "summa",
+        "rouge-score"
+      ]
+    },
 
-      "demoUrl": "https://www.youtube.com/embed/2B3p0kF2xlE"
+    {
+      "id": "R_kgDObR5ysg_7",
+      "name": "EXE Files Auto-Remover",
+      "createdAt": "2022-12-15T14:17:44Z",
+      "url": "https://github.com/SushantSriv/exe-files-automatic-remover",
+      "description": "Tiny desktop utility written in C# + PowerShell that scans engineering PCs and deletes obsolete binaries to free disk space.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "C#",
+          "iconifyClass": "simple-icons:csharp",
+          "color": "#239120"
+        },
+        {
+          "name": "PowerShell",
+          "iconifyClass": "simple-icons:powershell",
+          "color": "#5391FE"
+        }
+      ],
+      "dataSources": [],
+      "demoUrl": "https://www.youtube.com/embed/v7V3Cz2a7Y4"
     }
 
   ]

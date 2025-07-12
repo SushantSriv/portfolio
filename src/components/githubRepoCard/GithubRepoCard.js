@@ -1,13 +1,18 @@
 // src/components/githubRepoCard/GithubRepoCard.js
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useContext } from "react";
 import "./GithubRepoCard.css";
 import { Fade } from "react-reveal";
 import { Icon } from "@iconify/react";
+import { LanguageContext } from "../../LanguageContext";
 
 import Button from "../button/Button";
 import ProjectLanguages from "../projectLanguages/ProjectLanguages";
 
+
 export default function GithubRepoCard({ repo, theme }) {
+
+
+    const { language } = useContext(LanguageContext);
     /* ---------- kort-klikk ---------- */
     const openRepo = (url) => {
         const win = window.open(url, "_blank", "noopener,noreferrer");
@@ -70,6 +75,13 @@ export default function GithubRepoCard({ repo, theme }) {
                     <p className="repo-description" style={{ color: theme.secondaryText }}>
                         {repo.description}
                     </p>
+
+                    
+                    {repo.inProgress && (
+                        <div className="repo-dev-flag" title={language === "no" ? "Under utvikling" : "In development"}>
+                            <span className="dev-dot" /> {language === "no" ? "Under utvikling" : "In development"}
+                        </div>
+                    )}
 
                     {/* Teknologier */}
                     {repo.languages?.length > 0 && (

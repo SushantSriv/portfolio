@@ -1,4 +1,5 @@
-﻿import React, { useContext, useState, useMemo } from "react";
+﻿// src/pages/projects/Projects.js
+import React, { useContext, useState, useMemo } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import GithubRepoCard from "../../components/githubRepoCard/GithubRepoCard";
@@ -8,40 +9,46 @@ import { Fade } from "react-reveal";
 import ProjectsData from "../../shared/opensource/projects.json";
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
-import { LanguageContext } from "../../LanguageContext";  
+import { LanguageContext } from "../../LanguageContext";
 
 export default function Projects(props) {
     const { theme, portfolio } = props;
     const { language } = useContext(LanguageContext);
-    const [selectedLangs, setSelectedLangs] = useState([]);
+    const [selectedFilters, setSelectedFilters] = useState([]);
 
-    // 1. Gather all unique languages from your JSON
-    const allLanguages = useMemo(() => {
-        const langs = new Set();
-        ProjectsData.data.forEach(repo =>
-            repo.languages.forEach(l => langs.add(l.name))
-        );
-        return Array.from(langs).sort();
+    // 1) Hent alle unike tags fra både languages og technologies
+    const allFilters = useMemo(() => {
+        const setFilters = new Set();
+        ProjectsData.data.forEach((repo) => {
+            if (repo.languages) {
+                repo.languages.forEach((l) => setFilters.add(l.name));
+            }
+            if (repo.technologies) {
+                repo.technologies.forEach((t) => setFilters.add(t));
+            }
+        });
+        return Array.from(setFilters).sort();
     }, []);
 
-    // 2. Toggle a language on/off
-    const toggleLang = lang => {
-        setSelectedLangs(curr =>
-            curr.includes(lang)
-                ? curr.filter(l => l !== lang)
-                : [...curr, lang]
+    // 2) Slå av/på en tag
+    const toggleFilter = (f) => {
+        setSelectedFilters((curr) =>
+            curr.includes(f) ? curr.filter((x) => x !== f) : [...curr, f]
         );
     };
 
-    // 3. Filter repos by ANY selected language
+    // 3) Filtrer repos: vis alle hvis ingen valgt, ellers sjekk om repo inneholder minst én av valgte tags
     const filteredRepos = useMemo(() => {
-        if (selectedLangs.length === 0) return ProjectsData.data;
-        return ProjectsData.data.filter(repo =>
-            repo.languages.some(l => selectedLangs.includes(l.name))
-        );
-    }, [selectedLangs]);
+        if (selectedFilters.length === 0) return ProjectsData.data;
+        return ProjectsData.data.filter((repo) => {
+            const langs = repo.languages?.map((l) => l.name) || [];
+            const techs = repo.technologies || [];
+            return selectedFilters.some((f) => langs.includes(f) || techs.includes(f));
+        });
+    }, [selectedFilters]);
 
     const moreText = language === "no" ? "Flere prosjekter" : "More Projects";
+    const filterTitle = language === "no" ? "Filtrer etter teknologi" : "Filter by technology";
 
     return (
         <div className="projects-main">
@@ -54,16 +61,10 @@ export default function Projects(props) {
                             <ProjectsImg theme={theme} />
                         </div>
                         <div className="projects-heading-text-div">
-                            <h1
-                                className="projects-heading-text"
-                                style={{ color: theme.text }}
-                            >
+                            <h1 className="projects-heading-text" style={{ color: theme.text }}>
                                 {portfolio.projectsHeader.title}
                             </h1>
-                            <p
-                                className="projects-header-detail-text subTitle"
-                                style={{ color: theme.secondaryText }}
-                            >
+                            <p className="projects-header-detail-text subTitle" style={{ color: theme.secondaryText }}>
                                 {portfolio.projectsHeader.description}
                             </p>
                         </div>
@@ -71,35 +72,33 @@ export default function Projects(props) {
                 </Fade>
             </div>
 
-            {/* Filter heading */}
+            {/* Filter-piller */}
             <h3 className="filter-title" style={{ color: theme.text }}>
-                {language === "no" ? "Filtrer etter teknologi" : "Filter by technology"}
+                {filterTitle}
             </h3>
-
-            {/* Language pills */}
             <div className="lang-filter-bar">
-                {allLanguages.map(lang => {
-                    const active = selectedLangs.includes(lang);
+                {allFilters.map((f) => {
+                    const active = selectedFilters.includes(f);
                     return (
                         <button
-                            key={lang}
+                            key={f}
                             className={`lang-pill ${active ? "active" : ""}`}
-                            onClick={() => toggleLang(lang)}
+                            onClick={() => toggleFilter(f)}
                         >
-                            {lang} {active && <span className="pill-close">×</span>}
+                            {f} {active && <span className="pill-close">×</span>}
                         </button>
                     );
                 })}
             </div>
 
-            {/* Repo cards */}
+            {/* Repo-kort */}
             <div className="repo-cards-div-main">
-                {filteredRepos.map(repo => (
+                {filteredRepos.map((repo) => (
                     <GithubRepoCard key={repo.id} repo={repo} theme={theme} />
                 ))}
             </div>
 
-            {/* “More Projects” button */}
+            {/* “More Projects” */}
             <div className="project-button-div">
                 <Button
                     text={moreText}
