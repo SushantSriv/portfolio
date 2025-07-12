@@ -1,16 +1,20 @@
-﻿/* ────────────────── Wrapper & Headings ────────────────── */
+﻿/* Wrapper & Headings */
 .projects-main {
     width: 100%;
     text-align: center;
 }
 
 .basic-projects {
-    margin: 0 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .projects-heading-div {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .projects-heading-img-div,
@@ -26,50 +30,135 @@
     margin-top: 80px;
 }
 
-/* ────────────────── Filter Title ────────────────── */
-.filter-title {
-    margin-top: 2rem;
-    font-size: 1.2rem;
+.projects-header-detail-text {
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0 20px;
     font-family: "Google Sans Medium";
 }
 
-/* ────────────────── Language-Filter Bar ────────────────── */
-.lang-filter-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 2rem;
-    justify-content: center;
-}
-
-.lang-pill {
+/* Tag-input Search Bar */
+.projects-tag-search-wrapper {
     position: relative;
-    padding: 0.4rem 0.8rem;
-    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 360px;
+    max-width: 95%;
+    margin: 2rem auto;
+    padding: 0.4rem 1rem;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 999px;
-    background-color: #f5f5f5;
-    color: #333;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
 }
 
-    .lang-pill:hover {
-        background-color: #e0e0e0;
+.search-icon {
+    font-size: 1.2rem;
+    color: #888;
+    margin-right: 0.5rem;
+}
+
+.search-tag {
+    display: flex;
+    align-items: center;
+    background: #0077b5;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 16px;
+    margin-right: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.tag-close {
+    font-size: 1rem;
+    margin-left: 0.25rem;
+    cursor: pointer;
+}
+
+.projects-tag-search-input {
+    flex: 1;
+    border: none;
+    font-size: 1rem;
+    min-width: 100px;
+}
+
+    .projects-tag-search-input:focus {
+        outline: none;
     }
 
-    .lang-pill.active {
-        background-color: #0077b5;
+.clear-icon {
+    font-size: 1.2rem;
+    color: #888;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: color 0.2s;
+}
+
+    .clear-icon:hover {
+        color: #444;
+    }
+
+/* Suggestions Dropdown */
+.search-suggestions {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 240px;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0.25rem 0 0;
+    padding: 0;
+    z-index: 100;
+    text-align: left;
+}
+
+    .search-suggestions li {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }
+
+        .search-suggestions li:hover,
+        .search-suggestions li.highlighted {
+            background: #f0f0f0;
+        }
+
+/* Manual Tech-button Bar */
+.projects-tech-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem 2rem;
+}
+
+.tech-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: 1px solid #888;
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+    .tech-btn:hover {
+        background: #eee;
+        transform: translateY(-1px);
+    }
+
+    .tech-btn.active {
+        background: #0077b5;
         color: #fff;
         border-color: #0077b5;
     }
 
-.pill-close {
-    margin-left: 0.4rem;
-    font-weight: bold;
-}
-
-/* ────────────────── Repo Cards Grid ────────────────── */
+/* Repo Cards Grid */
 .repo-cards-div-main {
     display: flex;
     flex-wrap: wrap;
@@ -77,32 +166,7 @@
     margin: 60px 40px 0;
 }
 
-/* ────────────────── Responsive ────────────────── */
-@media (max-width: 768px) {
-    .projects-heading-text {
-        font-size: 30px;
-        margin-top: 20px;
-    }
-
-    .projects-header-detail-text {
-        font-size: 16px;
-        margin: 0 10px;
-        line-height: normal;
-    }
-
-    .lang-filter-bar {
-        gap: 0.4rem;
-        margin: 1rem 1rem;
-    }
-
-    .repo-cards-div-main {
-        margin: 30px 10px 0;
-    }
-}
-
-/* ─────────────────────────────────────────────────────────────────────────────
-   Override for Repo-card data-source images/icons
-───────────────────────────────────────────────────────────────────────────── */
+/* Override data-source images/icons */
 .repo-card-div .repo-datas {
     width: 80%;
     display: flex;
@@ -115,7 +179,7 @@
 .repo-card-div .repo-data-img {
     width: 180px !important;
     height: 130px !important;
-    object-fit: fill;
+    object-fit: cover;
     border-radius: 15px;
     margin: 0 !important;
 }
@@ -125,18 +189,25 @@
     margin: 0 !important;
 }
 
-/* ─── Allow cards to grow vertically ─── */
-.repo-card,
-.repo-card-div {
-    /* remove any hard-coded heights */
-    height: auto !important;
-}
-
-    /* ─── Let the description wrap and expand ─── */
-    .repo-card-div .repo-description,
-    .repo-card .repo-description {
-        white-space: normal !important;
-        overflow: visible !important;
-        /* if you have a flex layout, allow this element to grow */
-        flex-grow: 1;
+/* Responsive */
+@media (max-width: 768px) {
+    .projects-heading-text {
+        font-size: 30px;
+        margin-top: 20px;
     }
+
+    .projects-header-detail-text {
+        font-size: 16px;
+        margin: 0 10px;
+        line-height: normal;
+    }
+
+    .projects-tag-search-wrapper {
+        width: 90%;
+        margin: 1.5rem auto;
+    }
+
+    .repo-cards-div-main {
+        margin: 30px 10px 0;
+    }
+}

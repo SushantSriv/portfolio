@@ -1,11 +1,18 @@
-﻿// src/pages/projects/Projects.js
-import React, { useContext, useState, useMemo } from "react";
+﻿import React, {
+    useContext,
+    useState,
+    useMemo,
+    useCallback,
+    useRef,
+    useEffect,
+} from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import GithubRepoCard from "../../components/githubRepoCard/GithubRepoCard";
 import Button from "../../components/button/Button";
 import TopButton from "../../components/topButton/TopButton";
 import { Fade } from "react-reveal";
+import { Icon } from "@iconify/react";
 import ProjectsData from "../../shared/opensource/projects.json";
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
@@ -14,41 +21,109 @@ import { LanguageContext } from "../../LanguageContext";
 export default function Projects(props) {
     const { theme, portfolio } = props;
     const { language } = useContext(LanguageContext);
-    const [selectedFilters, setSelectedFilters] = useState([]);
 
-    // 1) Hent alle unike tags fra både languages og technologies
-    const allFilters = useMemo(() => {
-        const setFilters = new Set();
-        ProjectsData.data.forEach((repo) => {
-            if (repo.languages) {
-                repo.languages.forEach((l) => setFilters.add(l.name));
-            }
-            if (repo.technologies) {
-                repo.technologies.forEach((t) => setFilters.add(t));
-            }
-        });
-        return Array.from(setFilters).sort();
+    const [searchText, setSearchText] = useState("");
+    const [selectedTechs, setSelectedTechs] = useState([]);
+    const [showSuggestions, setShowSuggestions] = useState(false);
+    const [highlightedIndex, setHighlightedIndex] = useState(-1);
+    const wrapperRef = useRef(null);
+
+    // All tech names
+    const allTechs = useMemo(() => {
+        const s = new Set();
+        ProjectsData.data.forEach((repo) =>
+            repo.languages?.forEach((l) => s.add(l.name))
+        );
+        return Array.from(s).sort();
     }, []);
 
-    // 2) Slå av/på en tag
-    const toggleFilter = (f) => {
-        setSelectedFilters((curr) =>
-            curr.includes(f) ? curr.filter((x) => x !== f) : [...curr, f]
-        );
+    const toggleTech = useCallback(
+        (tech) =>
+            setSelectedTechs((prev) =>
+                prev.includes(tech) ? prev.filter((t) => t !== tech) : [...prev, tech]
+            ),
+        []
+    );
+
+    // Suggestions list (only unselected, filtered by searchText)
+    const suggestions = useMemo(() => {
+        const q = searchText.toLowerCase().trim();
+        if (!q) return [];
+        return allTechs
+            .filter((tech) => !selectedTechs.includes(tech))
+            .filter((tech) => tech.toLowerCase().includes(q));
+    }, [allTechs, selectedTechs, searchText]);
+
+    // Handle keyboard
+    const onKeyDown = (e) => {
+        if (e.key === "ArrowDown") {
+            e.preventDefault();
+            setShowSuggestions(true);
+            setHighlightedIndex((i) =>
+                i < suggestions.length - 1 ? i + 1 : 0
+            );
+        }
+        if (e.key === "ArrowUp") {
+            e.preventDefault();
+            setHighlightedIndex((i) =>
+                i > 0 ? i - 1 : suggestions.length - 1
+            );
+        }
+        if (e.key === "Enter") {
+            if (highlightedIndex >= 0 && suggestions[highlightedIndex]) {
+                const tech = suggestions[highlightedIndex];
+                toggleTech(tech);
+                setSearchText("");
+                setShowSuggestions(false);
+                setHighlightedIndex(-1);
+                e.preventDefault();
+            } else {
+                // fallback exact match
+                const exact = allTechs.find(
+                    (t) => t.toLowerCase() === searchText.toLowerCase().trim()
+                );
+                if (exact) {
+                    toggleTech(exact);
+                    setSearchText("");
+                    setShowSuggestions(false);
+                    setHighlightedIndex(-1);
+                    e.preventDefault();
+                }
+            }
+        }
+        if (e.key === "Escape") {
+            setShowSuggestions(false);
+            setHighlightedIndex(-1);
+        }
     };
 
-    // 3) Filtrer repos: vis alle hvis ingen valgt, ellers sjekk om repo inneholder minst én av valgte tags
+    // Close on outside click
+    useEffect(() => {
+        const onClick = (e) => {
+            if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+                setShowSuggestions(false);
+                setHighlightedIndex(-1);
+            }
+        };
+        document.addEventListener("mousedown", onClick);
+        return () => document.removeEventListener("mousedown", onClick);
+    }, []);
+
+    // Repo filtering
     const filteredRepos = useMemo(() => {
-        if (selectedFilters.length === 0) return ProjectsData.data;
         return ProjectsData.data.filter((repo) => {
-            const langs = repo.languages?.map((l) => l.name) || [];
-            const techs = repo.technologies || [];
-            return selectedFilters.some((f) => langs.includes(f) || techs.includes(f));
+            const names = repo.languages?.map((l) => l.name.toLowerCase()) || [];
+            const textOK =
+                !searchText ||
+                names.some((n) => n.includes(searchText.toLowerCase()));
+            const tagsOK =
+                selectedTechs.length === 0 ||
+                selectedTechs.every((t) => names.includes(t.toLowerCase()));
+            return textOK && tagsOK;
         });
-    }, [selectedFilters]);
+    }, [searchText, selectedTechs]);
 
     const moreText = language === "no" ? "Flere prosjekter" : "More Projects";
-    const filterTitle = language === "no" ? "Filtrer etter teknologi" : "Filter by technology";
 
     return (
         <div className="projects-main">
@@ -61,10 +136,16 @@ export default function Projects(props) {
                             <ProjectsImg theme={theme} />
                         </div>
                         <div className="projects-heading-text-div">
-                            <h1 className="projects-heading-text" style={{ color: theme.text }}>
+                            <h1
+                                className="projects-heading-text"
+                                style={{ color: theme.text }}
+                            >
                                 {portfolio.projectsHeader.title}
                             </h1>
-                            <p className="projects-header-detail-text subTitle" style={{ color: theme.secondaryText }}>
+                            <p
+                                className="projects-header-detail-text subTitle"
+                                style={{ color: theme.secondaryText }}
+                            >
                                 {portfolio.projectsHeader.description}
                             </p>
                         </div>
@@ -72,39 +153,102 @@ export default function Projects(props) {
                 </Fade>
             </div>
 
-            {/* Filter-piller */}
-            <h3 className="filter-title" style={{ color: theme.text }}>
-                {filterTitle}
-            </h3>
-            <div className="lang-filter-bar">
-                {allFilters.map((f) => {
-                    const active = selectedFilters.includes(f);
-                    return (
-                        <button
-                            key={f}
-                            className={`lang-pill ${active ? "active" : ""}`}
-                            onClick={() => toggleFilter(f)}
-                        >
-                            {f} {active && <span className="pill-close">×</span>}
-                        </button>
-                    );
-                })}
+            {/* Search + tags */}
+            <div
+                className="projects-tag-search-wrapper"
+                ref={wrapperRef}
+            >
+                <Icon icon="mdi:magnify" className="search-icon" />
+                {selectedTechs.map((tech) => (
+                    <span key={tech} className="search-tag">
+                        {tech}
+                        <Icon
+                            icon="mdi:close"
+                            className="tag-close"
+                            onClick={() => toggleTech(tech)}
+                        />
+                    </span>
+                ))}
+                <input
+                    type="text"
+                    className="projects-tag-search-input"
+                    placeholder={
+                        language === "no" ? "Søk teknologi…" : "Search technologies…"
+                    }
+                    value={searchText}
+                    onChange={(e) => {
+                        setSearchText(e.target.value);
+                        setShowSuggestions(true);
+                        setHighlightedIndex(-1);
+                    }}
+                    onKeyDown={onKeyDown}
+                    onFocus={() => setShowSuggestions(true)}
+                />
+                {searchText && (
+                    <Icon
+                        icon="mdi:close-circle"
+                        className="clear-icon"
+                        onClick={() => {
+                            setSearchText("");
+                            setShowSuggestions(false);
+                            setHighlightedIndex(-1);
+                        }}
+                    />
+                )}
+                {showSuggestions && suggestions.length > 0 && (
+                    <ul className="search-suggestions">
+                        {suggestions.map((tech, idx) => (
+                            <li
+                                key={tech}
+                                className={idx === highlightedIndex ? "highlighted" : ""}
+                                onMouseEnter={() => setHighlightedIndex(idx)}
+                                onMouseLeave={() => setHighlightedIndex(-1)}
+                                onClick={() => {
+                                    toggleTech(tech);
+                                    setSearchText("");
+                                    setShowSuggestions(false);
+                                    setHighlightedIndex(-1);
+                                }}
+                            >
+                                {tech}
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
 
-            {/* Repo-kort */}
+            {/* Manual tech bar */}
+            <div className="projects-tech-buttons">
+                <button
+                    className={`tech-btn ${selectedTechs.length === 0 ? "active" : ""}`}
+                    onClick={() => setSelectedTechs([])}
+                >
+                    {language === "no" ? "Alle" : "All"}
+                </button>
+                {allTechs.map((tech) => (
+                    <button
+                        key={tech}
+                        className={`tech-btn ${selectedTechs.includes(tech) ? "active" : ""
+                            }`}
+                        onClick={() => toggleTech(tech)}
+                    >
+                        {tech}
+                    </button>
+                ))}
+            </div>
+
             <div className="repo-cards-div-main">
                 {filteredRepos.map((repo) => (
                     <GithubRepoCard key={repo.id} repo={repo} theme={theme} />
                 ))}
             </div>
 
-            {/* “More Projects” */}
             <div className="project-button-div">
                 <Button
                     text={moreText}
                     className="project-button"
                     href={portfolio.greeting.githubProfile}
-                    newTab={true}
+                    newTab
                     theme={theme}
                 />
             </div>
