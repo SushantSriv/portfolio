@@ -5,7 +5,7 @@
       "name": "Norwegian Pronunciation Coach",
       "createdAt": "2025-07-07T00:00:00Z",
       "url": "https://github.com/SushantSriv/norwegian-pronunciation-app",
-      "description": "Light-weight, Dockerised web app that lets learners record themselves, get instant Whisper-based feedback on Norwegian pronunciation, and level-up sentence by sentence. Built because, while learning Norwegian, I found pronunciation especially challenging and existing apps offered no phrase-level, real-time feedbackóso I created this tool for myself and other international learners. React + Vite frontend with framer-motion animations; FastAPI backend running a local Whisper-medium ASR model and an IPA-hint pipeline.",
+      "description": "Light-weight, Dockerised web app that lets learners record themselves, get instant Whisper-based feedback on Norwegian pronunciation, and level-up sentence by sentence. Built because, while learning Norwegian, I found pronunciation especially challenging and existing apps offered no phrase-level, real-time feedback‚Äîso I created this tool for myself and other international learners. React + Vite frontend with framer-motion animations; FastAPI backend running a local Whisper-medium ASR model and an IPA-hint pipeline.",
       "isFork": false,
       "languages": [
         {
@@ -205,7 +205,7 @@
       ],
       "dataSources": [
         {
-          "name": "HvaKosterStr¯mmen API",
+          "name": "HvaKosterStr√∏mmen API",
           "imageSrc": "hvakosterstrommen.png"
         },
         {
@@ -420,7 +420,7 @@
       "name": "Traffic Accident Data Analysis Norway",
       "createdAt": "2023-09-02T08:44:19Z",
       "url": "https://github.com/SushantSriv/TrafikkulykkeDataanalyse_Norge",
-      "description": "Analysis of traffic accidents in Norway (1990 to 2024) using open data from Statens vegvesen. This project uncovers patterns in time, location, weather, gender, and road conditions to support better road safety measures.",
+      "description": "Analysis of traffic accidents in Norway (1990 - 2024) using open data from Statens vegvesen. This project uncovers patterns in time, location, weather, gender, and road conditions to support better road safety measures.",
       "isFork": false,
       "languages": [
         {
@@ -480,7 +480,7 @@
       "name": "Power BI report on Injuries & Accidents",
       "createdAt": "2023-09-02T08:44:19Z",
       "url": "https://github.com/SushantSriv/Vegvesen_data_analyse_BI",
-      "description": "Power BI report analyzing traffic injuries and accidents based on Statens vegvesen open CSV data (1990 to 2024).",
+      "description": "Power BI report analyzing traffic injuries and accidents based on Statens vegvesen open CSV data (1990 - 2024).",
       "isFork": false,
       "languages": [
         {
@@ -526,7 +526,7 @@
       "name": "Semantic Image Captioning Enhancements",
       "createdAt": "2024-01-12T00:00:00Z",
       "url": "https://github.com/SushantSriv/Semantic-Enhancements-in-Image-Captioning-Leveraging-Neural-Networks-to-Improve-BLIP-and-GPT-2",
-      "description": "Master-thesis codebase that augments BLIP and GPT-2 for image captioning via ìWeighted Summarizationî. Includes notebooks for COCO & Flickr30k, evaluation scripts and result JSON-files.",
+      "description": "Master-thesis codebase that augments BLIP and GPT-2 for image captioning via ‚ÄúWeighted Summarization‚Äù. Includes notebooks for COCO & Flickr30k, evaluation scripts and result JSON-files.",
       "isFork": false,
       "languages": [
         {
