@@ -98,23 +98,27 @@ const socialMediaLinks = [
 const skills = {
     data: [
         {
-            title: "Data-science & maskinlæring",
+            title: "Datavitenskap og Maskinlæring",
             fileName: "DataScienceImg",
             skills: [
-                "⚡ Prediktive modeller og dyp-lærings-pipelines (TensorFlow / PyTorch)",
-                "⚡ Strukturert- og tidsserie-analyse med pandas, scikit-learn og statsmodels",
-                "⚡ Historiefortelling med data i Jupyter, Power BI og Tableau",
-                "⚡ Eksempelkode: boligprediksjon-fastapi, COVID-19-Data-Pipeline",
+                "⚡ Prediktiv modellering og dyp‑læringspipelines (TensorFlow og PyTorch)",
+                "⚡ Tale‑til‑tekst og dokumentanalyse med Whisper, OCR og IPA/fonem‑pipelines",
+                "⚡ Strukturert og tidsserieanalyse med pandas, scikit‑learn og statsmodels",
+                "⚡ Datafortelling med notebooks, Power BI dashboards og Tableau",
+                "⚡ Eksempel-repoer: `boligprediksjon‑fastapi`, `norwegian‑pronunciation‑app`, `Forklar‑llama`",
             ],
             softwareSkills: [
                 { skillName: "Python", fontAwesomeClassname: "logos:python" },
                 { skillName: "pandas", fontAwesomeClassname: "simple-icons:pandas", style: { color: "#150458" } },
-                { skillName: "scikit-learn", fontAwesomeClassname: "simple-icons:scikitlearn", style: { color: "#F7931E" } },
+                { skillName: "scikit‑learn", fontAwesomeClassname: "simple-icons:scikitlearn", style: { color: "#F7931E" } },
                 { skillName: "TensorFlow", fontAwesomeClassname: "logos:tensorflow" },
                 { skillName: "PyTorch", fontAwesomeClassname: "logos:pytorch" },
+                { skillName: "Whisper", fontAwesomeClassname: "simple-icons:openai", style: { color: "#412991" } },
+                { skillName: "pytesseract", fontAwesomeClassname: "simple-icons:tesseract", style: { color: "#5A5A5A" } },
                 { skillName: "Power BI", fontAwesomeClassname: "simple-icons:powerbi", style: { color: "#F2C811" } },
             ],
         },
+
         {
             title: "MLOps, API-er & sky",
             fileName: "CloudInfraImg",

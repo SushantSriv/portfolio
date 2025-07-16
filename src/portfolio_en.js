@@ -104,27 +104,28 @@ const socialMediaLinks = [
 ];
 
 const skills = {
-  data: [
-    //------------------------------------------------------------------
-    {
-      title: "Data Science & Machine Learning",
-      fileName: "DataScienceImg",
-      skills: [
-        "⚡ Predictive modelling and deep‑learning pipelines (TensorFlow & PyTorch)",
-        "⚡ Structured & time‑series analytics with pandas, scikit‑learn and statsmodels",
-        "⚡ Data storytelling with notebooks, Power BI dashboards and Tableau",
-        "⚡ Example repos: `boligprediksjon‑fastapi`, `COVID‑19‑Data‑Pipeline`",
-      ],
-      softwareSkills: [
-        { skillName: "Python", fontAwesomeClassname: "logos:python" },
-        { skillName: "pandas", fontAwesomeClassname: "simple-icons:pandas", style: { color: "#150458" } },
-        { skillName: "scikit‑learn", fontAwesomeClassname: "simple-icons:scikitlearn", style: { color: "#F7931E" } },
-        { skillName: "TensorFlow", fontAwesomeClassname: "logos:tensorflow" },
-        { skillName: "PyTorch", fontAwesomeClassname: "logos:pytorch" },
-        { skillName: "Power BI", fontAwesomeClassname: "simple-icons:powerbi", style: { color: "#F2C811" } },
-      ],
-    },
-    //------------------------------------------------------------------
+  data: [ 
+        {
+            title: "Data Science & Machine Learning",
+            fileName: "DataScienceImg",
+            skills: [
+                "⚡ Predictive modelling and deep‑learning pipelines (TensorFlow & PyTorch)",
+                "⚡ Speech-to-text and document parsing with Whisper, OCR, and IPA/phoneme pipelines",
+                "⚡ Structured & time‑series analytics with pandas, scikit‑learn and statsmodels",
+                "⚡ Data storytelling with notebooks, Power BI dashboards and Tableau",
+                "⚡ Example repos: `boligprediksjon‑fastapi`, `norwegian‑pronunciation‑app`, `Forklar‑llama`",
+            ],
+            softwareSkills: [
+                { skillName: "Python", fontAwesomeClassname: "logos:python" },
+                { skillName: "pandas", fontAwesomeClassname: "simple-icons:pandas", style: { color: "#150458" } },
+                { skillName: "scikit‑learn", fontAwesomeClassname: "simple-icons:scikitlearn", style: { color: "#F7931E" } },
+                { skillName: "TensorFlow", fontAwesomeClassname: "logos:tensorflow" },
+                { skillName: "PyTorch", fontAwesomeClassname: "logos:pytorch" },
+                { skillName: "Whisper", fontAwesomeClassname: "simple-icons:openai", style: { color: "#412991" } },
+                { skillName: "pytesseract", fontAwesomeClassname: "simple-icons:tesseract", style: { color: "#5A5A5A" } },
+                { skillName: "Power BI", fontAwesomeClassname: "simple-icons:powerbi", style: { color: "#F2C811" } },
+            ],
+        },
     {
       title: "MLOps, APIs & Cloud",
       fileName: "CloudInfraImg",
