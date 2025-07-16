@@ -25,7 +25,7 @@ const greeting = {
     subTitle:
         "Engasjert i å utvikle helhetlige, skalerbare løsninger som skaper varig sosial og teknisk verdi",
     resumeLink:
-        "https://drive.google.com/file/d/1zFG4ZiANMVl-5Rmc_BtcGZF0G2AUIU-v/view?usp=sharing",
+        "https://drive.google.com/file/d/1FDMdD7ZWnxxl7uZlotW_HI_xY2LFJvp5/view?usp=sharing",
     portfolio_repository: "https://sushantsriv.github.io/portfolio/",
     githubProfile: "https://github.com/SushantSriv",
 };
