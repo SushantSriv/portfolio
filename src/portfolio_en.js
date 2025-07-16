@@ -122,7 +122,6 @@ const skills = {
                 { skillName: "TensorFlow", fontAwesomeClassname: "logos:tensorflow" },
                 { skillName: "PyTorch", fontAwesomeClassname: "logos:pytorch" },
                 { skillName: "Whisper", fontAwesomeClassname: "simple-icons:openai", style: { color: "#412991" } },
-                { skillName: "pytesseract", fontAwesomeClassname: "simple-icons:tesseract", style: { color: "#5A5A5A" } },
                 { skillName: "Power BI", fontAwesomeClassname: "simple-icons:powerbi", style: { color: "#F2C811" } },
             ],
         },
