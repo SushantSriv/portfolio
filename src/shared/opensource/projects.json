@@ -519,8 +519,6 @@
       ]
     },
 
-
-
     {
       "id": "semantic_image_captioning_11",
       "name": "Semantic Image Captioning Enhancements",
@@ -605,6 +603,185 @@
       ]
     },
 
+    {
+      "id": "customer_churn_nordea_13",
+      "name": "Customer Churn Prediction",
+      "createdAt": "2023-11-18T00:00:00Z",
+      "url": "https://github.com/SushantSriv/Customer-Churn-Prediction",
+      "description": "Logistic regression-based churn prediction system built using real-world anonymised bank data (Nordea) to identify customers likely to leave. Includes exploratory data analysis, feature engineering, model evaluation and interpretability using SHAP. Designed to help banks proactively retain customers.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "Jupyter Notebook",
+          "iconifyClass": "simple-icons:jupyter",
+          "color": "#F37626"
+        },
+        {
+          "name": "scikit-learn",
+          "iconifyClass": "simple-icons:scikitlearn",
+          "color": "#F7931E"
+        },
+        {
+          "name": "Pandas",
+          "iconifyClass": "simple-icons:pandas",
+          "color": "#150458"
+        },
+        {
+          "name": "SHAP",
+          "iconifyClass": "simple-icons:plotly",
+          "color": "#3F4B58"
+        }
+      ],
+      "dataSources": [
+        {
+          "name": "Nordea Bank (anonymised dataset)",
+          "imageSrc": "nordea_logo.png"
+        }
+      ],
+      "demoPdfs": [
+        "https://raw.githubusercontent.com/SushantSriv/Customer-Churn-Prediction/main/vertopal.com_XYZ%20Bank%20Customer%20Churn%20-Sushant%20.pdf",
+        "https://raw.githubusercontent.com/SushantSriv/Customer-Churn-Prediction/main/XYZ%20Business%20Use%20case%20-Sushant%20Srivastava.pptx"
+      ],
+      "inProgress": false,
+      "technologies": [
+        "logistic-regression",
+        "seaborn",
+        "shap",
+        "imbalanced-learn",
+        "classification-report"
+      ]
+    },
+    {
+      "id": "ecommerce_scraper_amazon_14",
+      "name": "E-Commerce Scraper (Amazon)",
+      "createdAt": "2023-10-03T00:00:00Z",
+      "url": "https://github.com/SushantSriv/E-Commerce-Scraper",
+      "description": "Web scraper built with Python and BeautifulSoup to extract product details from Amazon, including title, price, rating, and reviews. Designed for structured e-commerce data collection, trend analysis, and price tracking.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "Pandas",
+          "iconifyClass": "simple-icons:pandas",
+          "color": "#150458"
+        },
+        {
+          "name": "Jupyter Notebook",
+          "iconifyClass": "simple-icons:jupyter",
+          "color": "#F37626"
+        }
+      ],
+      "dataSources": [
+        {
+          "name": "Amazon Web Store",
+          "imageSrc": "amazon_logo.png"
+        }
+      ],
+      "demoUrl": "",
+      "inProgress": false,
+      "technologies": [
+        "requests",
+        "html.parser",
+        "beautiful-soup",
+        "user-agent rotation",
+        "data export to CSV"
+      ]
+    },
+    {
+      "id": "jpmc_codeforgood_anthill_15",
+      "name": "JPMC Code for Good: Anthill Creations Website",
+      "createdAt": "2025-06-20T00:00:00Z",
+      "url": "https://github.com/bengaluru19/team-7",
+      "description": "Team 7’s contribution to JPMorgan Chase’s Code for Good hackathon: a website for Anthill Creations—an Indian NGO that builds sustainable playscapes using upcycled materials. Highlights include community stories, image galleries, responsive design, and a contact form to support their mission..",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "JavaScript",
+          "iconifyClass": "simple-icons:javascript",
+          "color": "#F7DF1E"
+        },
+        {
+          "name": "HTML",
+          "iconifyClass": "simple-icons:html5",
+          "color": "#E34F26"
+        },
+        {
+          "name": "CSS",
+          "iconifyClass": "simple-icons:css3",
+          "color": "#1572B6"
+        },
+        {
+          "name": "React",
+          "iconifyClass": "simple-icons:react",
+          "color": "#61DAFB"
+        }
+      ],
+      "dataSources": [
+        {
+          "name": "Anthill Creations (internett)",
+          "imageSrc": "anthill_logo.png"
+        },
+        {
+          "name": "JP Morgan & Chase",
+          "imageSrc": "jpmc_logo.png"
+        }
+      ],
+      "demoUrl": "",
+      "inProgress": false,
+      "technologies": [
+        "responsive-design",
+        "community-stories",
+        "NGO"
+      ]
+    },
+
+    {
+      "id": "threat_ripper_16",
+      "name": "ThreatRipper (HPE)",
+      "createdAt": "2019-05-12T00:00:00Z",
+      "url": "https://github.com/SushantSriv/ThreatRipper",
+      "description": "Command-line tool for web threat intelligence using VirusTotal and Threat Intelligence Platform APIs. Includes domain malware checks, reputation scoring, SSL chain/config analysis, Whois lookup, and infrastructure mapping for domains. Built in Python with both Docker and shell install support.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "Shell",
+          "iconifyClass": "simple-icons:gnubash",
+          "color": "#4EAA25"
+        }
+      ],
+      "dataSources": [
+        {
+          "name": "VirusTotal API",
+          "imageSrc": "virustotal_logo.png"
+        },
+        {
+          "name": "HPE",
+          "imageSrc": "hpe_logo.png"
+        }
+      ],
+      "demoUrl": "",
+      "inProgress": false,
+      "technologies": [        
+        "ssl",
+        "ipaddress",
+        "socket",
+        "malware-check"
+      ]
+    },
 
     {
       "id": "R_kgDOdk7Yhg_8",
@@ -663,7 +840,7 @@
         }
       ],
       "dataSources": [],
-      "demoUrl": "https://www.youtube.com/embed/v7V3Cz2a7Y4"
+      "demoUrl": ""
     }
 
   ]
