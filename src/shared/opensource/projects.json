@@ -60,7 +60,7 @@
         }
       ],
       "dataSources": [],
-      "demoUrl": "",
+      "demoUrl": "https://www.youtube.com/watch?v=fOIoMYNXhQE",
       "technologies": [
         "openai-whisper",
         "jiwer",
