@@ -491,12 +491,12 @@ const contactPageData = {
     },
 
     addressSection: {
-        title: "Office location",
-        subtitle: "Bekkestua, 1357 Bærum, Norway",
+        title: "Location",
+        subtitle: "Bekkestua, 1356 Bærum, Norway",
         locality: "Bekkestua",
         country: "Norway",
         region: "Viken",
-        postalCode: "1357",
+        postalCode: "1356",
         streetAddress: "Gamle Drammensvei",
         avatar_image_path: "address_image.svg",
         location_map_link: "https://maps.app.goo.gl/TL5gyRWjVVc9EszP6",
