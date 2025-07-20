@@ -491,7 +491,7 @@ const contactPageData = {
 
 
     addressSection: {
-        title: "Office location",
+        title: "Location",
         subtitle: "Bekkestua, 1357 Bærum, Norway",
         locality: "Bekkestua",
         country: "Norway",
