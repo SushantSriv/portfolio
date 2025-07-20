@@ -249,3 +249,70 @@
             height: 3px;
         }
 }
+
+/* Hamburger layout */
+.header .menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    padding: 12px;
+    position: relative;
+    user-select: none;
+}
+
+.header .navicon {
+    background: currentColor;
+    display: block;
+    height: 2px;
+    width: 26px;
+    position: relative;
+    transition: background 0.3s ease-out;
+}
+
+    .header .navicon::before,
+    .header .navicon::after {
+        content: "";
+        background: currentColor;
+        display: block;
+        height: 2px;
+        width: 26px;
+        position: absolute;
+        transition: all 0.3s ease-out;
+    }
+
+    .header .navicon::before {
+        top: -8px;
+    }
+
+    .header .navicon::after {
+        bottom: -8px;
+    }
+
+/* Animate icon when checked */
+.menu-btn:checked + .menu-icon .navicon {
+    background: transparent;
+}
+
+    .menu-btn:checked + .menu-icon .navicon::before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    .menu-btn:checked + .menu-icon .navicon::after {
+        transform: rotate(45deg);
+        bottom: 0;
+    }
+
+/* Skjul hamburger for større skjermer */
+@media (min-width: 768px) {
+    .header .menu-icon {
+        display: none !important;
+    }
+
+    .header .navicon {
+        display: none !important;
+    }
+
+    .menu-btn {
+        display: none !important;
+    }
+}
