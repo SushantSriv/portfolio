@@ -217,3 +217,69 @@
   transform: rotate(45deg);
   bottom: 0;
 }
+
+/******************************************************************
+ * MOBILE FIXES (≤ 767 px)
+ ******************************************************************/
+@media (max-width: 767px) {
+
+    /* ---------- 1. Header layout & burger ---------- */
+    .header {
+        display: flex; /* også på mobil – enklere å sentrere */
+        align-items: center;
+        justify-content: space-between;
+        width: 100%; /* dropp max-width her */
+        padding: 14px 16px; /* litt mindre margin */
+    }
+
+        .header .logo {
+            float: none; /* flex tar seg av plassering */
+            margin: 0; /* fjerner høy topp-offset */
+        }
+
+        /* flytt burgeren helt opp i høyre hjørne */
+        .header .menu-icon {
+            position: relative; /* beholder inline-flow, men */
+            margin: 0; /* ingen ekstra venstre-hurtig */
+        }
+
+    /* ---------- 2. Globale anti-overflow regler ---------- */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden; /* kill horizontal scroll */
+    }
+
+    /* alle fleks-lister som kan bli brede må wrappe */
+    .projects-tech-buttons,
+    .projects-tag-search-wrapper,
+    .repo-cards-div-main,
+    .contact-heading-div,
+    .address-heading-div {
+        flex-wrap: wrap;
+        width: 100%; /* ikke 90 vw – eliminer margin-regnefeil */
+    }
+
+    /* søke-inputen i Projects */
+    .projects-tag-search-wrapper {
+        margin: 1rem auto;
+        padding: 0.4rem 0.8rem;
+        box-sizing: border-box; /* la padding holde seg i 100 % */
+    }
+
+    /* chip-knapper */
+    .tech-btn {
+        white-space: nowrap;
+        word-break: break-word;
+    }
+}
+
+/******************************************************************
+ * SMÅ FIKSER SOM GJELDER ALLE SKJERMER
+ ******************************************************************/
+
+/* Sørg for at burgerikonet zoomes/margin-fritt */
+.header .navicon,
+.header .navicon::before,
+.header .navicon::after {
+    width: 28px;
+}
