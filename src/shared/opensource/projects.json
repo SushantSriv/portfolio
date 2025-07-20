@@ -296,6 +296,47 @@
     },
 
     {
+      "id": "resume_builder_terraform_17",
+      "name": "Terraform Resume Generator",
+      "createdAt": "2025-07-15T00:00:00Z",
+      "url": "https://github.com/SushantSriv/resume-builder-terraform",
+      "description": "A fully automated, code-driven resume builder using Terraform, Markdown, and headless Chrome. Define your experience, skills, and projects in `variables.tf`, generate Markdown with `templatefile()`, convert to HTML using Showdown.js, and export to PDF using Chromium. Includes build scripts for Windows and Unix.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Terraform",
+          "iconifyClass": "simple-icons:terraform",
+          "color": "#623CE4"
+        },
+        {
+          "name": "Markdown",
+          "iconifyClass": "simple-icons:markdown",
+          "color": "#000000"
+        },
+        {
+          "name": "JavaScript",
+          "iconifyClass": "simple-icons:javascript",
+          "color": "#F7DF1E"
+        },
+        {
+          "name": "Shell",
+          "iconifyClass": "simple-icons:gnubash",
+          "color": "#4EAA25"
+        }
+      ],
+      "dataSources": [],
+      "demoUrl": "",
+      "inProgress": false,
+      "technologies": [
+        "templatefile",
+        "Showdown.js",
+        "Chromium headless",
+        "Yarn",
+        "Node.js"
+      ]
+    }
+    ,
+    {
       "id": "R_kgDObzB2KQ_2",
       "name": "Housing-Price Prediction API",
       "createdAt": "2024-01-28T10:12:03Z",

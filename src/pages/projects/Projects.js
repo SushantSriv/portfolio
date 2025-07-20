@@ -31,11 +31,17 @@ export default function Projects(props) {
     // All tech names
     const allTechs = useMemo(() => {
         const s = new Set();
-        ProjectsData.data.forEach((repo) =>
-            repo.languages?.forEach((l) => s.add(l.name))
-        );
+        ProjectsData.data.forEach((repo) => {
+            if (Array.isArray(repo.languages)) {
+                repo.languages.forEach((l) => s.add(l.name));
+            }
+            if (Array.isArray(repo.technologies)) {
+                repo.technologies.forEach((t) => s.add(t));
+            }
+        });
         return Array.from(s).sort();
     }, []);
+
 
     const toggleTech = useCallback(
         (tech) =>
@@ -112,16 +118,22 @@ export default function Projects(props) {
     // Repo filtering
     const filteredRepos = useMemo(() => {
         return ProjectsData.data.filter((repo) => {
-            const names = repo.languages?.map((l) => l.name.toLowerCase()) || [];
+            const languageNames = repo.languages?.map((l) => l.name.toLowerCase()) || [];
+            const technologyNames = repo.technologies?.map((t) => t.toLowerCase()) || [];
+            const allNames = [...languageNames, ...technologyNames];
+
             const textOK =
                 !searchText ||
-                names.some((n) => n.includes(searchText.toLowerCase()));
+                allNames.some((n) => n.includes(searchText.toLowerCase()));
+
             const tagsOK =
                 selectedTechs.length === 0 ||
-                selectedTechs.every((t) => names.includes(t.toLowerCase()));
+                selectedTechs.every((t) => allNames.includes(t.toLowerCase()));
+
             return textOK && tagsOK;
         });
     }, [searchText, selectedTechs]);
+
 
     const moreText = language === "no" ? "Flere prosjekter" : "More Projects";
 
@@ -132,6 +144,23 @@ export default function Projects(props) {
             <div className="basic-projects">
                 <Fade bottom duration={2000} distance="40px">
                     <div className="projects-heading-div">
+                        <div className="scroll-down-btn-wrapper">
+                            <button
+                                className="scroll-down-btn"
+                                onClick={() => {
+                                    const target = document.querySelector(".repo-cards-div-main");
+                                    if (target) {
+                                        target.scrollIntoView({ behavior: "smooth" });
+                                    }
+                                }}
+                            >
+                                <span role="img" aria-label="Nedover pekende hånd">👇</span>{" "}
+                                {language === "no"
+                                    ? "Gå ned for å se prosjektene"
+                                    : "Scroll down to see the projects"}
+                            </button>
+
+                        </div>
                         <div className="projects-heading-img-div">
                             <ProjectsImg theme={theme} />
                         </div>

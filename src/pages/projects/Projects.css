@@ -7,33 +7,46 @@
 .basic-projects {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .projects-heading-div {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    flex-wrap: wrap;
+    text-align: left;
 }
 
-.projects-heading-img-div,
+.projects-heading-img-div {
+    flex: 1;
+    max-width: 500px;
+}
+
+    .projects-heading-img-div svg {
+        width: 100%;
+        height: auto;
+    }
+
 .projects-heading-text-div {
     flex: 1;
+    max-width: 600px;
+    padding: 0 1rem;
 }
 
 .projects-heading-text {
-    font-size: 56px;
-    font-weight: 400;
+    font-size: 40px;
+    font-weight: 500;
     font-family: "Google Sans Medium";
-    line-height: 1.1;
-    margin-top: 80px;
+    margin-bottom: 1rem;
 }
 
 .projects-header-detail-text {
-    font-size: 20px;
-    line-height: 30px;
-    margin: 0 20px;
+    font-size: 16px;
+    line-height: 1.6;
     font-family: "Google Sans Medium";
 }
 
@@ -43,17 +56,17 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    width: 360px;
-    max-width: 95%;
-    margin: 2rem auto;
+    width: 90%;
+    max-width: 600px;
+    margin: 1.5rem auto;
     padding: 0.4rem 1rem;
     background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     border-radius: 999px;
 }
 
 .search-icon {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #888;
     margin-right: 0.5rem;
 }
@@ -63,10 +76,10 @@
     align-items: center;
     background: #0077b5;
     color: #fff;
-    padding: 0.3rem 0.6rem;
-    border-radius: 16px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 14px;
     margin-right: 0.5rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
 .tag-close {
@@ -78,7 +91,7 @@
 .projects-tag-search-input {
     flex: 1;
     border: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
     min-width: 100px;
 }
 
@@ -133,18 +146,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem;
-    margin: 1.5rem 2rem;
+    max-width: 90%;
+    margin: 1rem auto;
+    gap: 0.4rem;
 }
 
 .tech-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 4px 10px;
+    font-size: 13px;
     border: 1px solid #888;
-    border-radius: 20px;
+    border-radius: 14px;
     background: transparent;
     cursor: pointer;
     transition: background 0.2s, color 0.2s, transform 0.1s;
+    white-space: nowrap;
 }
 
     .tech-btn:hover {
@@ -162,52 +177,116 @@
 .repo-cards-div-main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
-    margin: 60px 40px 0;
+    margin: 40px 20px 0;
 }
 
 /* Override data-source images/icons */
 .repo-card-div .repo-datas {
-    width: 80%;
+    width: 90%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .repo-card-div .repo-data-img {
-    width: 180px !important;
-    height: 130px !important;
+    width: 150px !important;
+    height: 100px !important;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 12px;
     margin: 0 !important;
 }
 
 .repo-card-div .repo-data-icon {
-    font-size: 100px !important;
+    font-size: 80px !important;
     margin: 0 !important;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+    .projects-heading-div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .projects-heading-img-div,
+    .projects-heading-text-div {
+        max-width: 90%;
+    }
+
+        .projects-heading-img-div svg {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
     .projects-heading-text {
-        font-size: 30px;
-        margin-top: 20px;
+        font-size: 28px;
     }
 
     .projects-header-detail-text {
-        font-size: 16px;
-        margin: 0 10px;
-        line-height: normal;
+        font-size: 14px;
     }
 
     .projects-tag-search-wrapper {
-        width: 90%;
-        margin: 1.5rem auto;
+        width: 92%;
+        margin: 1rem auto;
+    }
+
+    .projects-tech-buttons {
+        gap: 0.3rem;
+        padding: 0 1rem;
+    }
+
+    .tech-btn {
+        padding: 3px 8px;
+        font-size: 12px;
     }
 
     .repo-cards-div-main {
         margin: 30px 10px 0;
+    }
+}
+
+
+.scroll-down-btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 2rem 1rem;
+}
+
+.scroll-down-btn {
+    background-color: var(--button-bg, #0077b5);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Google Sans Medium", sans-serif;
+    animation: bounce 1.6s infinite;
+}
+
+    .scroll-down-btn:hover {
+        background-color: #005f91;
+    }
+
+@media (max-width: 768px) {
+    .scroll-down-btn-wrapper {
+        justify-content: center;
+        padding: 0 1rem 1rem;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
     }
 }
