@@ -1,65 +1,66 @@
-/* ContactComponent.css */
-
 /* ===== Generelt oppsett ===== */
 .contact-main {
     width: 100%;
 }
 
 .basic-contact {
-    margin: 0 5%;
-    padding-bottom: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
 }
 
 /* ===== Kontakt–intro ===== */
 .contact-heading-div {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
     margin-top: 2rem;
 }
 
-
-/* Gjør tekst-kolonnen til et vertikalt flex-container */
 .contact-heading-text-div {
     flex: 1 1 300px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Sentrer alt horisontalt */
-    text-align: center; /* Fallback for tekst */
+    align-items: center;
+    text-align: center;
 }
 
 .contact-heading-text {
     margin: 0.5rem 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-family: "Google Sans Medium";
 }
 
 .contact-header-detail-text {
     margin: 1rem 0;
-    line-height: 1.5;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: var(--secondaryText, #555);
 }
 
 /* ===== Sosiale ikoner ===== */
-/* Hvis SocialMedia komponenten har class "social-media" */
 .social-media {
     display: flex !important;
     justify-content: center !important;
     gap: 1rem;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
 }
 
-/* ===== Profilbilde under sosiale ikoner ===== */
+/* ===== Profilbilde ===== */
 .profile-img-below-social {
     margin: 1.5rem 0;
 }
 
     .profile-img-below-social img {
-        width: 400px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
         object-fit: cover;
         border-radius: 50%;
         display: block;
         margin: 0 auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
 /* ===== CV-knapp ===== */
@@ -73,12 +74,12 @@
 .address-heading-div {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
-    margin: 4rem 0;
+    margin: 4rem 0 2rem;
 }
 
-/* Tekst-kolonnen samme oppsett som over */
 .address-heading-text-div {
     flex: 1 1 300px;
     display: flex;
@@ -90,9 +91,10 @@
 .address-heading-text {
     margin: 0.5rem 0;
     font-size: 1.8rem;
+    font-family: "Google Sans Medium";
+    color: var(--text, #000);
 }
 
-/* Google Maps-knapp */
 .address-btn-div {
     margin-top: 1rem;
     display: flex;
@@ -104,29 +106,7 @@
     margin-top: 4rem;
 }
 
-/* ===== Responsive brytpunkter ===== */
-@media (max-width: 768px) {
-    .contact-heading-div,
-    .address-heading-div {
-        flex-direction: column;
-    }
-
-    .profile-img-below-social img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .contact-heading-text {
-        font-size: 1.6rem;
-    }
-
-    .address-heading-text {
-        font-size: 1.6rem;
-    }
-}
-
-/* Legg i ContactComponent.css */
-
+/* ===== Puls-animasjon for undertittel ===== */
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
@@ -138,7 +118,33 @@
 }
 
 .subTitle {
-    display: inline-block; /* Viktig for transform */
+    display: inline-block;
     animation: pulse 3s ease-in-out infinite;
     margin: 0 auto 1.5em;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .contact-heading-div,
+    .address-heading-div {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .contact-heading-text {
+        font-size: 1.6rem;
+    }
+
+    .address-heading-text {
+        font-size: 1.6rem;
+    }
+
+    .profile-img-below-social img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .basic-contact {
+        padding: 2rem 1rem;
+    }
 }
