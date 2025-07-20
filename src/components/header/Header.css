@@ -1,229 +1,219 @@
 /* ===== Generell header ===== */
 .header {
-    position: relative;
-    z-index: 1000;
-    max-width: 90%;
-    padding: 20px 10px;
-    margin: 0 auto;
+  position: relative;
+  z-index: 1000;
+  max-width: 90%;
+  padding: 20px 10px;
+  margin: 0 auto;
 }
 
-    /* Logo */
-    .header .logo {
-        display: block;
-        float: left;
-        font-size: 1.5em;
-        margin-top: 10px;
-        text-decoration: none;
-    }
+/* Logo */
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 1.5em;
+  margin-top: 10px;
+  text-decoration: none;
+}
 
-    .header .logo-name {
-        font-family: "Agustina Regular";
-        font-weight: bold;
-        padding: 0 10px;
-    }
+.header .logo-name {
+  font-family: "Agustina Regular";
+  font-weight: bold;
+  padding: 0 10px;
+}
 
 /* Meny‐oppsett */
 .menu {
-    font-family: "Google Sans Regular";
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease-in-out;
+  font-family: "Google Sans Regular";
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
 }
 
 /* Aktiver meny når checkbox er sjekket */
 .menu-btn:checked ~ .menu {
-    max-height: 500px;
-    overflow: visible;
+  max-height: 500px;
+  overflow: visible;
 }
 
 /* Lenker i meny */
 .header li a {
-    display: block;
-    padding: 20px;
-    text-decoration: none;
+  display: block;
+  padding: 20px;
+  text-decoration: none;
 }
 
 /* Desktop‐layout */
 @media (min-width: 768px) {
-    .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-        .header .menu {
-            display: flex !important;
-            align-items: center;
-            max-height: none !important;
-            overflow: visible !important;
-        }
+  .header .menu {
+    display: flex !important;
+    align-items: center;
+    max-height: none !important;
+    overflow: visible !important;
+  }
 
-            .header .menu li {
-                margin-right: 1.5rem;
-            }
+  .header .menu li {
+    margin-right: 1.5rem;
+  }
 
-                .header .menu li.lang-item {
-                    margin-left: auto;
-                }
+  .header .menu li.lang-item {
+    margin-left: auto;
+  }
 
-        .header .menu-icon,
-        .header .navicon,
-        .menu-btn {
-            display: none !important;
-        }
+  .header .menu-icon,
+  .header .navicon,
+  .menu-btn {
+    display: none !important;
+  }
 }
 
 /* Språk‐knapp */
 .menu .lang-item {
-    position: relative;
-    list-style: none;
+  position: relative;
+  list-style: none;
 }
 
 .menu .lang-btn {
-    background: transparent;
-    border: 1px solid currentColor;
-    border-radius: 4px;
-    padding: 0.3rem 1rem;
-    font-size: 0.9rem;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-    .menu .lang-btn .arrow {
-        margin-left: 0.4rem;
-        font-size: 0.8rem;
-    }
+.menu .lang-btn .arrow {
+  margin-left: 0.4rem;
+  font-size: 0.8rem;
+}
 
 /* Hint‐boks */
 .menu .lang-hint {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 0.4rem;
-    background-color: var(--hint-bg, #fff);
-    color: var(--hint-color, #000);
-    border: 1px solid currentColor;
-    padding: 0.3rem 0.6rem;
-    font-size: 1.2rem;
-    border-radius: 4px;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    z-index: 10000;
-    animation: langHintBounce 1s ease-in-out infinite;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.4rem;
+  background-color: var(--hint-bg, #fff);
+  color: var(--hint-color, #000);
+  border: 1px solid currentColor;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  z-index: 10000;
+  animation: langHintBounce 1s ease-in-out infinite;
 }
 
-    .menu .lang-hint::before {
-        content: "";
-        position: absolute;
-        bottom: 100%;
-        right: 0.6rem;
-        border-width: 6px;
-        border-style: solid;
-        border-color: transparent transparent currentColor transparent;
-    }
+.menu .lang-hint::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 0.6rem;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent currentColor transparent;
+}
 
 @keyframes langHintBounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
 /* Flaggbilder */
 .flag-icon-img {
-    width: 2em;
-    height: 2em;
-    margin-right: 0.4rem;
-    vertical-align: middle;
+  width: 2em;
+  height: 2em;
+  margin-right: 0.4rem;
+  vertical-align: middle;
 }
 
 /* Dropdown‐meny */
 .menu .lang-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 4px;
-    padding: 4px 0;
-    border: 1px solid currentColor;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    min-width: 140px;
-    z-index: 9999;
-    background: inherit;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  padding: 4px 0;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  min-width: 140px;
+  z-index: 9999;
+  background: inherit;
 }
 
-    .menu .lang-dropdown li {
-        padding: 0.5rem 0.8rem;
-        cursor: pointer;
-        white-space: nowrap;
-        display: flex;
-        align-items: center;
-        font-size: 0.9rem;
-    }
+.menu .lang-dropdown li {
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
 
-        .menu .lang-dropdown li:hover {
-            background-color: rgba(255,255,255,0.2);
-        }
+.menu .lang-dropdown li:hover {
+  background-color: rgba(255,255,255,0.2);
+}
 
 /* Hamburger */
 .menu-btn {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .header .menu-icon {
-    display: inline-block;
-    cursor: pointer;
-    padding: 12px;
-    position: relative;
-    user-select: none;
+  display: inline-block;
+  cursor: pointer;
+  padding: 12px;
+  position: relative;
+  user-select: none;
 }
 
 .header .navicon {
-    background: currentColor;
-    display: block;
-    height: 2px;
-    width: 26px;
-    position: relative;
-    transition: background 0.3s ease-out;
+  background: currentColor;
+  display: block;
+  height: 2px;
+  width: 26px;
+  position: relative;
+  transition: background 0.3s ease-out;
 }
 
-    .header .navicon::before,
-    .header .navicon::after {
-        content: "";
-        background: currentColor;
-        display: block;
-        height: 2px;
-        width: 26px;
-        position: absolute;
-        transition: all 0.3s ease-out;
-    }
+.header .navicon::before,
+.header .navicon::after {
+  content: "";
+  background: currentColor;
+  display: block;
+  height: 2px;
+  width: 26px;
+  position: absolute;
+  transition: all 0.3s ease-out;
+}
 
-    .header .navicon::before {
-        top: -8px;
-    }
-
-    .header .navicon::after {
-        bottom: -8px;
-    }
+.header .navicon::before { top: -8px; }
+.header .navicon::after { bottom: -8px; }
 
 .menu-btn:checked + .menu-icon .navicon {
-    background: transparent;
+  background: transparent;
 }
 
-    .menu-btn:checked + .menu-icon .navicon::before {
-        transform: rotate(-45deg);
-        top: 0;
-    }
+.menu-btn:checked + .menu-icon .navicon::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
 
-    .menu-btn:checked + .menu-icon .navicon::after {
-        transform: rotate(45deg);
-        bottom: 0;
-    }
+.menu-btn:checked + .menu-icon .navicon::after {
+  transform: rotate(45deg);
+  bottom: 0;
+}
