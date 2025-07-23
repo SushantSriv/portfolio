@@ -334,8 +334,7 @@
         "Yarn",
         "Node.js"
       ]
-    }
-    ,
+    },
     {
       "id": "R_kgDObzB2KQ_2",
       "name": "Housing-Price Prediction API",
@@ -455,6 +454,52 @@
         "pyarrow"
       ]
     },
+
+    {
+      "id": "R_kgDOc8nVFA_423",
+      "name": "Norge Population Analytics",
+      "createdAt": "2023-09-02T08:44:19Z",
+      "url": "https://github.com/SushantSriv/min-dlt-retail",
+      "description": "Notebook‑driven exploration of Norwegian municipality‑level population data (2022–2025) on free Databricks Community Edition.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "PySpark",
+          "iconifyClass": "simple-icons:apachespark",
+          "color": "#E25A1C"
+        },
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "Pandas",
+          "iconifyClass": "simple-icons:pandas",
+          "color": "#150458"
+        },
+
+        {
+          "name": "Databricks",
+          "iconifyClass": "simple-icons:databricks",
+          "color": "#ff3621"
+        }
+
+      ],
+      "dataSources": [
+        {
+          "name": "SSB",
+          "imageSrc": "statbank.png"
+        }
+      ],
+      "demoUrl": "",
+      "technologies": [
+        "sql",
+        "openpyxl"
+      ]
+    },
+
+
 
     {
       "id": "R_kgDOc8nVFA_4",
@@ -816,7 +861,7 @@
       ],
       "demoUrl": "",
       "inProgress": false,
-      "technologies": [        
+      "technologies": [
         "ssl",
         "ipaddress",
         "socket",
