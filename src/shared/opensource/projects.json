@@ -64,12 +64,8 @@
       "technologies": [
         "openai-whisper",
         "jiwer",
-        "phonemizer",
-        "pydub",
-        "uvicorn",
-        "fastapi-cors-middleware",
-        "espeak-ng",
-        "react-hook-form"
+        "phonemizer",        
+        "uvicorn"       
       ],
       "inProgress": true
 
@@ -144,11 +140,8 @@
       ],
       "demoUrl": "https://www.youtube.com/embed/GgHTWc32vtw",
       "inProgress": true,
-      "technologies": [
-        "pdfminer.six",
-        "pytesseract",
-        "Pillow",
-        "WeasyPrint",
+      "technologies": [            
+        "Pillow",        
         "PyMuPDF",
         "stqdm"
       ]
@@ -216,10 +209,8 @@
       "demoUrl": "https://www.youtube.com/embed/GAKTtiNIRG0",
       "inProgress": true,
       "technologies": [
-        "joblib",
-        "streamlit-autorefresh",
-        "vega_datasets",
-        "requests"
+        "joblib",       
+        "vega_datasets"      
       ]
     },
 
@@ -327,10 +318,8 @@
       "dataSources": [],
       "demoUrl": "",
       "inProgress": false,
-      "technologies": [
-        "templatefile",
-        "Showdown.js",
-        "Chromium headless",
+      "technologies": [        
+        "Showdown.js",        
         "Yarn",
         "Node.js"
       ]
@@ -377,11 +366,7 @@
       ],
       "demoUrl": "https://www.youtube.com/embed/kSOjQf3MPO8",
       "technologies": [
-        "uvicorn",
-        "joblib",
-        "requests",
-        "react-dom",
-        "react-scripts"
+    
       ]
     },
 
@@ -554,8 +539,7 @@
         "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/vegtilstand_skader.pdf"
       ],
       "technologies": [
-        "seaborn",
-        "plotly",
+        "seaborn",        
         "geopandas"
       ]
 
@@ -676,16 +660,9 @@
 
       ],
       "demoUrl": "",
-      "technologies": [
-        "evaluate",
-        "huggingface-evaluate",
-        "transformers",
-        "language_tool_python",
-        "Pillow",
-        "scikit-image",
-        "pycocotools",
-        "pycocoevalcap",
-        "torchvision"
+      "technologies": [ 
+        "language_tool_python",              
+       "pycocotools"       
       ]
     },
 
@@ -774,12 +751,9 @@
       ],
       "demoUrl": "",
       "inProgress": false,
-      "technologies": [
-        "requests",
-        "html.parser",
+      "technologies": [        
         "beautiful-soup",
-        "user-agent rotation",
-        "data export to CSV"
+        "user-agent rotation"      
       ]
     },
     {
@@ -863,8 +837,6 @@
       "inProgress": false,
       "technologies": [
         "ssl",
-        "ipaddress",
-        "socket",
         "malware-check"
       ]
     },
@@ -899,9 +871,7 @@
         }
       ],
       "demoUrl": "https://www.youtube.com/embed/2B3p0kF2xlE",
-      "technologies": [
-        "networkx",
-        "summa",
+      "technologies": [       
         "rouge-score"
       ]
     },
