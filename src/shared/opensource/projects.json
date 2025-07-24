@@ -6,7 +6,7 @@
       "name": "Job Tracker App",
       "createdAt": "2025-07-24T00:00:00Z",
       "url": "https://github.com/SushantSriv/job-tracker-app",
-      "description": "Fullstack applikasjon for jobbsøknadssporing, der brukere kan logge inn med Google og administrere sine søknader. Backend med FastAPI og PostgreSQL, caching via Redis med TTL for avslåtte søknader, og frontend med React + Vite. Inkluderer CI/CD med Docker og GitHub Actions.",
+      "description": "Fullstack job application tracking application, where users can log in with Google and manage their applications. Backend with FastAPI and PostgreSQL, caching via Redis with TTL for rejected applications, and frontend with React + Vite. Includes CI/CD with Docker and GitHub Actions.",
       "isFork": false,
       "languages": [
         {
@@ -66,7 +66,7 @@
         "OAuth2",
         "JWT",
         "SQLAlchemy",
-        "firebase/auth",          
+        "firebase/auth",
         "Playwright"
       ],
       "inProgress": true
