@@ -1,5 +1,77 @@
 {
   "data": [
+
+    {
+      "id": "job_tracker_app_01",
+      "name": "Job Tracker App",
+      "createdAt": "2025-07-24T00:00:00Z",
+      "url": "https://github.com/SushantSriv/job-tracker-app",
+      "description": "Fullstack applikasjon for jobbsøknadssporing, der brukere kan logge inn med Google og administrere sine søknader. Backend med FastAPI og PostgreSQL, caching via Redis med TTL for avslåtte søknader, og frontend med React + Vite. Inkluderer CI/CD med Docker og GitHub Actions.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python 3.11",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "FastAPI",
+          "iconifyClass": "simple-icons:fastapi",
+          "color": "#009688"
+        },
+        {
+          "name": "React",
+          "iconifyClass": "simple-icons:react",
+          "color": "#61DAFB"
+        },
+        {
+          "name": "TypeScript",
+          "iconifyClass": "simple-icons:typescript",
+          "color": "#3178C6"
+        },
+        {
+          "name": "Vite",
+          "iconifyClass": "simple-icons:vite",
+          "color": "#646CFF"
+        },
+        {
+          "name": "Redis",
+          "iconifyClass": "simple-icons:redis",
+          "color": "#DC382D"
+        },
+        {
+          "name": "PostgreSQL",
+          "iconifyClass": "simple-icons:postgresql",
+          "color": "#336791"
+        },
+        {
+          "name": "Docker",
+          "iconifyClass": "simple-icons:docker",
+          "color": "#2496ED"
+        },
+        {
+          "name": "GitHub Actions",
+          "iconifyClass": "simple-icons:githubactions",
+          "color": "#2088FF"
+        },
+        {
+          "name": "OAuth",
+          "iconifyClass": "simple-icons:oauth",
+          "color": "#3C6E71"
+        }
+      ],
+      "dataSources": [],
+      "demoUrl": "",
+      "technologies": [
+        "OAuth2",
+        "JWT",
+        "SQLAlchemy",
+        "firebase/auth",          
+        "Playwright"
+      ],
+      "inProgress": true
+    },
+
     {
       "id": "norwegian_pronunciation_coach_12",
       "name": "Norwegian Pronunciation Coach",
@@ -64,8 +136,8 @@
       "technologies": [
         "openai-whisper",
         "jiwer",
-        "phonemizer",        
-        "uvicorn"       
+        "phonemizer",
+        "uvicorn"
       ],
       "inProgress": true
 
@@ -140,8 +212,8 @@
       ],
       "demoUrl": "https://www.youtube.com/embed/GgHTWc32vtw",
       "inProgress": true,
-      "technologies": [            
-        "Pillow",        
+      "technologies": [
+        "Pillow",
         "PyMuPDF",
         "stqdm"
       ]
@@ -207,10 +279,10 @@
         }
       ],
       "demoUrl": "https://www.youtube.com/embed/GAKTtiNIRG0",
-      "inProgress": true,
+      "inProgress": false,
       "technologies": [
-        "joblib",       
-        "vega_datasets"      
+        "joblib",
+        "vega_datasets"
       ]
     },
 
@@ -318,8 +390,8 @@
       "dataSources": [],
       "demoUrl": "",
       "inProgress": false,
-      "technologies": [        
-        "Showdown.js",        
+      "technologies": [
+        "Showdown.js",
         "Yarn",
         "Node.js"
       ]
@@ -366,7 +438,7 @@
       ],
       "demoUrl": "https://www.youtube.com/embed/kSOjQf3MPO8",
       "technologies": [
-    
+
       ]
     },
 
@@ -539,7 +611,7 @@
         "https://raw.githubusercontent.com/SushantSriv/TrafikkulykkeDataanalyse_Norge/main/notebooks/vegtilstand_skader.pdf"
       ],
       "technologies": [
-        "seaborn",        
+        "seaborn",
         "geopandas"
       ]
 
@@ -660,9 +732,9 @@
 
       ],
       "demoUrl": "",
-      "technologies": [ 
-        "language_tool_python",              
-       "pycocotools"       
+      "technologies": [
+        "language_tool_python",
+        "pycocotools"
       ]
     },
 
@@ -751,9 +823,9 @@
       ],
       "demoUrl": "",
       "inProgress": false,
-      "technologies": [        
+      "technologies": [
         "beautiful-soup",
-        "user-agent rotation"      
+        "user-agent rotation"
       ]
     },
     {
@@ -871,7 +943,7 @@
         }
       ],
       "demoUrl": "https://www.youtube.com/embed/2B3p0kF2xlE",
-      "technologies": [       
+      "technologies": [
         "rouge-score"
       ]
     },
