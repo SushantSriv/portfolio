@@ -6,7 +6,7 @@
       "name": "Job Tracker App",
       "createdAt": "2025-07-24T00:00:00Z",
       "url": "https://github.com/SushantSriv/job-tracker-app",
-      "description": "Fullstack job application tracking application, where users can log in with Google and manage their applications. Backend with FastAPI and PostgreSQL, caching via Redis with TTL for rejected applications, and frontend with React + Vite. Includes CI/CD with Docker and GitHub Actions.",
+      "description": "End-to-end job application tracking system built with React (Vite) and FastAPI. Users can log in securely with Google OAuth2, add/edit/delete job applications, and track their status (e.g., 'applied', 'interview', 'rejected'). Admins can post and manage available jobs, update statuses, and trigger SendGrid email notifications. The system uses PostgreSQL for persistent storage, Redis for caching and TTL-based expiration of old applications, and Docker Compose for seamless local development. CI/CD is handled via GitHub Actions with automated testing and container deployment.",
       "isFork": false,
       "languages": [
         {
@@ -58,6 +58,11 @@
           "name": "OAuth",
           "iconifyClass": "simple-icons:oauth",
           "color": "#3C6E71"
+        },
+        {
+          "name": "SendGrid",
+          "iconifyClass": "simple-icons:sendgrid",
+          "color": "#008BB9"
         }
       ],
       "dataSources": [],
