@@ -55,11 +55,6 @@
           "color": "#2088FF"
         },
         {
-          "name": "OAuth",
-          "iconifyClass": "simple-icons:oauth",
-          "color": "#3C6E71"
-        },
-        {
           "name": "SendGrid",
           "iconifyClass": "simple-icons:sendgrid",
           "color": "#008BB9"
