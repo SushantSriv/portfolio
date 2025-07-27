@@ -69,7 +69,7 @@
         "firebase/auth",
         "Playwright"
       ],
-      "inProgress": true
+      "inProgress": false
     },
 
     {
