@@ -61,7 +61,7 @@
         }
       ],
       "dataSources": [],
-      "demoUrl": "",
+      "demoUrl": "https://www.youtube.com/embed/x0JqEnTyh5U",
       "technologies": [
         "OAuth2",
         "JWT",
