@@ -106,76 +106,77 @@ const socialMediaLinks = [
 const skills = {
   data: [ 
         {
-            title: "Data Science & Machine Learning",
-            fileName: "DataScienceImg",
-            skills: [
-                "⚡ Predictive modelling and deep‑learning pipelines (TensorFlow & PyTorch)",
-                "⚡ Speech-to-text and document parsing with Whisper, OCR, and IPA/phoneme pipelines",
-                "⚡ Structured & time‑series analytics with pandas, scikit‑learn and statsmodels",
-                "⚡ Data storytelling with notebooks, Power BI dashboards and Tableau",
-                "⚡ Example repos: `boligprediksjon‑fastapi`, `norwegian‑pronunciation‑app`, `Forklar‑llama`",
+            "title": "AI Applications & Data Science",
+            "fileName": "DataScienceImg",
+            "skills": [
+                "⚡ Applied AI with open-source LLMs, Whisper ASR, and transformer pipelines",
+                "⚡ Predictive modeling & time-series analysis with scikit-learn and statsmodels",
+                "⚡ AI-enhanced dashboards & storytelling (Power BI, Streamlit, Notebooks)",
+                "⚡ Familiar with agentic AI patterns and exploring Semantic Kernel for orchestration scenarios",
+                "⚡ Sample repos: `norwegian-pronunciation-coach`, `electricity-forecast-xgboost`"
             ],
-            softwareSkills: [
-                { skillName: "Python", fontAwesomeClassname: "logos:python" },
-                { skillName: "pandas", fontAwesomeClassname: "simple-icons:pandas", style: { color: "#150458" } },
-                { skillName: "scikit‑learn", fontAwesomeClassname: "simple-icons:scikitlearn", style: { color: "#F7931E" } },
-                { skillName: "TensorFlow", fontAwesomeClassname: "logos:tensorflow" },
-                { skillName: "PyTorch", fontAwesomeClassname: "logos:pytorch" },
-                { skillName: "Whisper", fontAwesomeClassname: "simple-icons:openai", style: { color: "#412991" } },
-                { skillName: "Power BI", fontAwesomeClassname: "simple-icons:powerbi", style: { color: "#F2C811" } },
-            ],
+            "softwareSkills": [
+                { "skillName": "Python", "fontAwesomeClassname": "logos:python" },
+                { "skillName": "scikit‑learn", "fontAwesomeClassname": "simple-icons:scikitlearn", "style": { "color": "#F7931E" } },
+                { "skillName": "PyTorch", "fontAwesomeClassname": "logos:pytorch" },
+                { "skillName": "Power BI", "fontAwesomeClassname": "simple-icons:powerbi", "style": { "color": "#F2C811" } },
+                { "skillName": "Streamlit", "fontAwesomeClassname": "simple-icons:streamlit", "style": { "color": "#FF4B4B" } }
+            ]
         },
-    {
-      title: "MLOps, APIs & Cloud",
-      fileName: "CloudInfraImg",
-      skills: [
-        "⚡ Packaging & serving models with FastAPI and Docker (GitHub Actions CI/CD)",
-        "⚡ Data‑lake design on AWS S3, Glue & Athena",
-        "⚡ Deploying container images to Azure Container Registry & ECS",
-        "⚡ Infrastructure automation using Bicep & Terraform (course projects)",
-      ],
-      softwareSkills: [
-        { skillName: "FastAPI", fontAwesomeClassname: "simple-icons:fastapi", style: { color: "#009688" } },
-        { skillName: "Docker", fontAwesomeClassname: "simple-icons:docker", style: { color: "#1488C6" } },
-        { skillName: "AWS", fontAwesomeClassname: "simple-icons:amazonaws", style: { color: "#FF9900" } },
-        { skillName: "Azure", fontAwesomeClassname: "simple-icons:microsoftazure", style: { color: "#0089D6" } },
-        { skillName: "GitHub Actions", fontAwesomeClassname: "simple-icons:githubactions", style: { color: "#2088FF" } },
-      ],
-    },
+        {
+            "title": "MLOps, APIs & Azure Integration",
+            "fileName": "CloudInfraImg",
+            "skills": [
+                "⚡ Packaging & serving ML models using FastAPI, Docker & CI/CD pipelines",
+                "⚡ Azure experience: Blob storage, Container Registry, App Services, Functions",
+                "⚡ Designed data lakes with AWS S3, Glue & Athena (side projects)",
+                "⚡ Infrastructure-as-code using Bicep & Terraform for reproducible environments",
+                "⚡ Built & deployed proof-of-concept GenAI apps — exploring how they can be governed via GenAI Ops patterns"
+            ],
+            "softwareSkills": [
+                { "skillName": "FastAPI", "fontAwesomeClassname": "simple-icons:fastapi", "style": { "color": "#009688" } },
+                { "skillName": "Azure", "fontAwesomeClassname": "simple-icons:microsoftazure", "style": { "color": "#0089D6" } },
+                { "skillName": "Docker", "fontAwesomeClassname": "simple-icons:docker", "style": { "color": "#1488C6" } },
+                { "skillName": "GitHub Actions", "fontAwesomeClassname": "simple-icons:githubactions", "style": { "color": "#2088FF" } },
+                { "skillName": "Terraform", "fontAwesomeClassname": "simple-icons:terraform", "style": { "color": "#844FBA" } }
+            ]
+        },
     //------------------------------------------------------------------
-    {
-      title: "Front‑end & Visualisation",
-      fileName: "FullStackImg",
-      skills: [
-        "⚡ Responsive React/Vite dashboards & SPAs (risk‑prediction repo)",
-        "⚡ Map‑based visualisations with Leaflet & Mapbox GL",
-        "⚡ Rapid prototyping in HTML, CSS Modules & Bootstrap",
-      ],
-      softwareSkills: [
-        { skillName: "React", fontAwesomeClassname: "simple-icons:react" },
-        { skillName: "Vite", fontAwesomeClassname: "simple-icons:vite", style: { color: "#646CFF" } },
-        { skillName: "JavaScript", fontAwesomeClassname: "simple-icons:javascript", style: { color: "#F7DF1E" } },
-        { skillName: "Bootstrap", fontAwesomeClassname: "simple-icons:bootstrap", style: { color: "#7952B3" } },
-        { skillName: "Leaflet", fontAwesomeClassname: "simple-icons:leaflet", style: { color: "#199900" } },
-      ],
-    },
+        {
+            "title": "Fullstack Engineering & Dashboards",
+            "fileName": "FullStackImg",
+            "skills": [
+                "⚡ Cloud-native dashboards built with React + Vite for real-time ML outputs",
+                "⚡ Map-based visualizations (Leaflet, Mapbox) for geospatial risk insights",
+                "⚡ Built APIs, frontend logic and containerized delivery (FastAPI + React)",
+                "⚡ Experience working closely with internal clients (Aibel, Bosch) to design and deploy PoC systems aligned with business needs"
+            ],
+            "softwareSkills": [
+                { "skillName": "React", "fontAwesomeClassname": "simple-icons:react" },
+                { "skillName": "Vite", "fontAwesomeClassname": "simple-icons:vite", "style": { "color": "#646CFF" } },
+                { "skillName": "JavaScript", "fontAwesomeClassname": "simple-icons:javascript", "style": { "color": "#F7DF1E" } },
+                { "skillName": "Leaflet", "fontAwesomeClassname": "simple-icons:leaflet", "style": { "color": "#199900" } },
+                { "skillName": "Node.js", "fontAwesomeClassname": "simple-icons:nodedotjs", "style": { "color": "#339933" } }
+            ]
+        },
+
     //------------------------------------------------------------------
-    {
-      title: "Desktop & CAD Automation",
-      fileName: "DesignImg",
-      skills: [
-        "⚡ Developing WPF/WinForms tooling and Aveva E3D plug‑ins in C# (.NET)",
-        "⚡ Automating engineering workflows with PML scripts & REST integrations",
-        "⚡ Building DevExpress UI components for design engineers",
-      ],
-      softwareSkills: [
-        { skillName: "C#", fontAwesomeClassname: "simple-icons:csharp", style: { color: "#239120" } },
-        { skillName: ".NET", fontAwesomeClassname: "simple-icons:dotnet", style: { color: "#512BD4" } },
-        { skillName: "WPF", fontAwesomeClassname: "simple-icons:microsoft", style: { color: "#5E5E5E" } },
-        { skillName: "DevExpress", fontAwesomeClassname: "simple-icons:devexpress", style: { color: "#FF7203" } },
-        { skillName: "PowerShell", fontAwesomeClassname: "simple-icons:powershell", style: { color: "#5391FE" } },
-      ],
-    },
+        {
+            "title": "Desktop Tools & .NET Automation",
+            "fileName": "DesignImg",
+            "skills": [
+                "⚡ Building internal desktop apps and automation tools in C# and .NET (WPF/WinForms)",
+                "⚡ Collaborating with design engineers and internal clients to streamline workflows",
+                "⚡ Developing intuitive user interfaces with DevExpress and PowerShell scripting"
+            ],
+            "softwareSkills": [
+                { "skillName": "C#", "fontAwesomeClassname": "simple-icons:csharp", "style": { "color": "#239120" } },
+                { "skillName": ".NET", "fontAwesomeClassname": "simple-icons:dotnet", "style": { "color": "#512BD4" } },
+                { "skillName": "WPF", "fontAwesomeClassname": "simple-icons:microsoft", "style": { "color": "#5E5E5E" } },
+                { "skillName": "DevExpress", "fontAwesomeClassname": "simple-icons:devexpress", "style": { "color": "#FF7203" } },
+                { "skillName": "PowerShell", "fontAwesomeClassname": "simple-icons:powershell", "style": { "color": "#5391FE" } }
+            ]
+        },
   ],
 };
 
@@ -338,7 +339,7 @@ const experience = {
           duration: "May 2024 – Present",
           location: "Asker, Norway",
           description:
-            "Develop custom C#/.NET & PML plug-ins for Aveva E3D and MicroStation, build WPF tooling, and maintain 3D uploader to Azure for Web3D solution.",
+            "Develop internal C#/.NET tools and workflow automation for 3D engineering systems, integrating desktop and Azure cloud components.",
           color: "#0077B5",
         },
         {

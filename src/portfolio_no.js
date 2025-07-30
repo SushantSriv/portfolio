@@ -98,77 +98,77 @@ const socialMediaLinks = [
 const skills = {
     data: [
         {
-            title: "Datavitenskap og Maskinlæring",
+            title: "AI-applikasjoner og Data Science",
             fileName: "DataScienceImg",
             skills: [
-                "⚡ Prediktiv modellering og dyp‑læringspipelines (TensorFlow og PyTorch)",
-                "⚡ Tale‑til‑tekst og dokumentanalyse med Whisper, OCR og IPA/fonem‑pipelines",
-                "⚡ Strukturert og tidsserieanalyse med pandas, scikit‑learn og statsmodels",
-                "⚡ Datafortelling med notebooks, Power BI dashboards og Tableau",
-                "⚡ Eksempel-repoer: `boligprediksjon‑fastapi`, `norwegian‑pronunciation‑app`, `Forklar‑llama`",
+                "⚡ Brukt AI med åpne LLM-er, Whisper ASR og transformer-pipelines",
+                "⚡ Prediktiv modellering og tidsserieanalyse med scikit-learn og statsmodels",
+                "⚡ AI-drevne dashbord og historiefortelling (Power BI, Streamlit, Notebooks)",
+                "⚡ Kjent med agentiske AI-mønstre og utforsker Semantic Kernel for orkestrering",
+                "⚡ Eksempelkode: `norwegian-pronunciation-coach`, `electricity-forecast-xgboost`"
             ],
             softwareSkills: [
                 { skillName: "Python", fontAwesomeClassname: "logos:python" },
-                { skillName: "pandas", fontAwesomeClassname: "simple-icons:pandas", style: { color: "#150458" } },
                 { skillName: "scikit‑learn", fontAwesomeClassname: "simple-icons:scikitlearn", style: { color: "#F7931E" } },
-                { skillName: "TensorFlow", fontAwesomeClassname: "logos:tensorflow" },
                 { skillName: "PyTorch", fontAwesomeClassname: "logos:pytorch" },
-                { skillName: "Whisper", fontAwesomeClassname: "simple-icons:openai", style: { color: "#412991" } },
                 { skillName: "Power BI", fontAwesomeClassname: "simple-icons:powerbi", style: { color: "#F2C811" } },
-            ],
+                { skillName: "Streamlit", fontAwesomeClassname: "simple-icons:streamlit", style: { color: "#FF4B4B" } }
+            ]
         },
-
         {
-            title: "MLOps, API-er & sky",
+            title: "MLOps, API-er og Azure-integrasjon",
             fileName: "CloudInfraImg",
             skills: [
-                "⚡ Pakking og utrulling av modeller med FastAPI og Docker (GitHub Actions)",
-                "⚡ Data-lake-design på AWS S3, Glue & Athena",
-                "⚡ Deploy av containere til Azure Container Registry & ECS",
-                "⚡ Infrastruktur som kode med Bicep og Terraform",
+                "⚡ Pakking og drift av ML-modeller med FastAPI, Docker og CI/CD-pipelines",
+                "⚡ Azure-erfaring: Blob Storage, Container Registry, App Services, Functions",
+                "⚡ Designet data lakes med AWS S3, Glue og Athena (sideprosjekter)",
+                "⚡ Infrastruktur som kode med Bicep og Terraform for reproduserbare miljøer",
+                "⚡ Bygget og distribuert GenAI-demoprosjekter — utforsker styring gjennom GenAI Ops-mønstre"
             ],
             softwareSkills: [
                 { skillName: "FastAPI", fontAwesomeClassname: "simple-icons:fastapi", style: { color: "#009688" } },
-                { skillName: "Docker", fontAwesomeClassname: "simple-icons:docker", style: { color: "#1488C6" } },
-                { skillName: "AWS", fontAwesomeClassname: "simple-icons:amazonaws", style: { color: "#FF9900" } },
                 { skillName: "Azure", fontAwesomeClassname: "simple-icons:microsoftazure", style: { color: "#0089D6" } },
+                { skillName: "Docker", fontAwesomeClassname: "simple-icons:docker", style: { color: "#1488C6" } },
                 { skillName: "GitHub Actions", fontAwesomeClassname: "simple-icons:githubactions", style: { color: "#2088FF" } },
-            ],
+                { skillName: "Terraform", fontAwesomeClassname: "simple-icons:terraform", style: { color: "#844FBA" } }
+            ]
         },
         {
-            title: "Front-end & visualisering",
+            title: "Fullstack-utvikling og Dashboards",
             fileName: "FullStackImg",
             skills: [
-                "⚡ Responsive React/Vite-dashbord og enkelt-side-applikasjoner",
-                "⚡ Kartvisualiseringer med Leaflet & Mapbox GL",
-                "⚡ Rask prototyping i HTML, CSS Modules & Bootstrap",
+                "⚡ Skybaserte dashbord bygget med React + Vite for sanntidsvisning av ML-resultater",
+                "⚡ Kartvisualiseringer (Leaflet, Mapbox) for geospatiale risikovurderinger",
+                "⚡ Utviklet API-er, frontend-logikk og containerisert leveranse (FastAPI + React)",
+                "⚡ Erfaring med å jobbe tett med interne kunder (Aibel, Bosch) for å designe og levere Proof-of-Concept-løsninger"
             ],
             softwareSkills: [
                 { skillName: "React", fontAwesomeClassname: "simple-icons:react" },
                 { skillName: "Vite", fontAwesomeClassname: "simple-icons:vite", style: { color: "#646CFF" } },
                 { skillName: "JavaScript", fontAwesomeClassname: "simple-icons:javascript", style: { color: "#F7DF1E" } },
-                { skillName: "Bootstrap", fontAwesomeClassname: "simple-icons:bootstrap", style: { color: "#7952B3" } },
                 { skillName: "Leaflet", fontAwesomeClassname: "simple-icons:leaflet", style: { color: "#199900" } },
-            ],
+                { skillName: "Node.js", fontAwesomeClassname: "simple-icons:nodedotjs", style: { color: "#339933" } }
+            ]
         },
         {
-            title: "Desktop- & CAD-automatisering",
+            title: "Skrivebordsverktøy og .NET-automatisering",
             fileName: "DesignImg",
             skills: [
-                "⚡ WPF/WinForms-verktøy og Aveva E3D-plug-ins i C# (.NET)",
-                "⚡ Arbeidsflyt-automatisering med PML-skript og REST-integrasjoner",
-                "⚡ DevExpress-UI-komponenter for ingeniører",
+                "⚡ Utvikling av interne skrivebordsapplikasjoner og automatiseringsverktøy i C# og .NET (WPF/WinForms)",
+                "⚡ Samarbeid med designingeniører og interne kunder for å effektivisere arbeidsflyter",
+                "⚡ Utvikling av brukervennlige grensesnitt med DevExpress og PowerShell-skripting"
             ],
             softwareSkills: [
                 { skillName: "C#", fontAwesomeClassname: "simple-icons:csharp", style: { color: "#239120" } },
                 { skillName: ".NET", fontAwesomeClassname: "simple-icons:dotnet", style: { color: "#512BD4" } },
                 { skillName: "WPF", fontAwesomeClassname: "simple-icons:microsoft", style: { color: "#5E5E5E" } },
                 { skillName: "DevExpress", fontAwesomeClassname: "simple-icons:devexpress", style: { color: "#FF7203" } },
-                { skillName: "PowerShell", fontAwesomeClassname: "simple-icons:powershell", style: { color: "#5391FE" } },
-            ],
-        },
-    ],
+                { skillName: "PowerShell", fontAwesomeClassname: "simple-icons:powershell", style: { color: "#5391FE" } }
+            ]
+        }
+    ]
 };
+
 
 /* ---------- Konkurransesider ---------- */
 const competitiveSites = {
@@ -316,7 +316,7 @@ const experience = {
                     duration: "mai 2024 – nå",
                     location: "Asker, Norge",
                     description:
-                        "Utvikler skreddersydde C#/.NET- og PML-plug-ins for Aveva E3D og MicroStation, bygger WPF-verktøy og vedlikeholder 3D-opplaster til Azure for Web3D-løsningen.",
+                        "Utvikle interne C#/.NET-verktøy og arbeidsflytautomatisering for 3D-ingeniørsystemer, med integrering av desktop- og Azure-skykomponenter.",
                     color: "#0077B5",
                 },
                 {
