@@ -15,6 +15,11 @@
           "color": "#3776AB"
         },
         {
+          "name": "Azure",
+          "iconifyClass": "simple-icons:azuredevops",
+          "color": "#0078D4"
+        },
+        {
           "name": "FastAPI",
           "iconifyClass": "simple-icons:fastapi",
           "color": "#009688"
@@ -86,6 +91,11 @@
           "color": "#3776AB"
         },
         {
+          "name": "Azure",
+          "iconifyClass": "simple-icons:azuredevops",
+          "color": "#0078D4"
+        },
+        {
           "name": "FastAPI",
           "iconifyClass": "simple-icons:fastapi",
           "color": "#009688"
@@ -142,6 +152,7 @@
       "inProgress": true
 
     },
+
     {
       "id": "explain_public_services_01",
       "name": "Explain My Document",
@@ -300,6 +311,11 @@
           "color": "#3776AB"
         },
         {
+          "name": "Azure Container Registry",
+          "iconifyClass": "simple-icons:azuredevops",
+          "color": "#0078D4"
+        },
+        {
           "name": "Pandas",
           "iconifyClass": "simple-icons:pandas",
           "color": "#150458"
@@ -372,6 +388,11 @@
           "color": "#623CE4"
         },
         {
+          "name": "Azure Container Registry",
+          "iconifyClass": "simple-icons:azuredevops",
+          "color": "#0078D4"
+        },
+        {
           "name": "Markdown",
           "iconifyClass": "simple-icons:markdown",
           "color": "#000000"
@@ -396,6 +417,7 @@
         "Node.js"
       ]
     },
+
     {
       "id": "R_kgDObzB2KQ_2",
       "name": "Housing-Price Prediction API",
