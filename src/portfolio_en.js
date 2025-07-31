@@ -483,7 +483,7 @@ const contactPageData = {
         profile_image_path: "mittbilde.jpg",    // replace with your own file
         description: `
       I build end-to-end solutions in data science, ML pipelines and CAD automation. 
-      Based in Norway since 2022, I’m passionate about tackling local challenges and creating 
+      I’m passionate about tackling local challenges and creating 
       sustainable, scalable systems that make a difference. 
       Outside of work, you’ll find me trail running, playing tennis, strength training or hiking. 
       Drop me a message — I usually reply the same day.
