@@ -10,7 +10,7 @@
       "isFork": false,
       "languages": [
         {
-          "name": "Python 3.11",
+          "name": "Python",
           "iconifyClass": "logos:python",
           "color": "#3776AB"
         },
@@ -81,7 +81,7 @@
       "isFork": false,
       "languages": [
         {
-          "name": "Python 3.10",
+          "name": "Python",
           "iconifyClass": "logos:python",
           "color": "#3776AB"
         },
@@ -151,7 +151,7 @@
       "isFork": false,
       "languages": [
         {
-          "name": "Python 3.10+",
+          "name": "Python",
           "iconifyClass": "logos:python",
           "color": "#3776AB"
         },
