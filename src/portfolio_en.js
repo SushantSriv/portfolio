@@ -482,7 +482,7 @@ const contactPageData = {
         title: "Get in touch",
         profile_image_path: "mittbilde.jpg",    // replace with your own file
         description: `
-      I build end-to-end solutions in data science, ML pipelines and CAD automation. 
+      I build end-to-end solutions in data science, ML pipelines and desktop applications. 
       I’m passionate about tackling local challenges and creating 
       sustainable, scalable systems that make a difference. 
       Outside of work, you’ll find me trail running, playing tennis, strength training or hiking. 

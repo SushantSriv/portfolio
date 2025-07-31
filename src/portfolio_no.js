@@ -459,7 +459,7 @@ const contactPageData = {
         title: "Kontakt meg",
         profile_image_path: "mittbilde.jpg",    // erstatt med din egen fil
         description: `
-      Jeg bygger helhetlige løsninger innen datavitenskap, ML-pipelines og CAD-automatisering. 
+      Jeg bygger helhetlige løsninger innen datavitenskap, ML-pipelines og desktop applikasjoner. 
       Bosatt i Norge siden 2022, brenner jeg for å løse lokale utfordringer og skape 
       bærekraftige, skalerbare systemer som gjør en forskjell. 
       På fritiden finner du meg gjerne på sti-løp, tennisbanen, styrketrening eller på tur. 
