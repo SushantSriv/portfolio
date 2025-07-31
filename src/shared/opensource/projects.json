@@ -2,6 +2,47 @@
   "data": [
 
     {
+      "id": "semantic_kernel_agent_03",
+      "name": "AI Knowledge Agent – Semantic Kernel Edition",
+      "createdAt": "2025-07-29T00:00:00Z",
+      "url": "https://github.com/SushantSriv/semantic_kernel_agentic_ai",
+      "description": "Tiny FastAPI service backed by Microsoft Semantic Kernel. A planner breaks questions into skill calls (search, summarise, note) and persists context. Docker-ready layout with .env secrets makes it trivial to run locally or on Azure.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "FastAPI",
+          "iconifyClass": "simple-icons:fastapi",
+          "color": "#009688"
+        },
+        {
+          "name": "Semantic Kernel",
+          "iconifyClass": "simple-icons:microsoft",
+          "color": "#0078D4"
+        },
+        {
+          "name": "Docker",
+          "iconifyClass": "simple-icons:docker",
+          "color": "#2496ED"
+        }
+      ],
+      "dataSources": [],
+      "demoUrl": "",
+      "technologies": [
+        "planner-agent",
+        "vector-memory",
+        "async-skills",
+        "uvicorn",
+        "React-chat (optional)"
+      ],
+      "inProgress": true
+    },
+
+    {
       "id": "job_tracker_app_01",
       "name": "Job Tracker App",
       "createdAt": "2025-07-24T00:00:00Z",
@@ -73,6 +114,52 @@
         "SQLAlchemy",
         "firebase/auth",
         "Playwright"
+      ],
+      "inProgress": false
+    },
+
+    {
+      "id": "ai_feedback_analyst_01",
+      "name": "AI Feedback Analyst Copilot",
+      "createdAt": "2025-07-30T00:00:00Z",
+      "url": "https://github.com/SushantSriv/ai-feedback-analyst_Azure_AI_Foundry",
+      "description": "Transforms raw customer comments into summarised themes, sentiment, and actionable next steps using a three-stage Azure AI Foundry prompt-flow pipeline. Includes offline evaluation configs (BLEU, embedding-sim, GPT-Judge) and a GitHub Actions gate.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "Azure AI Foundry",
+          "iconifyClass": "simple-icons:azuredevops",
+          "color": "#0078D4"
+        },
+        {
+          "name": "YAML",
+          "iconifyClass": "simple-icons:yaml",
+          "color": "#CB171E"
+        },
+        {
+          "name": "GitHub Actions",
+          "iconifyClass": "simple-icons:githubactions",
+          "color": "#2088FF"
+        },
+        {
+          "name": "Docker",
+          "iconifyClass": "simple-icons:docker",
+          "color": "#2496ED"
+        }
+      ],
+      "dataSources": [],
+      "demoUrl": "",
+      "technologies": [
+        "prompt-flow",
+        "embedding-similarity",
+        "BLEU",
+        "GPT-Judge",
+        "CI quality-gate"
       ],
       "inProgress": false
     },
