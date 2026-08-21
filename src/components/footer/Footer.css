@@ -1,10 +1,31 @@
 .footer-text {
   text-align: center;
-  /* color: #868e96; */
   font-weight: bold;
   font-family: "Google Sans Regular";
 }
 
+.footer-text [role="img"] {
+  display: inline-block;
+  animation: footer-heartbeat 1.8s ease-in-out infinite;
+}
+
+@keyframes footer-heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-text [role="img"] {
+    animation: none;
+  }
+}
+
 .footer-div {
   margin-top: 2rem;
+  padding-top: 1.5rem;
 }

@@ -28,20 +28,12 @@ export default function Hero3D({ theme }) {
   }
 
   return (
-    <div className="hero3d-stack">
-      <div className="hero3d-canvas-wrap">
-        <Hero3DErrorBoundary fallback={fallback}>
-          <Suspense fallback={fallback}>
-            <Hero3DScene theme={theme} />
-          </Suspense>
-        </Hero3DErrorBoundary>
-      </div>
-      <div
-        className="hero3d-illustration"
-        style={{ backgroundColor: theme.body }}
-      >
-        <FeelingProud theme={theme} />
-      </div>
+    <div className="hero3d-canvas-wrap">
+      <Hero3DErrorBoundary fallback={fallback}>
+        <Suspense fallback={fallback}>
+          <Hero3DScene theme={theme} />
+        </Suspense>
+      </Hero3DErrorBoundary>
     </div>
   );
 }

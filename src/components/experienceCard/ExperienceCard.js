@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./ExperienceCard.css";
 import { Fade } from "react-reveal";
+import Tilt from "react-parallax-tilt";
+import { getGlassStyle } from "../../styles/glassStyle";
 
 class ExperienceCard extends Component {
   render() {
@@ -50,9 +52,15 @@ class ExperienceCard extends Component {
               className="arrow-left"
               style={{ borderRight: `10px solid ${theme.body}` }}
             ></div>
-            <div
+            <Tilt
               className="experience-card"
-              style={{ background: `${theme.body}` }}
+              style={getGlassStyle(theme)}
+              tiltMaxAngleX={4}
+              tiltMaxAngleY={4}
+              glareEnable={true}
+              glareMaxOpacity={0.15}
+              glareColor={theme.highlight}
+              transitionSpeed={1500}
             >
               <div
                 style={{
@@ -108,7 +116,7 @@ class ExperienceCard extends Component {
                 <div className="repo-description" />
                 {experience["description"]}
               </div>
-            </div>
+            </Tilt>
           </div>
         </Fade>
       </div>

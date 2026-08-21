@@ -43,7 +43,6 @@ function SeoHeader() {
     name: greeting.title,
     url: seo?.og?.url,
     email: mail,
-    telephone: contactPageData.phoneSection?.subtitle,
     sameAs: sameAs,
     jobTitle: job.title,
     worksFor: {

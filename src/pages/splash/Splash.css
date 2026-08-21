@@ -9,6 +9,7 @@
 .screen {
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -44,8 +45,27 @@
 }
 
 #logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  flex-shrink: 0;
+}
+
+.splash-signature {
+  margin: 1.5rem 0 0;
+  font-family: "Agustina Regular";
+  font-size: clamp(28px, 6vw, 56px);
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+  animation: signature-reveal 2.5s ease forwards 0.8s;
+}
+
+@keyframes signature-reveal {
+  to {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-signature {
+    animation: none;
+    clip-path: inset(0 0% 0 0);
+  }
 }

@@ -2,11 +2,7 @@
 
 // Website related settings
 const settings = {
-  isSplash: false, // Change this to false if you don't want Splash screen.
-  // NOTE: the LoaderLogo signature animation (src/components/Loader/LoaderLogo.js)
-  // is hardcoded to "Ashutosh Ho" (the original template author), not this site's
-  // owner. Re-enabling isSplash will show that name on load. Fix the signature SVG
-  // (or swap to a text-based cursive rendering of the real name) before flipping this on.
+  isSplash: true, // Change this to false if you don't want Splash screen.
 };
 
 //SEO Related settings
@@ -564,11 +560,6 @@ const contactPageData = {
     avatar_image_path: "address_image.svg",
     location_map_link:
       "https://www.google.com/maps/search/?api=1&query=Drammen%2C+Norway",
-  },
-
-  phoneSection: {
-    title: "Phone",
-    subtitle: "+47 973 92 924",
   },
 };
 

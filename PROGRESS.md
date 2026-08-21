@@ -5,6 +5,85 @@ the top.
 
 ---
 
+## 2026-08-21 — Site-wide consistency pass, contact form, privacy cleanup
+
+Follow-up to the redesign: extended the glass/gradient treatment site-wide,
+added a "Write to Me" contact form, fixed the hero image-column composition,
+and removed personal data the user didn't want shown.
+
+### Hero composition (round 3)
+
+- The framed illustration added in the previous round didn't work visually —
+  a flat vector illustration in a light card clashed with the glass/gradient/
+  3D aesthetic. Removed it entirely per the user's own call ("your choice if
+  you want to remove the boy picture").
+- Instead, made the 3D canvas itself fill the column (taller
+  `.hero3d-canvas-wrap`, no more shared space with an illustration) and added
+  a themed particle field around the crystal (`Points`/`bufferGeometry`, ~140
+  points in a spherical shell) for depth, so the space reads as one coherent
+  tech scene instead of two competing visual styles.
+- Also fixed the wireframe shell clipping at the canvas edge on wide
+  viewports: pulled the camera back (`z: 4.2 -> 5.6`, `fov: 45 -> 40`) and
+  shrunk the object scale, leaving real margin between the shape and the
+  frustum edge instead of the fixed `1.4`/`1.22` multipliers that clipped in
+  practice.
+
+### Site-wide consistency
+
+- Extended `getGlassStyle` + `react-parallax-tilt` to `ExperienceCard.js`
+  (`.experience-card`), matching the treatment already on Certification/
+  GithubRepo/Degree/Skill cards — this was the one page left visually flat
+  after the redesign.
+- Added a shared `.gradient-heading` utility class (`src/index.css`) and
+  applied the hero's gradient-text treatment to every page's main `<h1>`
+  (Education, Experience, Projects, Contact, and the "What I Do?" Skills
+  heading) so the whole site reads as one design instead of "fancy hero +
+  plain everything else."
+- `Footer`/`TopButton`: fixed the same "hover sets no property" dead-CSS
+  pattern already caught on `Button.css` — both now have real hover
+  transitions (lift + shadow), and `TopButton`'s scroll-to-top uses
+  `window.scrollTo({ behavior: 'smooth' })` instead of an instant jump.
+
+### New: "Write to Me" contact form
+
+Added `src/components/contactForm/ContactForm.js` — a toggle button that
+reveals Name/Subject/Message fields (framer-motion height/opacity reveal,
+glass-styled). Since this is a static GitHub Pages site with no backend, the
+user chose the `mailto:` approach over standing up a third-party mailer
+(EmailJS, etc.): submitting builds a `mailto:sushantsrivastava198@gmail.com`
+link with the subject/body pre-filled and navigates to it, handing off to the
+visitor's own email client. Zero secrets, zero backend, works everywhere a
+mail client is configured.
+
+### Privacy cleanup
+
+- Removed the phone number entirely: stopped rendering `phoneSection` on the
+  Contact page, deleted the field from `portfolio.js`/`portfolio_en.js`/
+  `portfolio_no.js`, and removed `telephone` from `SeoHeader.js`'s JSON-LD
+  (it was being published in page metadata/structured data, not just visibly
+  displayed — worth knowing that SEO schema fields need the same scrutiny as
+  on-page content).
+- Removed the personal photo slideshow from the Contact page. Deleting the
+  `require.context` call in `ContactComponent.js` alone wasn't enough — the
+  images kept showing up in the production bundle anyway. Root cause: other
+  components (`GithubRepoCard.js`, `DegreeCard.js`, `CertificationCard.js`,
+  etc.) load images via `require(\`../../assets/images/\${variable}\`)`— dynamic requires with a runtime-only path segment. Webpack can't statically resolve those, so it conservatively bundles a *recursive* context over the entire`assets/images/`tree "just in case," which was sweeping up`assets/images/slideshow/*.jpg`regardless of whether anything explicitly imported it. Confirmed by grepping the built bundle for the literal filenames — traced to`require.context`'s auto-generated module listing, not a caching artifact (initially suspected stale webpack/babel-loader cache and spent a while ruling that out first). Fix: deleted the source image files outright (`src/assets/images/slideshow/`), which is the only
+  way to guarantee they can't get swept into *any\* dynamic require pattern
+  in the future. Verified by grepping the rebuilt bundle for the filenames
+  and confirming zero matches.
+
+### Verification
+
+- Full mobile horizontal-overflow sweep (390px, all 5 routes) — clean.
+- Splash screen re-tested end-to-end: fresh visit shows the new signature and
+  redirects to `/home` after 5.5s; reload within the same session skips
+  straight to `/home` (sessionStorage gating still works).
+- Production build clean; confirmed via bundle grep that the slideshow
+  images and phone number are genuinely gone from build output, not just
+  from the rendered page.
+
+---
+
 ## 2026-08-21 — Hero visual fixes after first look
 
 User feedback on the first pass of the 3D redesign, live in browser:

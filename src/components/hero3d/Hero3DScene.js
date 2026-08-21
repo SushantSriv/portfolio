@@ -1,5 +1,49 @@
-import React, { useRef, Suspense } from "react";
+import React, { useRef, useMemo, Suspense } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
+
+function Particles({ theme, count = 140 }) {
+  const pointsRef = useRef();
+
+  const positions = useMemo(() => {
+    const arr = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      const radius = 2.1 + Math.random() * 1.9;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(Math.random() * 2 - 1);
+      arr[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
+      arr[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+      arr[i * 3 + 2] = radius * Math.cos(phi);
+    }
+    return arr;
+  }, [count]);
+
+  useFrame((state, delta) => {
+    if (pointsRef.current) {
+      pointsRef.current.rotation.y += delta * 0.03;
+      pointsRef.current.rotation.x += delta * 0.008;
+    }
+  });
+
+  return (
+    <points ref={pointsRef}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={count}
+          array={positions}
+          itemSize={3}
+        />
+      </bufferGeometry>
+      <pointsMaterial
+        color={theme.highlight}
+        size={0.045}
+        sizeAttenuation={true}
+        transparent={true}
+        opacity={0.65}
+      />
+    </points>
+  );
+}
 
 function TechCrystal({ theme }) {
   const coreRef = useRef();
@@ -7,7 +51,7 @@ function TechCrystal({ theme }) {
   const groupRef = useRef();
   const { size } = useThree();
   const isSmall = size.width < 500;
-  const scale = isSmall ? 0.85 : 1.05;
+  const scale = isSmall ? 1.05 : 1.3;
 
   useFrame((state, delta) => {
     if (coreRef.current) {
@@ -33,6 +77,7 @@ function TechCrystal({ theme }) {
 
   return (
     <group ref={groupRef}>
+      <Particles theme={theme} />
       {/* Faceted crystal core - flat-shaded so each triangle reads as a
                 distinct cut facet, like a gem or prism, instead of a smooth blob. */}
       <mesh ref={coreRef} scale={scale}>

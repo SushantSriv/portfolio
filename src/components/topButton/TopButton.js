@@ -3,8 +3,7 @@ import "./TopButton.css";
 
 export default function TopButton({ theme }) {
   function GoUpEvent() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function scrollFunction() {

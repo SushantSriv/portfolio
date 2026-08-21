@@ -1,31 +1,13 @@
-.hero3d-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  width: 100%;
-}
-
 .hero3d-canvas-wrap {
   position: relative;
   width: 100%;
-  min-height: 300px;
+  height: 100%;
+  min-height: 460px;
 }
 
 .hero3d-canvas-wrap canvas {
   outline: none;
   touch-action: none;
-}
-
-.hero3d-illustration {
-  border-radius: 20px;
-  padding: 16px;
-  box-shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.45);
-}
-
-.hero3d-illustration svg {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 .hero3d-fallback {
@@ -40,12 +22,12 @@
 
 @media (max-width: 1380px) {
   .hero3d-canvas-wrap {
-    min-height: 260px;
+    min-height: 360px;
   }
 }
 
 @media (max-width: 768px) {
   .hero3d-canvas-wrap {
-    min-height: 220px;
+    min-height: 280px;
   }
 }

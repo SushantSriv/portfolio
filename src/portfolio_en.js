@@ -562,11 +562,6 @@ const contactPageData = {
     location_map_link:
       "https://www.google.com/maps/search/?api=1&query=Drammen%2C+Norway",
   },
-
-  phoneSection: {
-    title: "Phone",
-    subtitle: "+47 973 92 924",
-  },
 };
 
 export {

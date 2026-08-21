@@ -8,4 +8,10 @@
   outline: none;
   border-radius: 2rem;
   font-size: 1.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#topButton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px -8px currentColor;
 }

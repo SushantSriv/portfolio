@@ -3,6 +3,7 @@ import "./Splash.css";
 import { Redirect } from "react-router-dom";
 import LoaderLogo from "../../components/Loader/LoaderLogo.js";
 import { prefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
+import { greeting } from "../../portfolio.js";
 
 const SPLASH_SEEN_KEY = "portfolio_splash_seen";
 
@@ -11,6 +12,9 @@ function AnimatedSplash(props) {
     <div className="logo_wrapper">
       <div className="screen" style={{ backgroundColor: props.theme.splashBg }}>
         <LoaderLogo id="logo" theme={props.theme} />
+        <p className="splash-signature" style={{ color: props.theme.body }}>
+          {greeting.title}
+        </p>
       </div>
     </div>
   );
