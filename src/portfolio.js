@@ -557,14 +557,13 @@ const contactPageData = {
 
   addressSection: {
     title: "Location",
-    subtitle: "Bekkestua, 1356 Bærum, Norway",
-    locality: "Bekkestua",
+    subtitle: "Drammen, Norway",
+    locality: "Drammen",
     country: "Norway",
-    region: "Viken",
-    postalCode: "1356",
-    streetAddress: "Gamle Drammensvei",
+    region: "Buskerud",
     avatar_image_path: "address_image.svg",
-    location_map_link: "https://maps.app.goo.gl/TL5gyRWjVVc9EszP6",
+    location_map_link:
+      "https://www.google.com/maps/search/?api=1&query=Drammen%2C+Norway",
   },
 
   phoneSection: {

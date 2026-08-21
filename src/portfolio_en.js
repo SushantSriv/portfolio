@@ -26,7 +26,7 @@ const greeting = {
     "A passionate engineer who builds end-to-end products and scalable systems to create sustainable social and technical impact.",
   resumeLink:
     "https://drive.google.com/file/d/1zFG4ZiANMVl-5Rmc_BtcGZF0G2AUIU-v/view?usp=sharing",
-    portfolio_repository: "https://github.com/SushantSriv",
+  portfolio_repository: "https://github.com/SushantSriv",
   githubProfile: "https://github.com/SushantSriv",
 };
 
@@ -83,10 +83,10 @@ const socialMediaLinks = [
     backgroundColor: "#E4405F", // Reference https://simpleicons.org/?q=instagram
   },
   {
-  name: "CodeChef",
-  link: "https://www.codechef.com/users/sushant_sri",
-  iconifyClassname: "simple-icons:codechef",   // <- Iconify-navn
-  backgroundColor: "#5B4638",
+    name: "CodeChef",
+    link: "https://www.codechef.com/users/sushant_sri",
+    iconifyClassname: "simple-icons:codechef", // <- Iconify-navn
+    backgroundColor: "#5B4638",
   },
   {
     name: "Kaggle",
@@ -95,91 +95,157 @@ const socialMediaLinks = [
     backgroundColor: "#20BEFF", // Reference https://simpleicons.org/?q=instagram
   },
   {
-        name: "Hugging Face",
-        link: "https://huggingface.co/Sushant198",
-        iconifyClassname: "simple-icons:huggingface", // Reference https://simpleicons.org/icons/huggingface
-        backgroundColor: "#1099D7",
+    name: "Hugging Face",
+    link: "https://huggingface.co/Sushant198",
+    iconifyClassname: "simple-icons:huggingface", // Reference https://simpleicons.org/icons/huggingface
+    backgroundColor: "#1099D7",
   },
-
 ];
 
 const skills = {
-  data: [ 
+  data: [
+    {
+      title: "AI Applications & Data Science",
+      fileName: "DataScienceImg",
+      skills: [
+        "⚡ Applied AI with open-source LLMs, Whisper ASR, and transformer pipelines",
+        "⚡ Predictive modeling & time-series analysis with scikit-learn and statsmodels",
+        "⚡ AI-enhanced dashboards & storytelling (Power BI, Streamlit, Notebooks)",
+        "⚡ Familiar with agentic AI patterns and exploring Semantic Kernel for orchestration scenarios",
+        "⚡ Sample repos: `norwegian-pronunciation-coach`, `electricity-forecast-xgboost`",
+      ],
+      softwareSkills: [
+        { skillName: "Python", fontAwesomeClassname: "logos:python" },
         {
-            "title": "AI Applications & Data Science",
-            "fileName": "DataScienceImg",
-            "skills": [
-                "⚡ Applied AI with open-source LLMs, Whisper ASR, and transformer pipelines",
-                "⚡ Predictive modeling & time-series analysis with scikit-learn and statsmodels",
-                "⚡ AI-enhanced dashboards & storytelling (Power BI, Streamlit, Notebooks)",
-                "⚡ Familiar with agentic AI patterns and exploring Semantic Kernel for orchestration scenarios",
-                "⚡ Sample repos: `norwegian-pronunciation-coach`, `electricity-forecast-xgboost`"
-            ],
-            "softwareSkills": [
-                { "skillName": "Python", "fontAwesomeClassname": "logos:python" },
-                { "skillName": "scikit‑learn", "fontAwesomeClassname": "simple-icons:scikitlearn", "style": { "color": "#F7931E" } },
-                { "skillName": "PyTorch", "fontAwesomeClassname": "logos:pytorch" },
-                { "skillName": "Power BI", "fontAwesomeClassname": "simple-icons:powerbi", "style": { "color": "#F2C811" } },
-                { "skillName": "Streamlit", "fontAwesomeClassname": "simple-icons:streamlit", "style": { "color": "#FF4B4B" } }
-            ]
+          skillName: "scikit‑learn",
+          fontAwesomeClassname: "simple-icons:scikitlearn",
+          style: { color: "#F7931E" },
+        },
+        { skillName: "PyTorch", fontAwesomeClassname: "logos:pytorch" },
+        {
+          skillName: "Power BI",
+          fontAwesomeClassname: "simple-icons:powerbi",
+          style: { color: "#F2C811" },
         },
         {
-            "title": "MLOps, APIs & Azure Integration",
-            "fileName": "CloudInfraImg",
-            "skills": [
-                "⚡ Packaging & serving ML models using FastAPI, Docker & CI/CD pipelines",
-                "⚡ Azure experience: Blob storage, Container Registry, App Services, Functions",
-                "⚡ Designed data lakes with AWS S3, Glue & Athena (side projects)",
-                "⚡ Infrastructure-as-code using Bicep & Terraform for reproducible environments",
-                "⚡ Built & deployed proof-of-concept GenAI apps — exploring how they can be governed via GenAI Ops patterns"
-            ],
-            "softwareSkills": [
-                { "skillName": "FastAPI", "fontAwesomeClassname": "simple-icons:fastapi", "style": { "color": "#009688" } },
-                { "skillName": "Azure", "fontAwesomeClassname": "simple-icons:microsoftazure", "style": { "color": "#0089D6" } },
-                { "skillName": "Docker", "fontAwesomeClassname": "simple-icons:docker", "style": { "color": "#1488C6" } },
-                { "skillName": "GitHub Actions", "fontAwesomeClassname": "simple-icons:githubactions", "style": { "color": "#2088FF" } },
-                { "skillName": "Terraform", "fontAwesomeClassname": "simple-icons:terraform", "style": { "color": "#844FBA" } }
-            ]
+          skillName: "Streamlit",
+          fontAwesomeClassname: "simple-icons:streamlit",
+          style: { color: "#FF4B4B" },
         },
+      ],
+    },
+    {
+      title: "MLOps, APIs & Azure Integration",
+      fileName: "CloudInfraImg",
+      skills: [
+        "⚡ Packaging & serving ML models using FastAPI, Docker & CI/CD pipelines",
+        "⚡ Azure experience: Blob storage, Container Registry, App Services, Functions",
+        "⚡ Designed data lakes with AWS S3, Glue & Athena (side projects)",
+        "⚡ Infrastructure-as-code using Bicep & Terraform for reproducible environments",
+        "⚡ Built & deployed proof-of-concept GenAI apps — exploring how they can be governed via GenAI Ops patterns",
+      ],
+      softwareSkills: [
+        {
+          skillName: "FastAPI",
+          fontAwesomeClassname: "simple-icons:fastapi",
+          style: { color: "#009688" },
+        },
+        {
+          skillName: "Azure",
+          fontAwesomeClassname: "simple-icons:microsoftazure",
+          style: { color: "#0089D6" },
+        },
+        {
+          skillName: "Docker",
+          fontAwesomeClassname: "simple-icons:docker",
+          style: { color: "#1488C6" },
+        },
+        {
+          skillName: "GitHub Actions",
+          fontAwesomeClassname: "simple-icons:githubactions",
+          style: { color: "#2088FF" },
+        },
+        {
+          skillName: "Terraform",
+          fontAwesomeClassname: "simple-icons:terraform",
+          style: { color: "#844FBA" },
+        },
+      ],
+    },
     //------------------------------------------------------------------
+    {
+      title: "Fullstack Engineering & Dashboards",
+      fileName: "FullStackImg",
+      skills: [
+        "⚡ Cloud-native dashboards built with React + Vite for real-time ML outputs",
+        "⚡ Map-based visualizations (Leaflet, Mapbox) for geospatial risk insights",
+        "⚡ Built APIs, frontend logic and containerized delivery (FastAPI + React)",
+        "⚡ Experience working closely with internal clients (Aibel, Bosch) to design and deploy PoC systems aligned with business needs",
+      ],
+      softwareSkills: [
+        { skillName: "React", fontAwesomeClassname: "simple-icons:react" },
         {
-            "title": "Fullstack Engineering & Dashboards",
-            "fileName": "FullStackImg",
-            "skills": [
-                "⚡ Cloud-native dashboards built with React + Vite for real-time ML outputs",
-                "⚡ Map-based visualizations (Leaflet, Mapbox) for geospatial risk insights",
-                "⚡ Built APIs, frontend logic and containerized delivery (FastAPI + React)",
-                "⚡ Experience working closely with internal clients (Aibel, Bosch) to design and deploy PoC systems aligned with business needs"
-            ],
-            "softwareSkills": [
-                { "skillName": "React", "fontAwesomeClassname": "simple-icons:react" },
-                { "skillName": "Vite", "fontAwesomeClassname": "simple-icons:vite", "style": { "color": "#646CFF" } },
-                { "skillName": "JavaScript", "fontAwesomeClassname": "simple-icons:javascript", "style": { "color": "#F7DF1E" } },
-                { "skillName": "Leaflet", "fontAwesomeClassname": "simple-icons:leaflet", "style": { "color": "#199900" } },
-                { "skillName": "Node.js", "fontAwesomeClassname": "simple-icons:nodedotjs", "style": { "color": "#339933" } }
-            ]
+          skillName: "Vite",
+          fontAwesomeClassname: "simple-icons:vite",
+          style: { color: "#646CFF" },
         },
+        {
+          skillName: "JavaScript",
+          fontAwesomeClassname: "simple-icons:javascript",
+          style: { color: "#F7DF1E" },
+        },
+        {
+          skillName: "Leaflet",
+          fontAwesomeClassname: "simple-icons:leaflet",
+          style: { color: "#199900" },
+        },
+        {
+          skillName: "Node.js",
+          fontAwesomeClassname: "simple-icons:nodedotjs",
+          style: { color: "#339933" },
+        },
+      ],
+    },
 
     //------------------------------------------------------------------
+    {
+      title: "Desktop Tools & .NET Automation",
+      fileName: "DesignImg",
+      skills: [
+        "⚡ Building internal desktop apps and automation tools in C# and .NET (WPF/WinForms)",
+        "⚡ Collaborating with design engineers and internal clients to streamline workflows",
+        "⚡ Developing intuitive user interfaces with DevExpress and PowerShell scripting",
+      ],
+      softwareSkills: [
         {
-            "title": "Desktop Tools & .NET Automation",
-            "fileName": "DesignImg",
-            "skills": [
-                "⚡ Building internal desktop apps and automation tools in C# and .NET (WPF/WinForms)",
-                "⚡ Collaborating with design engineers and internal clients to streamline workflows",
-                "⚡ Developing intuitive user interfaces with DevExpress and PowerShell scripting"
-            ],
-            "softwareSkills": [
-                { "skillName": "C#", "fontAwesomeClassname": "simple-icons:csharp", "style": { "color": "#239120" } },
-                { "skillName": ".NET", "fontAwesomeClassname": "simple-icons:dotnet", "style": { "color": "#512BD4" } },
-                { "skillName": "WPF", "fontAwesomeClassname": "simple-icons:microsoft", "style": { "color": "#5E5E5E" } },
-                { "skillName": "DevExpress", "fontAwesomeClassname": "simple-icons:devexpress", "style": { "color": "#FF7203" } },
-                { "skillName": "PowerShell", "fontAwesomeClassname": "simple-icons:powershell", "style": { "color": "#5391FE" } }
-            ]
+          skillName: "C#",
+          fontAwesomeClassname: "simple-icons:csharp",
+          style: { color: "#239120" },
         },
+        {
+          skillName: ".NET",
+          fontAwesomeClassname: "simple-icons:dotnet",
+          style: { color: "#512BD4" },
+        },
+        {
+          skillName: "WPF",
+          fontAwesomeClassname: "simple-icons:microsoft",
+          style: { color: "#5E5E5E" },
+        },
+        {
+          skillName: "DevExpress",
+          fontAwesomeClassname: "simple-icons:devexpress",
+          style: { color: "#FF7203" },
+        },
+        {
+          skillName: "PowerShell",
+          fontAwesomeClassname: "simple-icons:powershell",
+          style: { color: "#5391FE" },
+        },
+      ],
+    },
   ],
 };
-
 
 // Education Page
 const competitiveSites = {
@@ -224,7 +290,7 @@ const degrees = {
     {
       title: "Norges miljø- og biovitenskapelige universitet (NMBU)",
       subtitle: "MSc in Data Science",
-      logo_path: "nmbu_logo.png",          // add to src/assets
+      logo_path: "nmbu_logo.png", // add to src/assets
       alt_name: "NMBU",
       duration: "Aug 2022 – May 2024",
       descriptions: [
@@ -236,23 +302,19 @@ const degrees = {
     {
       title: "National Institute of Engineering (NIE)",
       subtitle: "BEng in Information Science & Engineering",
-      logo_path: "nie_logo.png",           // add to src/assets
+      logo_path: "nie_logo.png", // add to src/assets
       alt_name: "NIE Mysore",
       duration: "Aug 2016 – Jun 2020",
-      descriptions: [
-        "⚡ CGPA: 8.63 / 10 (First Class with Distinction)",
-      ],
+      descriptions: ["⚡ CGPA: 8.63 / 10 (First Class with Distinction)"],
       website_link: "https://nie.ac.in/",
     },
     {
       title: "Sunbeam School Lahartara",
       subtitle: "Senior Secondary (XII), Science",
-      logo_path: "sunbeam_logo.png",       // optional – can omit
+      logo_path: "sunbeam_logo.png", // optional – can omit
       alt_name: "Sunbeam School",
       duration: "2013 – 2015",
-      descriptions: [
-        "⚡ Percentage: 87.4%",
-      ],
+      descriptions: ["⚡ Percentage: 87.4%"],
       website_link: "https://sunbeamschools.com/",
     },
   ],
@@ -263,20 +325,20 @@ const certifications = {
     {
       title: "Data Science Specialization",
       subtitle: "Johns Hopkins University – 10‑course series",
-      logo_path: "johnhopkins_logo.png",      // place logo in src/assets/images
+      logo_path: "johnhopkins_logo.png", // place logo in src/assets/images
       certificate_link:
         "https://drive.google.com/file/d/1VzB8OnwhzLmDlbdnQFrlSdL05ht369qh/view?usp=sharing",
       alt_name: "Coursera",
-      color_code: "#2A73CC",               // Coursera blue
+      color_code: "#2A73CC", // Coursera blue
     },
     {
       title: "Aruba Certified Switching Associate (ACSA)",
       subtitle: "Aruba Networks – HPE",
-      logo_path: "aruba_logo.png",         // src/assets/images
+      logo_path: "aruba_logo.png", // src/assets/images
       certificate_link:
         "https://drive.google.com/file/d/1uOzP0Rb9b4gNoZGHMXBI11NElpXW9cX7/view?usp=sharing",
       alt_name: "Aruba Networks",
-      color_code: "#F58220",               // Aruba orange
+      color_code: "#F58220", // Aruba orange
     },
     {
       title: "Big Data Specialization",
@@ -285,7 +347,7 @@ const certifications = {
       certificate_link:
         "https://drive.google.com/file/d/1LWZ7chy94p4sLRcyYXt621jmqplqOnK_/view?usp=sharing",
       alt_name: "Coursera / UCSD",
-      color_code: "#003B71",               // UCSD navy
+      color_code: "#003B71", // UCSD navy
     },
     {
       title: "Applied Data Science with Python",
@@ -294,7 +356,7 @@ const certifications = {
       certificate_link:
         "https://drive.google.com/file/d/1LhAcp9orPN05XPpLNIumtPs4gTm8Ibdt/view?usp=sharing",
       alt_name: "Coursera / UMich",
-      color_code: "#00274C",               // Michigan blue
+      color_code: "#00274C", // Michigan blue
     },
     {
       title: "SQL for Data Science",
@@ -303,7 +365,7 @@ const certifications = {
       certificate_link:
         "https://drive.google.com/file/d/1w4bSBl8wh9hY35ZNE8CIEnBXXbqE5S1Z/view?usp=sharing",
       alt_name: "Coursera / UCDavis",
-      color_code: "#3C7E8F",               // UC Davis teal
+      color_code: "#3C7E8F", // UC Davis teal
     },
     {
       title: "Natural Language Processing Specialization",
@@ -312,11 +374,10 @@ const certifications = {
       certificate_link:
         "https://drive.google.com/file/d/1VgvLPJ7ixy-s0--Io_3jfVHTdvgjQRI6/view?usp=sharing",
       alt_name: "deeplearning.ai",
-      color_code: "#EE0000",               // DL.ai red
+      color_code: "#EE0000", // DL.ai red
     },
   ],
 };
-
 
 // Experience Page
 const experience = {
@@ -394,7 +455,7 @@ const experience = {
           duration: "Jan 2020 – Aug 2020",
           location: "Bengaluru, India",
           description:
-            "Built \"L3 Triage\" bug-classification tool using LDA + KNN/SVM, boosting accuracy for Aruba networking team.",
+            'Built "L3 Triage" bug-classification tool using LDA + KNN/SVM, boosting accuracy for Aruba networking team.',
           color: "#00B388",
         },
         {
@@ -416,7 +477,7 @@ const experience = {
           duration: "Jan 2019 – Apr 2019",
           location: "Bengaluru, India",
           description:
-            "Created CLI tool \"Threat Ripper v1.0\" for web threat intelligence using VirusTotal & TIP APIs.",
+            'Created CLI tool "Threat Ripper v1.0" for web threat intelligence using VirusTotal & TIP APIs.',
           color: "#00B388",
         },
       ],
@@ -460,13 +521,14 @@ const experience = {
         },
       ],
     },
-    ],
-    recommendationLetters: [
-        {
-            label: "DNV – Letter of Recommendation",
-            fileUrl: "https://drive.google.com/file/d/1L7tqOIx0YCXmPRXZ0ifb55enKqOgxJNJ/view"
-        }
-    ]
+  ],
+  recommendationLetters: [
+    {
+      label: "DNV – Letter of Recommendation",
+      fileUrl:
+        "https://drive.google.com/file/d/1L7tqOIx0YCXmPRXZ0ifb55enKqOgxJNJ/view",
+    },
+  ],
 };
 
 // Projects Page
@@ -478,37 +540,34 @@ const projectsHeader = {
 };
 
 const contactPageData = {
-    contactSection: {
-        title: "Get in touch",
-        profile_image_path: "mittbilde.jpg",    // replace with your own file
-        description: `
+  contactSection: {
+    title: "Get in touch",
+    profile_image_path: "mittbilde.jpg", // replace with your own file
+    description: `
       I build end-to-end solutions in data science, ML pipelines and desktop applications. 
       I’m passionate about tackling local challenges and creating 
       sustainable, scalable systems that make a difference. 
       Outside of work, you’ll find me trail running, playing tennis, strength training or hiking. 
       Drop me a message — I usually reply the same day.
     `,
-    },
+  },
 
+  addressSection: {
+    title: "Location",
+    subtitle: "Drammen, Norway",
+    locality: "Drammen",
+    country: "Norway",
+    region: "Buskerud",
+    avatar_image_path: "address_image.svg",
+    location_map_link:
+      "https://www.google.com/maps/search/?api=1&query=Drammen%2C+Norway",
+  },
 
-    addressSection: {
-        title: "Location",
-        subtitle: "Bekkestua, 1357 Bærum, Norway",
-        locality: "Bekkestua",
-        country: "Norway",
-        region: "Viken",
-        postalCode: "1357",
-        streetAddress: "Gamle Drammensvei",
-        avatar_image_path: "address_image.svg",
-        location_map_link: "https://maps.app.goo.gl/TL5gyRWjVVc9EszP6",
-    },
-
-    phoneSection: {
-        title: "Phone",
-        subtitle: "+47 973 92 924",
-    },
+  phoneSection: {
+    title: "Phone",
+    subtitle: "+47 973 92 924",
+  },
 };
-
 
 export {
   settings,

@@ -7,7 +7,7 @@ function TechCrystal({ theme }) {
   const groupRef = useRef();
   const { size } = useThree();
   const isSmall = size.width < 500;
-  const scale = isSmall ? 1.1 : 1.35;
+  const scale = isSmall ? 0.85 : 1.05;
 
   useFrame((state, delta) => {
     if (coreRef.current) {
@@ -50,7 +50,7 @@ function TechCrystal({ theme }) {
       </mesh>
       {/* Wireframe shell floating just outside the core - a circuit/tech
                 accent that catches the theme's highlight color. */}
-      <mesh ref={shellRef} scale={scale * 1.22}>
+      <mesh ref={shellRef} scale={scale * 1.18}>
         <icosahedronGeometry args={[1.15, 1]} />
         <meshBasicMaterial
           color={theme.highlight}
@@ -67,7 +67,7 @@ export default function Hero3DScene({ theme }) {
   return (
     <Canvas
       dpr={[1, 2]}
-      camera={{ position: [0, 0, 4.2], fov: 45 }}
+      camera={{ position: [0, 0, 5.6], fov: 40 }}
       gl={{ alpha: true, antialias: true }}
     >
       <ambientLight color={theme.body} intensity={0.6} />
