@@ -38,7 +38,7 @@ export default function Greeting(props) {
         style={{
           "--aurora-1": theme.highlight,
           "--aurora-2": theme.imageHighlight,
-          "--aurora-3": theme.body,
+          "--aurora-3": theme.jacketColor,
         }}
       >
         <div className="greeting-main">
@@ -52,7 +52,7 @@ export default function Greeting(props) {
                 variants={heroItemVariants}
                 className="greeting-text"
                 style={{
-                  backgroundImage: `linear-gradient(135deg, ${theme.text}, ${theme.imageHighlight})`,
+                  backgroundImage: `linear-gradient(135deg, #FFFFFF, ${theme.highlight})`,
                 }}
               >
                 {greeting.title}
@@ -61,7 +61,7 @@ export default function Greeting(props) {
                 <motion.h2
                   variants={heroItemVariants}
                   className="greeting-nickname"
-                  style={{ color: theme.text }}
+                  style={{ color: "rgba(255, 255, 255, 0.92)" }}
                 >
                   ( {greeting.nickname} )
                 </motion.h2>
@@ -70,7 +70,7 @@ export default function Greeting(props) {
               <motion.p
                 variants={heroItemVariants}
                 className="greeting-text-p subTitle"
-                style={{ color: theme.secondaryText }}
+                style={{ color: "rgba(255, 255, 255, 0.82)" }}
               >
                 {greeting.subTitle}
               </motion.p>

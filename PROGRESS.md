@@ -5,6 +5,52 @@ the top.
 
 ---
 
+## 2026-08-21 — Hero visual fixes after first look
+
+User feedback on the first pass of the 3D redesign, live in browser:
+
+1. The aurora background was too subtle/patchy — didn't read as a real,
+   intentional background.
+2. The distorted-sphere 3D shape didn't fit a tech profile ("maybe something
+   like a prism").
+
+Changes:
+
+- **Background**: replaced the three-radial-blob aurora (`opacity: 0.45`,
+  heavily blurred, patchy) with a single full-coverage diagonal linear
+  gradient painted directly as `.greet-main`'s background, animated via
+  `background-position` drift instead of blob movement. Swapped the gradient's
+  darkest stop from `theme.body` (near-white on every theme, which is what
+  made the old aurora look washed out) to `theme.jacketColor` (each theme's
+  deep accent tone), so it reads as a real, rich, fully-colored card.
+- **Found and fixed a real cross-theme contrast bug**: initially set the hero
+  text to flat white assuming the gradient would always be medium-to-dark.
+  `blackTheme` breaks that assumption — its `highlight` token is pure white
+  and `jacketColor` is a light gray, so white text on `blackTheme` was nearly
+  invisible (confirmed via screenshot). Fixed by layering a flat
+  `rgba(0,0,0,0.4)` scrim underneath the text on top of the theme gradient
+  (`background-image` with two comma-separated layers) — this guarantees
+  sufficient contrast for white hero text on _any_ theme's token values, not
+  just the ones tested first. Verified on both `blueTheme` and `blackTheme`.
+- **3D shape**: swapped `MeshDistortMaterial` (organic blob) for a flat-shaded
+  octahedron core (`flatShading: true`, sharp gem/crystal facets) plus an
+  independently-rotating wireframe icosahedron shell around it — reads as a
+  faceted crystal/prism rather than a blob, which fits a tech profile much
+  better. This also means `@react-three/drei` is no longer imported anywhere
+  in the codebase (the scene now uses only plain three.js primitives via
+  `@react-three/fiber`), which simplified things and shrank the bundle
+  slightly — worth removing the now-unused `@react-three/drei` dependency in
+  a future pass if nothing else picks it back up.
+- Gave `.greet-main` real card padding (`48px 40px` desktop, `28px 20px`
+  mobile) now that it's an opaque, bordered gradient panel rather than a
+  transparent section.
+
+Re-verified after these changes: clean production build, zero mobile
+horizontal overflow (390px), and both `blueTheme`/`blackTheme` screenshots
+confirm the text stays legible.
+
+---
+
 ## 2026-08-21 — "Wow" 3D + motion redesign
 
 **Goal:** make the site visually striking — full WebGL 3D hero, glassmorphism

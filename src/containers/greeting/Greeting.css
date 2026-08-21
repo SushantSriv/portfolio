@@ -7,42 +7,36 @@
 .greet-main {
   position: relative;
   width: 90%;
-  padding: 20px 10px;
+  padding: 48px 40px;
   margin: 0px auto;
   margin-top: 2rem;
   overflow: hidden;
-}
-
-.greet-main::before {
-  content: "";
-  position: absolute;
-  inset: -20%;
-  z-index: -1;
-  background-image: radial-gradient(
-      circle at 15% 20%,
+  border-radius: 24px;
+  /* A flat dark scrim sits on top of the theme's gradient so hero text stays
+     legible no matter how light a given theme's highlight/jacketColor tokens
+     are (some themes, e.g. blackTheme, use near-white for both). */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    linear-gradient(
+      135deg,
       var(--aurora-1) 0%,
-      transparent 45%
-    ),
-    radial-gradient(circle at 85% 15%, var(--aurora-2) 0%, transparent 50%),
-    radial-gradient(circle at 50% 90%, var(--aurora-3) 0%, transparent 55%);
-  background-repeat: no-repeat;
-  opacity: 0.45;
-  filter: blur(40px);
-  animation: aurora-drift 22s ease-in-out infinite alternate;
-  pointer-events: none;
+      var(--aurora-2) 55%,
+      var(--aurora-3) 100%
+    );
+  background-size: 100% 100%, 200% 200%;
+  animation: aurora-drift 18s ease-in-out infinite alternate;
 }
 
 @keyframes aurora-drift {
   0% {
-    background-position: 0% 0%, 0% 0%, 0% 0%;
+    background-position: 0% 0%, 0% 0%;
   }
   100% {
-    background-position: 8% 6%, -6% 8%, 4% -8%;
+    background-position: 0% 0%, 100% 100%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .greet-main::before {
+  .greet-main {
     animation: none;
   }
 }
@@ -131,5 +125,10 @@
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  .greet-main {
+    padding: 28px 20px;
+    width: 94%;
   }
 }

@@ -1,17 +1,24 @@
 import React, { useRef, Suspense } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { MeshDistortMaterial } from "@react-three/drei/core/MeshDistortMaterial";
 
-function DistortBlob({ theme }) {
-  const meshRef = useRef();
+function TechCrystal({ theme }) {
+  const coreRef = useRef();
+  const shellRef = useRef();
   const groupRef = useRef();
   const { size } = useThree();
   const isSmall = size.width < 500;
+  const scale = isSmall ? 1.1 : 1.35;
 
   useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += delta * 0.12;
-      meshRef.current.rotation.y += delta * 0.18;
+    if (coreRef.current) {
+      coreRef.current.rotation.x += delta * 0.15;
+      coreRef.current.rotation.y += delta * 0.22;
+    }
+    if (shellRef.current) {
+      // Slightly different speed than the core so the wireframe shell
+      // reads as an independent orbiting layer, not a decal.
+      shellRef.current.rotation.x -= delta * 0.09;
+      shellRef.current.rotation.y -= delta * 0.13;
     }
     if (groupRef.current) {
       // Subtle mouse-parallax: lerp group rotation toward pointer position.
@@ -26,16 +33,30 @@ function DistortBlob({ theme }) {
 
   return (
     <group ref={groupRef}>
-      <mesh ref={meshRef} scale={isSmall ? 1.15 : 1.4}>
-        <icosahedronBufferGeometry args={[1, 5]} />
-        <MeshDistortMaterial
+      {/* Faceted crystal core - flat-shaded so each triangle reads as a
+                distinct cut facet, like a gem or prism, instead of a smooth blob. */}
+      <mesh ref={coreRef} scale={scale}>
+        <octahedronGeometry args={[1.15, 0]} />
+        <meshPhysicalMaterial
           color={theme.imageHighlight}
           emissive={theme.jacketColor}
-          emissiveIntensity={0.25}
-          roughness={0.25}
-          metalness={0.35}
-          distort={0.4}
-          speed={1.6}
+          emissiveIntensity={0.3}
+          roughness={0.15}
+          metalness={0.55}
+          flatShading={true}
+          clearcoat={0.6}
+          clearcoatRoughness={0.25}
+        />
+      </mesh>
+      {/* Wireframe shell floating just outside the core - a circuit/tech
+                accent that catches the theme's highlight color. */}
+      <mesh ref={shellRef} scale={scale * 1.22}>
+        <icosahedronGeometry args={[1.15, 1]} />
+        <meshBasicMaterial
+          color={theme.highlight}
+          wireframe={true}
+          transparent={true}
+          opacity={0.4}
         />
       </mesh>
     </group>
@@ -53,15 +74,15 @@ export default function Hero3DScene({ theme }) {
       <pointLight
         position={[4, 4, 4]}
         color={theme.highlight}
-        intensity={1.1}
+        intensity={1.2}
       />
       <pointLight
         position={[-4, -2, -3]}
         color={theme.imageHighlight}
-        intensity={0.5}
+        intensity={0.6}
       />
       <Suspense fallback={null}>
-        <DistortBlob theme={theme} />
+        <TechCrystal theme={theme} />
       </Suspense>
     </Canvas>
   );
