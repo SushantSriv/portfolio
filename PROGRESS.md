@@ -5,6 +5,56 @@ the top.
 
 ---
 
+## 2026-08-21 — Three real regressions from the redesign, caught by the user
+
+The user flagged three concrete bugs from screenshots after the previous
+round. All three traced back to `react-parallax-tilt`/`react-reveal`
+interactions that weren't visible in my own testing:
+
+1. **Project card "Code"/"Demo" buttons did nothing on click.**
+   `react-parallax-tilt`'s glare effect renders a decorative overlay div
+   (`.glare-wrapper`/`.glare`) covering the entire card. It defaults to
+   `pointer-events: auto`, so it silently sat on top of and swallowed every
+   click meant for buttons underneath - the card's own click-to-open-repo
+   handler still fired (since it's on an ancestor), but the more specific
+   "Code"/"Demo" button clicks never reached their handlers. Fixed with a
+   site-wide `.glare-wrapper, .glare { pointer-events: none !important; }`
+   in `index.css`, since this affects every Tilt-wrapped card, not just
+   Projects. Verified with an actual Playwright click that confirmed a new
+   tab opens to the right GitHub URL.
+
+2. **Certification cards rendered as narrow ~112px strips with huge gaps**
+   instead of normal card width. Root cause: `CertificationCard.js` wraps
+   `<Tilt className="cert-card">` in a `<Fade>` (react-reveal), so the DOM
+   is `.certs-body-div` (flex) > `.react-reveal` (Fade's wrapper div) >
+   `.cert-card`. `.cert-card`'s `width: 30%` was resolving against its
+   _immediate_ parent - the react-reveal wrapper - not the flex grid
+   container. Since that wrapper has no explicit sizing of its own, its
+   width is circularly determined by its content's shrink-to-fit size,
+   which collapses percentage-width children down to roughly their content
+   size instead of the intended grid share. Fixed by giving the actual flex
+   item (`.certs-body-div > .react-reveal`) the `flex: 1 1 30%; max-width: 30%` grid share directly, and changing `.cert-card` to `width: 100%` to
+   just fill it. (`GithubRepoCard`/`ExperienceCard`/`DegreeCard` don't have
+   this problem - either Tilt isn't nested inside a Fade wrapper, or the
+   surrounding layout isn't a percentage-based multi-column grid, so this
+   was specific to the certifications grid.)
+
+3. **Gradient-heading text appeared to clip at the top/descenders** ("Proiects",
+   "Get in touch" cut off) in the user's screenshots. Couldn't reproduce it
+   in a fresh headless render - suspect a transient rendering artifact tied
+   to the react-reveal Fade opacity animation's first paint frame, which is
+   a known category of glitch when `background-clip: text` sits inside an
+   animated/transformed ancestor. Applied a defensive fix regardless since
+   it's a safe improvement either way: `.gradient-heading` now has
+   `line-height: 1.3` and `padding-bottom: 0.08em` so descenders always
+   have headroom.
+
+Re-verified: full mobile overflow sweep (clean), production build (clean),
+and an actual click-through test on the Projects "Code" button confirming
+it opens the correct repo in a new tab.
+
+---
+
 ## 2026-08-21 — Site-wide consistency pass, contact form, privacy cleanup
 
 Follow-up to the redesign: extended the glass/gradient treatment site-wide,

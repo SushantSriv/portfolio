@@ -52,13 +52,25 @@ code {
 }
 
 /* Shared gradient-text treatment for page headings - pair with an inline
-   backgroundImage: linear-gradient(...) style built from the active theme. */
+   backgroundImage: linear-gradient(...) style built from the active theme.
+   Generous line-height + a touch of bottom padding so descenders (g, j, y)
+   always have room and never get clipped by the gradient's paint box. */
 .gradient-heading {
   display: inline-block;
+  line-height: 1.3;
+  padding-bottom: 0.08em;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+}
+
+/* react-parallax-tilt's glare effect renders as a decorative overlay div
+   covering the whole card. Without this, it sits on top of and swallows
+   every click meant for buttons/links inside the card. */
+.glare-wrapper,
+.glare {
+  pointer-events: none !important;
 }
 html,
 body {
