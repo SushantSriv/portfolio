@@ -1,150 +1,162 @@
 /* ===== Generelt oppsett ===== */
 .contact-main {
-    width: 100%;
+  width: 100%;
 }
 
 .basic-contact {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
 }
 
-/* ===== Kontakt–intro ===== */
+/* ===== Kontaktï¿½intro ===== */
 .contact-heading-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .contact-heading-text-div {
-    flex: 1 1 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  flex: 1 1 300px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .contact-heading-text {
-    margin: 0.5rem 0;
-    font-size: 2.2rem;
-    font-family: "Google Sans Medium";
+  margin: 0.5rem 0;
+  font-size: 2.2rem;
+  font-family: "Google Sans Medium";
 }
 
 .contact-header-detail-text {
-    margin: 1rem 0;
-    line-height: 1.6;
-    font-size: 1.1rem;
-    color: var(--secondaryText, #555);
+  margin: 1rem 0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: var(--secondaryText, #555);
 }
 
 /* ===== Sosiale ikoner ===== */
 .social-media {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 1rem;
-    margin: 1.5rem 0;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 1rem;
+  margin: 1.5rem 0;
 }
 
 /* ===== Profilbilde ===== */
 .profile-img-below-social {
-    margin: 1.5rem 0;
+  margin: 1.5rem 0;
 }
 
-    .profile-img-below-social img {
-        width: 300px;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 50%;
-        display: block;
-        margin: 0 auto;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
+.profile-img-below-social img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
 
 /* ===== CV-knapp ===== */
 .resume-btn-div {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 /* ===== Adresse & telefon ===== */
 .address-heading-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin: 4rem 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 4rem 0 2rem;
 }
 
 .address-heading-text-div {
-    flex: 1 1 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-heading-img-div {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.contact-heading-img-div svg {
+  width: 100%;
+  height: auto;
 }
 
 .address-heading-text {
-    margin: 0.5rem 0;
-    font-size: 1.8rem;
-    font-family: "Google Sans Medium";
-    color: var(--text, #000);
+  margin: 0.5rem 0;
+  font-size: 1.8rem;
+  font-family: "Google Sans Medium";
+  color: var(--text, #000);
 }
 
 .address-btn-div {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 /* ===== Footer spacing ===== */
 .footer {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 /* ===== Puls-animasjon for undertittel ===== */
 @keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
+  0%,
+  100% {
+    transform: scale(1);
+  }
 
-    50% {
-        transform: scale(1.05);
-    }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 .subTitle {
-    display: inline-block;
-    animation: pulse 3s ease-in-out infinite;
-    margin: 0 auto 1.5em;
+  display: inline-block;
+  animation: pulse 3s ease-in-out infinite;
+  margin: 0 auto 1.5em;
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-    .contact-heading-div,
-    .address-heading-div {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
+  .contact-heading-div,
+  .address-heading-div {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-    .contact-heading-text {
-        font-size: 1.6rem;
-    }
+  .contact-heading-text {
+    font-size: 1.6rem;
+  }
 
-    .address-heading-text {
-        font-size: 1.6rem;
-    }
+  .address-heading-text {
+    font-size: 1.6rem;
+  }
 
-    .profile-img-below-social img {
-        width: 160px;
-        height: 160px;
-    }
+  .profile-img-below-social img {
+    width: 160px;
+    height: 160px;
+  }
 
-    .basic-contact {
-        padding: 2rem 1rem;
-    }
+  .basic-contact {
+    padding: 2rem 1rem;
+  }
 }

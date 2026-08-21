@@ -2,289 +2,291 @@
 
 /* --------- Kort-oppsett --------- */
 .repo-card-div {
-    color: rgb(88, 96, 105);
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
-    padding: 2rem;
-    cursor: pointer;
-    flex: 1 1 25%;
+  color: rgb(88, 96, 105);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
+  padding: 2rem;
+  cursor: pointer;
+  flex: 1 1 25%;
+  max-width: 100%;
 }
 .repo-card-div:hover {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
 }
 
 /* Tittel */
 .repo-name {
-    text-align: left;
-    color: rgb(36, 41, 46);
-    font-family: "Google Sans Regular";
-    margin: 0 0 0.75rem;
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    overflow: hidden;
-    line-height: 1.2;
+  text-align: left;
+  color: rgb(36, 41, 46);
+  font-family: "Google Sans Regular";
+  margin: 0 0 0.75rem;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  overflow: hidden;
+  line-height: 1.2;
 }
 
 /* Beskrivelse */
 .repo-description {
-    text-align: left;
-    margin-top: 0.8rem;
-    margin-bottom: 1rem;
-    font-family: "Google Sans Regular";
+  text-align: left;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+  font-family: "Google Sans Regular";
 }
 
 /* Stats-linje (valgfritt) */
 .repo-stats {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    color: rgb(106, 115, 125);
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgb(106, 115, 125);
 }
 .repo-left-stat {
-    flex-grow: 1;
-    display: flex;
+  flex-grow: 1;
+  display: flex;
 }
 .language-color {
-    width: 10px;
-    height: 10px;
-    background-color: blue;
-    margin-right: 0.25rem;
-    border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: blue;
+  margin-right: 0.25rem;
+  border-radius: 50%;
 }
 .repo-left-stat span {
-    display: flex;
-    align-items: center;
-    margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+  margin-right: 0.75rem;
 }
 
 /* Data-kilde-ikoner */
 .repo-datas {
-    margin-top: 4px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px;
+  margin-top: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
 }
 .repo-data-img {
-    width: 32px;
-    height: 32px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin: 0;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 0;
 }
 .repo-data-icon {
-    font-size: 32px;
-    margin: 0;
-    color: inherit;
+  font-size: 32px;
+  margin: 0;
+  color: inherit;
 }
 
 /* Knapp-rad */
 .repo-btn-row {
-    margin-top: 12px;
-    display: flex;
-    gap: 8px;
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
 }
 .main-button {
-    padding: 14px 32px;
-    border: none;
-    border-radius: 6px;
-    font-family: "Google Sans Medium";
-    transition: transform 0.2s ease;
-    cursor: pointer;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 6px;
+  font-family: "Google Sans Medium";
+  transition: transform 0.2s ease;
+  cursor: pointer;
 }
 .main-button:hover {
-    transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 /* --------- Modal-overlay --------- */
 .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* --------- Modal-innhold --------- */
 .modal-content {
-    position: relative;
-    width: 90vw;          /* fylle store del av bredden */
-    max-width: 1500px;     /* begrense maksimal bredde */
-    aspect-ratio: 16 / 9;  /* beholde bredde/høydeforhold */
-    background: #000;      /* svart bakgrunn */
-    overflow: hidden;
+  position: relative;
+  width: 90vw; /* fylle store del av bredden */
+  max-width: 1500px; /* begrense maksimal bredde */
+  aspect-ratio: 16 / 9; /* beholde bredde/høydeforhold */
+  background: #000; /* svart bakgrunn */
+  overflow: hidden;
 }
 
 /* --------- Lukkeknapp --------- */
 .modal-close-btn {
-    position: absolute;   /* plassert i modal-content */
-    top: 8px;
-    right: 8px;
-    width: 40px;
-    height: 40px;
-    background-color: #e74c3c;
-    color: #fff;
-    font-size: 1.5rem;
-    border: none;
-    border-radius: 50%;
-    transition: transform 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1001;
+  position: absolute; /* plassert i modal-content */
+  top: 8px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
 }
 .modal-close-btn:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* --------- Video-iframe --------- */
 .modal-content iframe {
-    width: 100%;
-    height: 100%;
-    display: block;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 /* --------- Enkelt-bilde-galleri med prev/next --------- */
 .modal-single-image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .modal-single-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* Navigasjonsknapper for bildegalleri */
 .modal-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background: #e74c3c;
-    color: #fff;
-    font-size: 2rem;
-    border: none;
-    border-radius: 50%;
-    transition: transform 0.2s ease, background 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1001;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  transition: transform 0.2s ease, background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
 }
 .modal-nav-btn:hover {
-    transform: scale(1.2);
-    background: #c0392b;
+  transform: scale(1.2);
+  background: #c0392b;
 }
 .modal-nav-prev {
-    left: 24px;
+  left: 24px;
 }
 .modal-nav-next {
-    right: 24px;
+  right: 24px;
 }
 
 /* --------- Fallback galleri (flere bilder) --------- */
 .modal-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 16px;
 }
 .modal-gallery-img {
-    width: calc(50% - 12px);
-    max-width: 400px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 6px;
+  width: calc(50% - 12px);
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 /* YouTube-ikon i knapp */
 .demo-btn .btn-icon-youtube {
-    font-size: 1.4rem;
-    margin-right: 8px;
-    color: #FF0000; /* ekte YouTube-rød */
+  font-size: 1.4rem;
+  margin-right: 8px;
+  color: #ff0000; /* ekte YouTube-rød */
 }
 
 /* Galleri-ikon holder seg i standardfarge */
 .demo-btn .btn-icon {
-    font-size: 1.2rem;
-    margin-right: 6px;
+  font-size: 1.2rem;
+  margin-right: 6px;
 }
 /* --------- Responsive justeringer --------- */
 @media (max-width: 1200px) {
-    .repo-card-div {
-        flex: 1 1 40%;
-    }
+  .repo-card-div {
+    flex: 1 1 40%;
+  }
 }
 
 @media (max-width: 768px) {
-    .repo-card-div {
-        flex: 1 1 100%;
-    }
-    .repo-name {
-        font-size: 16px;
-    }
-    .repo-description {
-        font-size: 14px;
-    }
-    .repo-details {
-        flex-direction: column;
-    }
-    .repo-creation-date {
-        font-size: 14px;
-    }
+  .repo-card-div {
+    flex: 1 1 100%;
+  }
+  .repo-name {
+    font-size: 16px;
+  }
+  .repo-description {
+    font-size: 14px;
+  }
+  .repo-details {
+    flex-direction: column;
+  }
+  .repo-creation-date {
+    font-size: 14px;
+  }
 }
 
 .modal-pdf-iframe {
-    width: 100%;
-    height: 80vh; 
-    border: none;
+  width: 100%;
+  height: 80vh;
+  border: none;
 }
 
 /* ---- blinkende gul prikk for "under utvikling" ---- */
 @keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
+  0%,
+  100% {
+    opacity: 1;
+  }
 
-    50% {
-        opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* ----- GithubRepoCard.css ----- */
 
 /* Flagget som viser “Under utvikling” / “In development” */
 .repo-dev-flag {
-    display: inline-flex;
-    align-items: center;
-    background-color: #012731;
-    color: #F4D35E;
-    font-weight: 600;
-    font-size: 1.2rem;
-    padding: 0.3em 0.8em;
-    border-radius: 0.4em;
-    margin-bottom: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  background-color: #012731;
+  color: #f4d35e;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0.3em 0.8em;
+  border-radius: 0.4em;
+  margin-bottom: 1.5em;
 }
 
 /* Den lille prikka */
 /* Gjør prikk‐elementet blinkende */
 .dev-dot {
-    width: 0.7em;
-    height: 0.7em;
-    background-color: #FFA000;
-    border-radius: 50%;
-    margin-right: 0.5em;
-    /* legg til animasjon: navn, varighet, timing-funksjon, repetisjon */
-    animation: blink 1.2s ease-in-out infinite;
-    box-shadow: 0 0 4px rgba(255, 160, 0, 0.6);
+  width: 0.7em;
+  height: 0.7em;
+  background-color: #ffa000;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  /* legg til animasjon: navn, varighet, timing-funksjon, repetisjon */
+  animation: blink 1.2s ease-in-out infinite;
+  box-shadow: 0 0 4px rgba(255, 160, 0, 0.6);
 }
