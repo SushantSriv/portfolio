@@ -5,10 +5,46 @@
   margin-top: 4rem;
 }
 .greet-main {
+  position: relative;
   width: 90%;
   padding: 20px 10px;
   margin: 0px auto;
   margin-top: 2rem;
+  overflow: hidden;
+}
+
+.greet-main::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: -1;
+  background-image: radial-gradient(
+      circle at 15% 20%,
+      var(--aurora-1) 0%,
+      transparent 45%
+    ),
+    radial-gradient(circle at 85% 15%, var(--aurora-2) 0%, transparent 50%),
+    radial-gradient(circle at 50% 90%, var(--aurora-3) 0%, transparent 55%);
+  background-repeat: no-repeat;
+  opacity: 0.45;
+  filter: blur(40px);
+  animation: aurora-drift 22s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes aurora-drift {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 8% 6%, -6% 8%, 4% -8%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .greet-main::before {
+    animation: none;
+  }
 }
 
 .gretting-main {
@@ -35,6 +71,10 @@
   font-size: 70px;
   line-height: 1.1;
   font-family: "Google Sans Bold";
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .greeting-nickname {

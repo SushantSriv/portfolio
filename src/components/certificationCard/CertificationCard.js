@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./CertificationCard.css";
 import { Fade } from "react-reveal";
+import Tilt from "react-parallax-tilt";
+import { getGlassStyle } from "../../styles/glassStyle";
 
 class CertificationCard extends Component {
   render() {
@@ -8,7 +10,17 @@ class CertificationCard extends Component {
     const theme = this.props.theme;
     return (
       <Fade bottom duration={2000} distance="20px">
-        <div className="cert-card">
+        <Tilt
+          className="cert-card"
+          style={getGlassStyle(theme)}
+          tiltMaxAngleX={8}
+          tiltMaxAngleY={8}
+          glareEnable={true}
+          glareMaxOpacity={0.25}
+          glareColor={theme.highlight}
+          glarePosition="all"
+          transitionSpeed={1500}
+        >
           <div className="content">
             <a
               href={certificate.certificate_link}
@@ -44,7 +56,7 @@ class CertificationCard extends Component {
               {certificate.subtitle}
             </h3>
           </div>
-        </div>
+        </Tilt>
       </Fade>
     );
   }

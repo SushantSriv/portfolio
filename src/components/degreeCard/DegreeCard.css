@@ -21,7 +21,7 @@
 
 .card-img {
   /* — størrelsen på selve sirkelen — */
-  width: 160px;          /* endre tallet etter smak (må være = height) */
+  width: 160px; /* endre tallet etter smak (må være = height) */
   height: 160px;
 
   border-radius: 50%;
@@ -39,7 +39,7 @@
 }
 
 .card-img img {
-  width: 80%;          /* logoen blir litt mindre enn sirkelen */
+  width: 80%; /* logoen blir litt mindre enn sirkelen */
   height: 80%;
   object-fit: contain; /* bevarer proporsjoner, ingen beskjæring */
 }
@@ -86,13 +86,8 @@
 }
 
 .card-body {
-  /* background-color: #00FF00; */
-  border-bottom: 1px solid #d9dbdf;
-  border-left: 1px solid #d9dbdf;
-  border-right: 1px solid #d9dbdf;
-  border-radius: 7px;
+  border-radius: 12px;
   margin: 10px;
-  box-shadow: 5px 5px 5px #d9dbdf;
 }
 
 .visit-btn {

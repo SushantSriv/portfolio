@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./DegreeCard.css";
 import { Fade, Flip } from "react-reveal";
+import Tilt from "react-parallax-tilt";
+import { getGlassStyle } from "../../styles/glassStyle";
 
 class DegreeCard extends Component {
   render() {
@@ -24,9 +26,18 @@ class DegreeCard extends Component {
           </Flip>
         )}
         <Fade right duration={2000} distance="40px">
-          <div
+          <Tilt
             className="card-body"
-            style={{ width: degree.logo_path ? "90%" : "100%" }}
+            style={{
+              width: degree.logo_path ? "90%" : "100%",
+              ...getGlassStyle(theme),
+            }}
+            tiltMaxAngleX={4}
+            tiltMaxAngleY={4}
+            glareEnable={true}
+            glareMaxOpacity={0.15}
+            glareColor={theme.highlight}
+            transitionSpeed={1500}
           >
             <div
               className="body-header"
@@ -71,7 +82,7 @@ class DegreeCard extends Component {
                 </a>
               )}
             </div>
-          </div>
+          </Tilt>
         </Fade>
       </div>
     );

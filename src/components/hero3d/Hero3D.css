@@ -1,0 +1,32 @@
+.hero3d-canvas-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+}
+
+.hero3d-canvas-wrap canvas {
+  outline: none;
+  touch-action: none;
+}
+
+.hero3d-fallback {
+  width: 100%;
+  height: 100%;
+}
+
+.hero3d-fallback svg {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1380px) {
+  .hero3d-canvas-wrap {
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero3d-canvas-wrap {
+    min-height: 260px;
+  }
+}

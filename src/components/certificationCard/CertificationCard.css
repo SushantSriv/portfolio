@@ -4,11 +4,10 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1px solid #d9dbdf;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px #d9dbdf;
+  border-radius: 12px;
   margin-bottom: 30px;
   flex: 0 0 30%;
+  transition: box-shadow 0.3s ease;
 }
 
 .cert-header {

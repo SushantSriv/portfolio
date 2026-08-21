@@ -1,5 +1,6 @@
 import React from "react";
 import "./Button.css";
+import { motion } from "framer-motion";
 
 const onMouseEnter = (event, color, bgColor) => {
   const el = event.target;
@@ -16,7 +17,7 @@ const onMouseOut = (event, color, bgColor) => {
 export default function Button({ text, className, href, newTab, theme }) {
   return (
     <div className={className}>
-      <a
+      <motion.a
         className="main-button"
         href={href}
         target={newTab && "_blank"}
@@ -27,9 +28,11 @@ export default function Button({ text, className, href, newTab, theme }) {
         }}
         onMouseEnter={(event) => onMouseEnter(event, theme.text, theme.body)}
         onMouseOut={(event) => onMouseOut(event, theme.body, theme.text)}
+        whileHover={{ y: -3 }}
+        whileTap={{ scale: 0.96 }}
       >
         {text}
-      </a>
+      </motion.a>
     </div>
   );
 }
