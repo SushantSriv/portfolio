@@ -1,43 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d3840ac4fcde4a66f7a85731412211b8",
+    "revision": "87921186f14d0d63f9cdf55a3708b113",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "c666319e8c05ac1bc4c1",
-    "url": "/portfolio/static/css/main.3dffbfe3.chunk.css"
+    "revision": "20e6519aeab5f9738c9a",
+    "url": "/portfolio/static/css/main.2f00c890.chunk.css"
   },
   {
-    "revision": "6c31ecbb4e0e75d114d5",
-    "url": "/portfolio/static/js/2.aa1a0e2a.chunk.js"
+    "revision": "f19b3817925595f01865",
+    "url": "/portfolio/static/js/2.5ac90053.chunk.js"
   },
   {
-    "revision": "55b726d9121a10646190",
-    "url": "/portfolio/static/js/3.bc94df61.chunk.js"
+    "revision": "3eb6aceaad3d2a62664a",
+    "url": "/portfolio/static/js/3.3ec80ec8.chunk.js"
   },
   {
-    "revision": "648da4c41058520365f0",
-    "url": "/portfolio/static/js/4.44267f8d.chunk.js"
+    "revision": "0d06bc34f48715ad3c2b",
+    "url": "/portfolio/static/js/4.94559fbf.chunk.js"
   },
   {
-    "revision": "c666319e8c05ac1bc4c1",
-    "url": "/portfolio/static/js/main.77c12e36.chunk.js"
+    "revision": "20e6519aeab5f9738c9a",
+    "url": "/portfolio/static/js/main.9188af61.chunk.js"
   },
   {
-    "revision": "2d107549ee3c7fbcfa42",
-    "url": "/portfolio/static/js/runtime-main.ffc55ff6.js"
-  },
-  {
-    "revision": "344ec7b3b64fd6b9dd82f8bef6dfbe47",
-    "url": "/portfolio/static/media/481E004B-8E6D-42F9-944B-65B470FF1094.344ec7b3.jpg"
+    "revision": "687e1148a11c128cd6a4",
+    "url": "/portfolio/static/js/runtime-main.d6dab199.js"
   },
   {
     "revision": "21f233e19402cc4a66866a7f31191f0d",
     "url": "/portfolio/static/media/Agustina.21f233e1.woff"
-  },
-  {
-    "revision": "040eac8e21ce45cb0ac1095bd0016826",
-    "url": "/portfolio/static/media/FF92BA86-7986-49EE-9FAD-141BF84EEE4A.040eac8e.jpg"
   },
   {
     "revision": "4457817ac2b9993c65e81aa05828fe9c",
@@ -62,14 +54,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b5c77a6aed75cdad9489effd0d5ea411",
     "url": "/portfolio/static/media/GoogleSans-Regular.b5c77a6a.ttf"
-  },
-  {
-    "revision": "4a17a1978670d31baec31e7e6efb3c93",
-    "url": "/portfolio/static/media/IMG_1652.4a17a197.jpg"
-  },
-  {
-    "revision": "396d4d3da515aac395abf80372b35a74",
-    "url": "/portfolio/static/media/IMG_5713.396d4d3d.jpg"
   },
   {
     "revision": "6a77a572cffdfe8ac441cd25a9b344d0",

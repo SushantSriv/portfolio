@@ -1,25 +1,21 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.3dffbfe3.chunk.css",
-    "main.js": "/portfolio/static/js/main.77c12e36.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.77c12e36.chunk.js.map",
-    "runtime-main.js": "/portfolio/static/js/runtime-main.ffc55ff6.js",
-    "runtime-main.js.map": "/portfolio/static/js/runtime-main.ffc55ff6.js.map",
-    "static/js/2.aa1a0e2a.chunk.js": "/portfolio/static/js/2.aa1a0e2a.chunk.js",
-    "static/js/2.aa1a0e2a.chunk.js.map": "/portfolio/static/js/2.aa1a0e2a.chunk.js.map",
-    "static/js/3.bc94df61.chunk.js": "/portfolio/static/js/3.bc94df61.chunk.js",
-    "static/js/3.bc94df61.chunk.js.map": "/portfolio/static/js/3.bc94df61.chunk.js.map",
-    "static/js/4.44267f8d.chunk.js": "/portfolio/static/js/4.44267f8d.chunk.js",
-    "static/js/4.44267f8d.chunk.js.map": "/portfolio/static/js/4.44267f8d.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.2f00c890.chunk.css",
+    "main.js": "/portfolio/static/js/main.9188af61.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.9188af61.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.d6dab199.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.d6dab199.js.map",
+    "static/js/2.5ac90053.chunk.js": "/portfolio/static/js/2.5ac90053.chunk.js",
+    "static/js/2.5ac90053.chunk.js.map": "/portfolio/static/js/2.5ac90053.chunk.js.map",
+    "static/js/3.3ec80ec8.chunk.js": "/portfolio/static/js/3.3ec80ec8.chunk.js",
+    "static/js/3.3ec80ec8.chunk.js.map": "/portfolio/static/js/3.3ec80ec8.chunk.js.map",
+    "static/js/4.94559fbf.chunk.js": "/portfolio/static/js/4.94559fbf.chunk.js",
+    "static/js/4.94559fbf.chunk.js.map": "/portfolio/static/js/4.94559fbf.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.393ff9429e122fa6f4b7eb3f296a1750.js": "/portfolio/precache-manifest.393ff9429e122fa6f4b7eb3f296a1750.js",
+    "precache-manifest.957a3b487f90182cb38d18f70f09a23f.js": "/portfolio/precache-manifest.957a3b487f90182cb38d18f70f09a23f.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.3dffbfe3.chunk.css.map": "/portfolio/static/css/main.3dffbfe3.chunk.css.map",
-    "static/media/481E004B-8E6D-42F9-944B-65B470FF1094.jpg": "/portfolio/static/media/481E004B-8E6D-42F9-944B-65B470FF1094.344ec7b3.jpg",
+    "static/css/main.2f00c890.chunk.css.map": "/portfolio/static/css/main.2f00c890.chunk.css.map",
     "static/media/index.css": "/portfolio/static/media/Montserrat-Regular.ee653992.ttf",
-    "static/media/FF92BA86-7986-49EE-9FAD-141BF84EEE4A.jpg": "/portfolio/static/media/FF92BA86-7986-49EE-9FAD-141BF84EEE4A.040eac8e.jpg",
-    "static/media/IMG_1652.jpg": "/portfolio/static/media/IMG_1652.4a17a197.jpg",
-    "static/media/IMG_5713.jpg": "/portfolio/static/media/IMG_5713.396d4d3d.jpg",
     "static/media/JohnsHopkins.png": "/portfolio/static/media/JohnsHopkins.6a77a572.png",
     "static/media/UC_davis_logo.png": "/portfolio/static/media/UC_davis_logo.a8a9460f.png",
     "static/media/address_image.svg": "/portfolio/static/media/address_image.16559172.svg",
@@ -70,9 +66,9 @@
     "static/media/vegvesen.png": "/portfolio/static/media/vegvesen.0d03ea02.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ffc55ff6.js",
-    "static/js/2.aa1a0e2a.chunk.js",
-    "static/css/main.3dffbfe3.chunk.css",
-    "static/js/main.77c12e36.chunk.js"
+    "static/js/runtime-main.d6dab199.js",
+    "static/js/2.5ac90053.chunk.js",
+    "static/css/main.2f00c890.chunk.css",
+    "static/js/main.9188af61.chunk.js"
   ]
 }
