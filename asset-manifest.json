@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.69890af0.chunk.css",
-    "main.js": "/portfolio/static/js/main.b8756297.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.b8756297.chunk.js.map",
-    "runtime-main.js": "/portfolio/static/js/runtime-main.d6dab199.js",
-    "runtime-main.js.map": "/portfolio/static/js/runtime-main.d6dab199.js.map",
-    "static/js/2.5ac90053.chunk.js": "/portfolio/static/js/2.5ac90053.chunk.js",
-    "static/js/2.5ac90053.chunk.js.map": "/portfolio/static/js/2.5ac90053.chunk.js.map",
-    "static/js/3.3ec80ec8.chunk.js": "/portfolio/static/js/3.3ec80ec8.chunk.js",
-    "static/js/3.3ec80ec8.chunk.js.map": "/portfolio/static/js/3.3ec80ec8.chunk.js.map",
-    "static/js/4.94559fbf.chunk.js": "/portfolio/static/js/4.94559fbf.chunk.js",
-    "static/js/4.94559fbf.chunk.js.map": "/portfolio/static/js/4.94559fbf.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.f0c28fe2.chunk.css",
+    "main.js": "/portfolio/static/js/main.8a8a3aec.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.8a8a3aec.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.9d6d631d.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.9d6d631d.js.map",
+    "static/js/2.b21607d1.chunk.js": "/portfolio/static/js/2.b21607d1.chunk.js",
+    "static/js/2.b21607d1.chunk.js.map": "/portfolio/static/js/2.b21607d1.chunk.js.map",
+    "static/js/3.7df66fcb.chunk.js": "/portfolio/static/js/3.7df66fcb.chunk.js",
+    "static/js/3.7df66fcb.chunk.js.map": "/portfolio/static/js/3.7df66fcb.chunk.js.map",
+    "static/js/4.489114ad.chunk.js": "/portfolio/static/js/4.489114ad.chunk.js",
+    "static/js/4.489114ad.chunk.js.map": "/portfolio/static/js/4.489114ad.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.827f338e6fc3985ddc4b0c69a46cd276.js": "/portfolio/precache-manifest.827f338e6fc3985ddc4b0c69a46cd276.js",
+    "precache-manifest.68bf60fc1ff62e2f2870385cf787bbe9.js": "/portfolio/precache-manifest.68bf60fc1ff62e2f2870385cf787bbe9.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.69890af0.chunk.css.map": "/portfolio/static/css/main.69890af0.chunk.css.map",
+    "static/css/main.f0c28fe2.chunk.css.map": "/portfolio/static/css/main.f0c28fe2.chunk.css.map",
     "static/media/index.css": "/portfolio/static/media/Montserrat-Regular.ee653992.ttf",
     "static/media/JohnsHopkins.png": "/portfolio/static/media/JohnsHopkins.6a77a572.png",
     "static/media/UC_davis_logo.png": "/portfolio/static/media/UC_davis_logo.a8a9460f.png",
@@ -66,9 +66,9 @@
     "static/media/vegvesen.png": "/portfolio/static/media/vegvesen.0d03ea02.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d6dab199.js",
-    "static/js/2.5ac90053.chunk.js",
-    "static/css/main.69890af0.chunk.css",
-    "static/js/main.b8756297.chunk.js"
+    "static/js/runtime-main.9d6d631d.js",
+    "static/js/2.b21607d1.chunk.js",
+    "static/css/main.f0c28fe2.chunk.css",
+    "static/js/main.8a8a3aec.chunk.js"
   ]
 }
