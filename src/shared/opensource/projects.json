@@ -428,31 +428,17 @@
     },
     {
       "id": "R_kgDOO7jbdg_1",
-      "name": "Geo-Risk Prediction Dashboard",
+      "name": "Weather-Based Risk Predictor (Traffic & Agriculture)",
       "createdAt": "2025-06-14T12:39:30Z",
       "url": "https://github.com/SushantSriv/Risikoprediksjon_for_Transport_og_Landbruk",
-      "description": "Interactive dashboard that combines 34 years of Norwegian accident data with real-time MET Norway forecasts to predict road & farmland risk. Models (Random Forest) served through FastAPI, visualised with React + Leaflet, bundled in Docker.",
+      "liveUrl": "https://risikoprediksjon-for-transport-og-l.vercel.app",
+      "description": "Click any point on a map of Norway for live traffic-accident risk: current MET Norway weather scored against 34 years of accident history, normalised by real vehicle-km exposure (Statens Vegvesen NVDB traffic-volume data) rather than raw counts, so the ranking reflects genuine local danger instead of just kommune size. Also includes a 7-day temperature forecast (Random Forest regressor, MAE 1.37°C) and a Landbruk (agriculture) view with frost warnings and spraying windows. Deliberately replaced its original Random Forest risk classifiers with an exact climatology lookup table after validating the models were barely beating chance once the exposure confound was removed — full methodology and validation numbers are on the live site at /?metode=1.",
       "isFork": false,
       "languages": [
         {
           "name": "Python",
-          "iconifyClass": "logos-python",
+          "iconifyClass": "logos:python",
           "color": "#3776AB"
-        },
-        {
-          "name": "Azure Container Registry",
-          "iconifyClass": "simple-icons:azuredevops",
-          "color": "#0078D4"
-        },
-        {
-          "name": "Pandas",
-          "iconifyClass": "simple-icons:pandas",
-          "color": "#150458"
-        },
-        {
-          "name": "GeoPandas",
-          "iconifyClass": "simple-icons:geopandas",
-          "color": "#29B7C9"
         },
         {
           "name": "FastAPI",
@@ -475,9 +461,9 @@
           "color": "#199900"
         },
         {
-          "name": "Docker",
-          "iconifyClass": "simple-icons:docker",
-          "color": "#2496ED"
+          "name": "Vercel",
+          "iconifyClass": "simple-icons:vercel",
+          "color": "#000000"
         }
       ],
       "dataSources": [
@@ -486,19 +472,20 @@
           "imageSrc": "met_norway.png"
         },
         {
-          "name": "Statens vegvesen",
+          "name": "Statens vegvesen (NVDB)",
           "imageSrc": "vegvesen.png"
         },
         {
-          "name": "OpenStreetMap",
-          "imageSrc": "osm.png"
+          "name": "Kartverket",
+          "iconifyClass": "mdi:map-outline"
         }
       ],
-      "demoUrl": "https://www.youtube.com/embed/68XVxC6daig",
+      "demoUrl": "",
       "technologies": [
-        "joblib",
-        "react-leaflet",
-        "axios"
+        "Groq LLM summary",
+        "MET Frost & Locationforecast APIs",
+        "NVDB AADT vehicle-km normalisation",
+        "NO/EN i18n"
       ]
     },
     {

@@ -5,6 +5,50 @@ the top.
 
 ---
 
+## 2026-08-22 — Refreshed the Geo-Risk project entry from its current README
+
+The user pointed at
+`github.com/SushantSriv/Risikoprediksjon_for_Transport_og_Landbruk` and asked
+to update its existing card from that repo's README, since the project had
+moved on substantially since it was first added.
+
+Fetched the live README via the GitHub API rather than relying on the old
+entry. The project had changed in several concrete ways worth reflecting:
+
+- **Deployment moved from Docker/Azure to Vercel** (two projects from one
+  repo, frontend + FastAPI backend) — removed "Azure Container Registry"
+  and "Docker" from the language chips, added "Vercel".
+- **A real live demo now exists**
+  (`risikoprediksjon-for-transport-og-l.vercel.app`) — added via the
+  `liveUrl` field/button (same mechanism added for the 3d-home-view
+  project), and cleared the old YouTube `demoUrl`, which almost certainly
+  predates this rebuild and would show a stale UI.
+- **The methodology changed in a genuinely interesting way**: the README
+  documents that the original Random Forest risk _classifiers_ were
+  deliberately removed and replaced with an exact climatology lookup table,
+  after validating the classifiers were barely beating a 33% chance
+  baseline once a raw-count confound (kommune size / good-weather traffic
+  volume) was corrected for. The old one-line description didn't capture
+  any of this — rewrote it to lead with what the project actually does now
+  (live weather + 34 years of accident history, normalised by vehicle-km
+  exposure from NVDB traffic data) and to include this validation story,
+  since it's the most technically credible part of the README.
+- **Data sources**: confirmed MET Norway and Statens Vegvesen (NVDB) are
+  still current; the README no longer lists OpenStreetMap as a source, so
+  removed it; added Kartverket (no logo asset available, so it renders via
+  a generic `mdi:map-outline` icon instead of an image).
+- Renamed from "Geo-Risk Prediction Dashboard" to "Weather-Based Risk
+  Predictor (Traffic & Agriculture)" to reflect both the transport and
+  Landbruk (agriculture) views the README describes.
+
+Verified the live demo URL actually resolves (200), and confirmed via an
+actual click test that the new Live Demo button opens the right project
+specifically (there are now two "Live Demo" buttons on the Projects page,
+one per project with a `liveUrl`). Production build and full mobile
+overflow sweep both clean.
+
+---
+
 ## 2026-08-22 — Splash signature reveal fix, resume link update
 
 **Splash signature "cut off" look.** The user shared a screenshot where the
