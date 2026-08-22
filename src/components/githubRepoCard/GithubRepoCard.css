@@ -1,12 +1,22 @@
 /* src/components/githubRepoCard/GithubRepoCard.css */
 
 /* --------- Kort-oppsett --------- */
+/* The card is wrapped in a scroll-reveal motion div, so the flex item inside
+   .repo-cards-div-main is that wrapper - not .repo-card-div. The grid share
+   lives on the wrapper and the card simply fills it; giving the card itself a
+   percentage flex-basis here would resolve it against the wrapper's own
+   shrink-to-fit width and collapse every card to its content size. */
+.repo-card-reveal {
+  flex: 1 1 25%;
+  max-width: 100%;
+  display: flex;
+}
+
 .repo-card-div {
   color: rgb(88, 96, 105);
   border-radius: 16px;
   padding: 2rem;
-  flex: 1 1 25%;
-  max-width: 100%;
+  width: 100%;
   transition: box-shadow 0.3s ease;
 }
 .repo-card-div:hover {
@@ -223,13 +233,13 @@
 }
 /* --------- Responsive justeringer --------- */
 @media (max-width: 1200px) {
-  .repo-card-div {
+  .repo-card-reveal {
     flex: 1 1 40%;
   }
 }
 
 @media (max-width: 768px) {
-  .repo-card-div {
+  .repo-card-reveal {
     flex: 1 1 100%;
   }
   .repo-name {

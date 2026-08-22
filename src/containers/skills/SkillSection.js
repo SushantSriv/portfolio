@@ -1,8 +1,11 @@
-﻿import React, { Component } from "react";
+import React, { Component } from "react";
 import "./Skills.css";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
-import { Fade } from "react-reveal";
 import { getGlassStyle } from "../../styles/glassStyle";
+import Reveal, {
+  RevealGroup,
+  RevealItem,
+} from "../../components/motion/Reveal";
 
 import DataScienceImg from "./DataScienceImg";
 import FullStackImg from "./FullStackImg";
@@ -25,45 +28,50 @@ function GetSkillSvg({ fileName, theme }) {
 
 class SkillSection extends Component {
   render() {
-    const { theme, skills } = this.props; // 👈 henter fra props
+    const { theme, skills } = this.props;
 
     return (
       <div>
         {skills.data.map((skill, idx) => (
           <div
             key={idx}
-            className="skills-main-div"
+            className="skills-main-div skills-card"
             style={getGlassStyle(theme)}
           >
-            <Fade left duration={2000}>
-              <div className="skills-image-div">
-                <GetSkillSvg fileName={skill.fileName} theme={theme} />
-              </div>
-            </Fade>
+            {/* Illustration and copy come in from opposite sides, so the two
+                halves of the row resolve toward each other. */}
+            <Reveal
+              direction="left"
+              className="skills-image-div"
+              duration={0.85}
+            >
+              <GetSkillSvg fileName={skill.fileName} theme={theme} />
+            </Reveal>
 
-            <div className="skills-text-div">
-              <Fade right duration={1000}>
-                <h1 className="skills-heading" style={{ color: theme.text }}>
-                  {skill.title}
-                </h1>
-              </Fade>
+            <RevealGroup className="skills-text-div" stagger={0.12}>
+              <RevealItem
+                as="h1"
+                className="skills-heading"
+                style={{ color: theme.text }}
+              >
+                {skill.title}
+              </RevealItem>
 
-              <Fade right duration={1500}>
+              <RevealItem>
                 <SoftwareSkill logos={skill.softwareSkills} />
-              </Fade>
+              </RevealItem>
 
-              <Fade right duration={2000}>
-                {skill.skills.map((sentence, i) => (
-                  <p
-                    key={i}
-                    className="subTitle skills-text"
-                    style={{ color: theme.secondaryText }}
-                  >
-                    {sentence}
-                  </p>
-                ))}
-              </Fade>
-            </div>
+              {skill.skills.map((sentence, i) => (
+                <RevealItem
+                  key={i}
+                  as="p"
+                  className="subTitle skills-text"
+                  style={{ color: theme.secondaryText }}
+                >
+                  {sentence}
+                </RevealItem>
+              ))}
+            </RevealGroup>
           </div>
         ))}
       </div>

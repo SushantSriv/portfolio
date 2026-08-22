@@ -116,10 +116,21 @@
   }
 }
 
-.subTitle {
+/* Scoped to the contact page on purpose. CRA bundles every stylesheet
+   globally, so as a bare `.subTitle` this rule was reaching every subtitle on
+   the site - the hero strapline and each skills bullet were quietly running an
+   infinite scale animation and picking up inline-block + auto margins meant
+   only for this page. */
+.contact-main .subTitle {
   display: inline-block;
   animation: pulse 3s ease-in-out infinite;
   margin: 0 auto 1.5em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-main .subTitle {
+    animation: none;
+  }
 }
 
 /* ===== Responsive ===== */

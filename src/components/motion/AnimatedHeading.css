@@ -1,0 +1,23 @@
+.animated-heading {
+  /* Words are inline-block masks; this keeps multi-line headings breathing. */
+  line-height: 1.15;
+}
+
+.ah-word-mask {
+  display: inline-block;
+  overflow: hidden;
+  /* Word gaps come from real space text nodes between the masks (see
+     AnimatedHeading.js), so the heading's text content stays readable to
+     screen readers and copy-paste. No margin hack needed here. */
+  /* Descenders (g, j, p, y) would otherwise be sliced off by overflow:hidden.
+     The padding gives them room inside the mask; the matching negative margin
+     keeps the heading's layout height unchanged. */
+  padding-bottom: 0.16em;
+  margin-bottom: -0.16em;
+  vertical-align: bottom;
+}
+
+.ah-word {
+  display: inline-block;
+  will-change: transform;
+}

@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+/* Owns a stacking context above CursorGlow (z-index 0) so ambient light
+   never paints over page content. */
+.app-content {
+  position: relative;
+  z-index: 1;
+}
+
 .App-logo {
   height: 40vmin;
 }
@@ -59,4 +66,3 @@
       transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }
-

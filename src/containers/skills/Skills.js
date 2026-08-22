@@ -1,7 +1,7 @@
 ﻿import React, { useContext } from "react";
 import "./Skills.css";
 import SkillSection from "./SkillSection";
-import { Fade } from "react-reveal";
+import AnimatedHeading from "../../components/motion/AnimatedHeading";
 import { LanguageContext } from "../../LanguageContext"; // Ny import
 
 export default function Skills(props) {
@@ -20,16 +20,13 @@ export default function Skills(props) {
   return (
     <div className="main" id="skills">
       <div className="skills-header-div">
-        <Fade bottom duration={2000} distance="20px">
-          <h1
-            className="skills-header gradient-heading"
-            style={{
-              backgroundImage: `linear-gradient(135deg, ${theme.text}, ${theme.imageHighlight})`,
-            }}
-          >
-            {headingText}
-          </h1>
-        </Fade>
+        <AnimatedHeading
+          as="h1"
+          className="skills-header"
+          text={headingText}
+          gradientFrom={theme.text}
+          gradientTo={theme.imageHighlight}
+        />
       </div>
       <SkillSection theme={theme} skills={skills} />
     </div>

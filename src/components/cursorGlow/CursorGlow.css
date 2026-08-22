@@ -1,0 +1,16 @@
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 520px;
+  /* x/y from framer-motion position the element's top-left corner, so pull it
+     back by half its size to center the glow on the pointer. */
+  margin-left: -260px;
+  margin-top: -260px;
+  border-radius: 50%;
+  pointer-events: none;
+  /* Behind all content but above the page background. */
+  z-index: 0;
+  will-change: transform;
+}

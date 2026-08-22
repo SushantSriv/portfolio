@@ -12,31 +12,54 @@
   margin-top: 2rem;
   overflow: hidden;
   border-radius: 24px;
-  /* A flat dark scrim sits on top of the theme's gradient so hero text stays
-     legible no matter how light a given theme's highlight/jacketColor tokens
-     are (some themes, e.g. blackTheme, use near-white for both). */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    linear-gradient(
-      135deg,
+  isolation: isolate;
+  /* Deep base from the theme's darkest token. Colour comes from the drifting
+     blobs above it, so hero text keeps a guaranteed dark backdrop no matter
+     how light a given theme's accent tokens are (blackTheme, for instance,
+     uses near-white for both highlight and jacketColor). */
+  background-color: var(--hero-base);
+}
+
+/* Aurora mesh: three oversized colour blobs drifting on independent cycles.
+   The heavy blur is what turns three hard radial gradients into one soft
+   continuous field - it's the whole trick behind the "mesh gradient" look.
+   Only `transform` is animated, so the blur is rasterised once and the
+   drift stays on the compositor. */
+.greet-main::before {
+  content: "";
+  position: absolute;
+  /* Overscan well past the panel: the blobs translate, and the blur pulls in
+     whatever sits at the edge, so anything short of this shows hard corners. */
+  inset: -35%;
+  z-index: -1;
+  background-image: radial-gradient(
+      38% 44% at 22% 28%,
       var(--aurora-1) 0%,
-      var(--aurora-2) 55%,
-      var(--aurora-3) 100%
-    );
-  background-size: 100% 100%, 200% 200%;
-  animation: aurora-drift 18s ease-in-out infinite alternate;
+      transparent 68%
+    ),
+    radial-gradient(42% 48% at 78% 22%, var(--aurora-2) 0%, transparent 68%),
+    radial-gradient(46% 52% at 58% 82%, var(--aurora-3) 0%, transparent 68%);
+  filter: blur(52px) saturate(135%);
+  opacity: 0.85;
+  animation: aurora-drift 22s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 @keyframes aurora-drift {
   0% {
-    background-position: 0% 0%, 0% 0%;
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, 3%, 0) scale(1.12);
   }
   100% {
-    background-position: 0% 0%, 100% 100%;
+    transform: translate3d(-2%, 5%, 0) scale(1.05);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .greet-main {
+  .greet-main::before,
+  .greeting-text {
     animation: none;
   }
 }
@@ -69,6 +92,38 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  /* The inline gradient alternates white/highlight stops; oversizing it and
+     sliding the background sweeps a sheen through the letterforms. */
+  background-size: 220% auto;
+  animation: text-shimmer 7s linear infinite;
+}
+
+@keyframes text-shimmer {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 220% center;
+  }
+}
+
+/* Soft interior glow so the hero panel has falloff toward its edges instead
+   of reading as a flat rectangle of gradient. */
+.greet-main::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 90% at 70% 15%,
+    rgba(255, 255, 255, 0.16) 0%,
+    transparent 55%
+  );
+}
+
+.greeting-main {
+  position: relative;
+  z-index: 1;
 }
 
 .greeting-nickname {

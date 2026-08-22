@@ -7,6 +7,7 @@ import ExperienceAccordion from "../../containers/experienceAccordion/Experience
 import "./Experience.css";
 import ExperienceImg from "./ExperienceImg";
 import { LanguageContext } from "../../LanguageContext";
+import AnimatedHeading from "../../components/motion/AnimatedHeading";
 
 class Experience extends Component {
   static contextType = LanguageContext;
@@ -31,14 +32,13 @@ class Experience extends Component {
                 <ExperienceImg theme={theme} />
               </div>
               <div className="experience-heading-text-div">
-                <h1
-                  className="experience-heading-text gradient-heading"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, ${theme.text}, ${theme.imageHighlight})`,
-                  }}
-                >
-                  {exp.title}
-                </h1>
+                <AnimatedHeading
+                  as="h1"
+                  className="experience-heading-text"
+                  text={exp.title}
+                  gradientFrom={theme.text}
+                  gradientTo={theme.imageHighlight}
+                />
                 <h3
                   className="experience-heading-sub-text"
                   style={{ color: theme.text }}

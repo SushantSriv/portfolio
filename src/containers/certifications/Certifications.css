@@ -11,11 +11,11 @@
   flex-wrap: wrap;
 }
 
-/* CertificationCard is wrapped in a react-reveal <Fade> div, so the actual
+/* CertificationCard is wrapped in a scroll-reveal motion div, so the actual
    flex item here is that wrapper, not .cert-card itself - give it the grid
    share directly, and let .cert-card fill it (width: 100%) rather than
    resolving a percentage against the wrapper's own shrink-to-fit width. */
-.certs-body-div > .react-reveal {
+.certs-body-div > .cert-card-reveal {
   flex: 1 1 30%;
   max-width: 30%;
 }
@@ -31,7 +31,7 @@
     flex-direction: column;
   }
 
-  .certs-body-div > .react-reveal {
+  .certs-body-div > .cert-card-reveal {
     max-width: 100%;
   }
 

@@ -17,6 +17,7 @@ import ProjectsData from "../../shared/opensource/projects.json";
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
 import { LanguageContext } from "../../LanguageContext";
+import AnimatedHeading from "../../components/motion/AnimatedHeading";
 
 export default function Projects(props) {
   const { theme, portfolio } = props;
@@ -162,14 +163,13 @@ export default function Projects(props) {
               <ProjectsImg theme={theme} />
             </div>
             <div className="projects-heading-text-div">
-              <h1
-                className="projects-heading-text gradient-heading"
-                style={{
-                  backgroundImage: `linear-gradient(135deg, ${theme.text}, ${theme.imageHighlight})`,
-                }}
-              >
-                {portfolio.projectsHeader.title}
-              </h1>
+              <AnimatedHeading
+                as="h1"
+                className="projects-heading-text"
+                text={portfolio.projectsHeader.title}
+                gradientFrom={theme.text}
+                gradientTo={theme.imageHighlight}
+              />
               <p
                 className="projects-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
@@ -264,8 +264,8 @@ export default function Projects(props) {
       </div>
 
       <div className="repo-cards-div-main">
-        {filteredRepos.map((repo) => (
-          <GithubRepoCard key={repo.id} repo={repo} theme={theme} />
+        {filteredRepos.map((repo, i) => (
+          <GithubRepoCard key={repo.id} repo={repo} theme={theme} index={i} />
         ))}
       </div>
 

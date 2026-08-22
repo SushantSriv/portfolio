@@ -1,16 +1,16 @@
 // src/components/githubRepoCard/GithubRepoCard.js
 import React, { useState, useCallback, useEffect, useContext } from "react";
 import "./GithubRepoCard.css";
-import { Fade } from "react-reveal";
 import { Icon } from "@iconify/react";
 import Tilt from "react-parallax-tilt";
 import { LanguageContext } from "../../LanguageContext";
 import { getGlassStyle } from "../../styles/glassStyle";
+import Reveal from "../motion/Reveal";
 
 import Button from "../button/Button";
 import ProjectLanguages from "../projectLanguages/ProjectLanguages";
 
-export default function GithubRepoCard({ repo, theme }) {
+export default function GithubRepoCard({ repo, theme, index = 0 }) {
   const { language } = useContext(LanguageContext);
   /* ---------- kort-klikk ---------- */
   const openRepo = (url) => {
@@ -61,24 +61,35 @@ export default function GithubRepoCard({ repo, theme }) {
   const resolved = hasPdfs ? gallery.map(toRaw) : gallery;
 
   /* ---------- render ---------- */
+  // Cards enter as they scroll into view; the small per-column offset makes
+  // each row ripple left-to-right instead of snapping in as a block. Modulo 3
+  // (the widest column count) keeps the delay bounded no matter how long the
+  // filtered list gets.
+  const revealDelay = (index % 3) * 0.09;
+
   return (
     <>
-      <Tilt
-        className="repo-card-div"
-        style={getGlassStyle(theme)}
-        tiltMaxAngleX={6}
-        tiltMaxAngleY={6}
-        glareEnable={true}
-        glareMaxOpacity={0.2}
-        glareColor={theme.highlight}
-        glarePosition="all"
-        transitionSpeed={1500}
+      <Reveal
+        className="repo-card-reveal"
+        direction="up"
+        delay={revealDelay}
+        duration={0.65}
       >
-        <div
-          onClick={handleCardClick}
-          style={{ cursor: "pointer", height: "100%" }}
+        <Tilt
+          className="repo-card-div"
+          style={getGlassStyle(theme)}
+          tiltMaxAngleX={6}
+          tiltMaxAngleY={6}
+          glareEnable={true}
+          glareMaxOpacity={0.2}
+          glareColor={theme.highlight}
+          glarePosition="all"
+          transitionSpeed={1500}
         >
-          <Fade bottom duration={2000} distance="40px">
+          <div
+            onClick={handleCardClick}
+            style={{ cursor: "pointer", height: "100%" }}
+          >
             <div>
               {/* Tittel & beskrivelse */}
               <h3 className="repo-name" style={{ color: theme.text }}>
@@ -176,9 +187,9 @@ export default function GithubRepoCard({ repo, theme }) {
                 )}
               </div>
             </div>
-          </Fade>
-        </div>
-      </Tilt>
+          </div>
+        </Tilt>
+      </Reveal>
 
       {/* Modal */}
       {open && (

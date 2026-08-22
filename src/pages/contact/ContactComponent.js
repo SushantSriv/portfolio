@@ -9,6 +9,7 @@ import AddressImg from "./AddressImg";
 import { Fade } from "react-reveal";
 import "./ContactComponent.css";
 import { LanguageContext } from "../../LanguageContext";
+import AnimatedHeading from "../../components/motion/AnimatedHeading";
 
 class Contact extends Component {
   static contextType = LanguageContext;
@@ -33,14 +34,13 @@ class Contact extends Component {
           <Fade bottom duration={1000} distance="40px">
             <div className="contact-heading-div">
               <div className="contact-heading-text-div">
-                <h1
-                  className="contact-heading-text gradient-heading"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, ${theme.text}, ${theme.imageHighlight})`,
-                  }}
-                >
-                  {contactSection.title}
-                </h1>
+                <AnimatedHeading
+                  as="h1"
+                  className="contact-heading-text"
+                  text={contactSection.title}
+                  gradientFrom={theme.text}
+                  gradientTo={theme.imageHighlight}
+                />
                 <p
                   className="contact-header-detail-text subTitle"
                   style={{ color: theme.secondaryText }}
@@ -69,14 +69,13 @@ class Contact extends Component {
                 <AddressImg theme={theme} />
               </div>
               <div className="address-heading-text-div">
-                <h1
-                  className="address-heading-text gradient-heading"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, ${theme.text}, ${theme.imageHighlight})`,
-                  }}
-                >
-                  {addressSection.title}
-                </h1>
+                <AnimatedHeading
+                  as="h1"
+                  className="address-heading-text"
+                  text={addressSection.title}
+                  gradientFrom={theme.text}
+                  gradientTo={theme.imageHighlight}
+                />
                 <p
                   className="contact-header-detail-text subTitle"
                   style={{ color: theme.secondaryText }}

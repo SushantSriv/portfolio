@@ -1,28 +1,44 @@
 import React, { useContext } from "react";
 import "./Greeting.css";
-import { motion } from "framer-motion";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import { Fade } from "react-reveal";
 import Hero3D from "../../components/hero3d/Hero3D";
-import { LanguageContext } from "../../LanguageContext"; // ✨ NY
+import { LanguageContext } from "../../LanguageContext";
+import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 
-const heroEase = [0.645, 0.045, 0.355, 1];
+const heroEase = [0.22, 1, 0.36, 1];
 
 const heroContainerVariants = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
 };
 
 const heroItemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: heroEase } },
+  hidden: { opacity: 0, y: 28 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.75, ease: heroEase },
+  },
 };
 
 export default function Greeting(props) {
   const theme = props.theme;
   const greeting = props.greeting;
-  const { language } = useContext(LanguageContext); // ✨ NY
+  const { language } = useContext(LanguageContext);
+  const reduced = usePrefersReducedMotion();
+
+  const { scrollY } = useViewportScroll();
+  // The text and the 3D column drift apart as you scroll, which reads as
+  // depth. The canvas moves further because it's the "closer" layer.
+  const textY = useTransform(scrollY, [0, 700], [0, 70]);
+  const artY = useTransform(scrollY, [0, 700], [0, 130]);
+  const heroOpacity = useTransform(scrollY, [0, 620], [1, 0.15]);
+
+  const parallax = reduced ? {} : { y: textY, opacity: heroOpacity };
+  const artParallax = reduced ? {} : { y: artY, opacity: heroOpacity };
 
   // Tekst for knappen på begge språk
   const starText =
@@ -36,13 +52,14 @@ export default function Greeting(props) {
         className="greet-main"
         id="greeting"
         style={{
-          "--aurora-1": theme.highlight,
-          "--aurora-2": theme.imageHighlight,
-          "--aurora-3": theme.jacketColor,
+          "--hero-base": theme.dark,
+          "--aurora-1": theme.imageHighlight,
+          "--aurora-2": theme.jacketColor,
+          "--aurora-3": theme.highlight,
         }}
       >
         <div className="greeting-main">
-          <div className="greeting-text-div">
+          <motion.div className="greeting-text-div" style={parallax}>
             <motion.div
               variants={heroContainerVariants}
               initial="hidden"
@@ -52,7 +69,7 @@ export default function Greeting(props) {
                 variants={heroItemVariants}
                 className="greeting-text"
                 style={{
-                  backgroundImage: `linear-gradient(135deg, #FFFFFF, ${theme.highlight})`,
+                  backgroundImage: `linear-gradient(115deg, #FFFFFF 0%, ${theme.highlight} 30%, #FFFFFF 50%, ${theme.highlight} 70%, #FFFFFF 100%)`,
                 }}
               >
                 {greeting.title}
@@ -84,7 +101,7 @@ export default function Greeting(props) {
                 className="portfolio-repo-btn-div"
               >
                 <Button
-                  text={starText} // 👈 BRUKER variabelen
+                  text={starText}
                   newTab={true}
                   href={greeting.portfolio_repository}
                   theme={theme}
@@ -92,11 +109,11 @@ export default function Greeting(props) {
                 />
               </motion.div>
             </motion.div>
-          </div>
+          </motion.div>
 
-          <div className="greeting-image-div">
+          <motion.div className="greeting-image-div" style={artParallax}>
             <Hero3D theme={theme} />
-          </div>
+          </motion.div>
         </div>
       </div>
     </Fade>

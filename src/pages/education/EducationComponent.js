@@ -9,6 +9,7 @@ import EducationImg from "./EducationImg";
 import "./EducationComponent.css";
 import { Fade } from "react-reveal";
 import { LanguageContext } from "../../LanguageContext";
+import AnimatedHeading from "../../components/motion/AnimatedHeading";
 
 export default class Education extends Component {
   static contextType = LanguageContext;
@@ -34,14 +35,13 @@ export default class Education extends Component {
                 <EducationImg theme={theme} />
               </div>
               <div className="heading-text-div">
-                <h1
-                  className="heading-text gradient-heading"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, ${theme.text}, ${theme.imageHighlight})`,
-                  }}
-                >
-                  {eduHeader}
-                </h1>
+                <AnimatedHeading
+                  as="h1"
+                  className="heading-text"
+                  text={eduHeader}
+                  gradientFrom={theme.text}
+                  gradientTo={theme.imageHighlight}
+                />
                 <h3 className="heading-sub-text" style={{ color: theme.text }}>
                   {eduSubHeader}
                 </h3>

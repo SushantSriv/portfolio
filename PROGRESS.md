@@ -5,6 +5,108 @@ the top.
 
 ---
 
+## 2026-08-23 — Motion layer: scroll reveals, page transitions, aurora hero
+
+Brief was to make the site genuinely striking, with more animation and
+smoother flow. Added a reusable motion layer rather than one-off animations,
+and fixed three real bugs found along the way.
+
+### The framer-motion constraint (read this before upgrading)
+
+The project is pinned to **framer-motion 2.9.4** and has to stay there for
+now. Attempting the upgrade documented the reason:
+
+- v6.5.1 has the `whileInView` / `viewport` props I wanted, but its ES build
+  ships as `.mjs`, and the webpack 4 bundled by `react-scripts@3.2.0` applies
+  strict ESM semantics to `.mjs` and fails on framer-motion's named imports
+  from CommonJS React (`Can't import the named export 'Children'…`).
+- Importing framer-motion's CJS build directly gets past its own entry, but
+  the same failure just moves down the tree — `popmotion`, `style-value-types`
+  and friends are all `.mjs` in that generation.
+- v5 ships `.mjs` too, so there's no v5/v6 escape hatch. Fixing this properly
+  needs webpack config we can't reach without ejecting CRA.
+
+So `whileInView` is hand-rolled instead: `src/hooks/useInView.js` is a small
+IntersectionObserver hook, which is all `whileInView` wraps anyway.
+
+**Second v2 gotcha:** framer-motion 2.9.4 does not reliably propagate a
+parent's variant label to child `motion` components. The skills cards showed
+this clearly — the parent reached `show` while every child sat at `opacity: 0`
+forever. `RevealGroup` therefore publishes its in-view state through React
+context and each `RevealItem` animates itself, with the stagger applied as an
+explicit per-item delay rather than `staggerChildren`.
+
+### New motion primitives (`src/components/motion/`)
+
+- **`Reveal` / `RevealGroup` / `RevealItem`** — scroll-triggered reveals.
+  Unlike the react-reveal `<Fade>` used elsewhere (which animates on _mount_,
+  so below-the-fold content often finishes before you scroll to it), these
+  fire on true viewport entry.
+- **`AnimatedHeading`** — word-by-word mask reveal for page headings. Gradient
+  backgrounds live on each word span, not the parent: `background-clip: text`
+  clips a parent's background to its own paint box, so a transformed child
+  would slide its glyphs out of the clipped region and lose its fill mid-flight.
+- **`PageTransition`** + `AnimatePresence` in `Main.js` — routes now cross-fade
+  instead of snapping, and scroll resets to top on navigation.
+- **`ScrollProgress`** — spring-smoothed gradient progress bar.
+- **`CursorGlow`** — ambient light trailing the pointer, layered at `z-index: 0`
+  beneath content (`.app-content` holds `z-index: 1`) so it never washes over
+  text. Desktop-only, gated on `(pointer: fine)`.
+
+Everything respects `prefers-reduced-motion`, verified by rendering all pages
+under Playwright's `reducedMotion: 'reduce'` and confirming nothing is left
+stuck invisible.
+
+### Visual work
+
+- **Hero is now an animated aurora mesh**: three oversized colour blobs on
+  independent drift cycles over the theme's darkest token, heavily blurred so
+  they read as one continuous field. Only `transform` animates, so the blur
+  rasterises once and the drift stays on the compositor. Replaces the flat
+  linear-gradient-plus-black-scrim, which washed out to grey.
+- **3D crystal**: added a vertical float, a slow breathing scale and an
+  orbiting ring. Also fixed it overflowing its canvas — the ring was at 2.28
+  world units against a visible half-height of ~2.04, so it clipped at the
+  frustum edge. Sizes are now derived from that half-height with margin to
+  spare, and the maths is written down in the file.
+- **Magnetic buttons** — buttons chase the cursor slightly and spring back.
+- Hero text/art scroll-parallax at different rates, plus a shimmer sweep
+  through the gradient title.
+- Projects and certifications grids now cascade in per row.
+
+### Bugs found and fixed
+
+1. **`.subTitle` was leaking site-wide.** `ContactComponent.css` declared a
+   bare `.subTitle { animation: pulse 3s infinite; display: inline-block; … }`.
+   CRA bundles all CSS globally, so _every_ subtitle on the site — the hero
+   strapline, every skills bullet — was silently running an infinite scale
+   animation. Caught it while debugging a phantom `scale(1.0498)` that kept
+   changing on elements whose inline style said `transform: none`. Now scoped
+   to `.contact-main .subTitle` and disabled under reduced motion.
+2. **Word-masked headings broke their own text.** Spacing words with CSS
+   margin meant the heading's text content was `"Getintouch"` — which is what
+   a screen reader announces and what a user copies. Gaps are real space text
+   nodes now; verified `innerText` reads `"Get in touch"`.
+3. **Two missing React `key` props** (`ExperienceAccordion`, `DegreeCard`) that
+   had been warning in the console.
+
+### On the card-grid wrappers
+
+Wrapping a flex item in a reveal `<div>` moves the flex item one level down —
+the same trap that collapsed the certification cards to 112px strips
+previously. Both grids now put the flex share on the wrapper
+(`.repo-card-reveal`, `.cert-card-reveal`) and let the card fill it. Verified
+card widths at 1440/1100/700/390px.
+
+### Verification
+
+Production build clean; all five routes checked for horizontal overflow at
+390px and 768px (none); route navigation exercised end-to-end; Code and Live
+Demo buttons click-tested again to be sure the magnetic transform didn't
+reintroduce the earlier click-blocking regression.
+
+---
+
 ## 2026-08-22 — Refreshed the Geo-Risk project entry from its current README
 
 The user pointed at
