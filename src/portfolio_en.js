@@ -25,7 +25,7 @@ const greeting = {
   subTitle:
     "A passionate engineer who builds end-to-end products and scalable systems to create sustainable social and technical impact.",
   resumeLink:
-    "https://drive.google.com/file/d/1zFG4ZiANMVl-5Rmc_BtcGZF0G2AUIU-v/view?usp=sharing",
+    "https://drive.google.com/file/d/15P3l8IvHQtgSa8AFE3keBt0g2a7_rlKt/view?usp=sharing",
   portfolio_repository: "https://github.com/SushantSriv",
   githubProfile: "https://github.com/SushantSriv",
 };

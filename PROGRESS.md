@@ -5,6 +5,33 @@ the top.
 
 ---
 
+## 2026-08-22 — Splash signature reveal fix, resume link update
+
+**Splash signature "cut off" look.** The user shared a screenshot where the
+"Sushant Srivastava" signature on the splash screen looked like it was
+sliced/underlapped by a border instead of reading clean and open. Root
+cause: `.splash-signature` revealed itself via a hard `clip-path` wipe
+(`inset(0 100% 0 0)` animating to `inset(0 0% 0 0)`) — a moving vertical
+edge sweeping left to right. For a connected cursive script font
+(Agustina), that hard edge can slice straight through a letter's
+connecting stroke mid-animation, which is very likely what got
+screenshotted. Confirmed via Playwright at six viewport widths (390px to
+1920px) that the text never actually overflows its container — so this was
+an animation artifact, not a layout bug. Replaced the clip-path wipe with a
+plain opacity/blur fade (`.splash-signature` now fades and un-blurs in as
+one unit, no directional cutting edge at any point), plus a touch of
+`letter-spacing` for extra breathing room. Re-verified clean at all six
+widths and in a settled + mid-animation screenshot.
+
+**Resume links.** Split `resumeLink` into the correct per-language files —
+`portfolio_en.js` now points to the English CV, `portfolio_no.js` to the
+Norwegian one (both new Google Drive links from the user, checked as
+publicly reachable before committing).
+
+Verified with a production build after each change.
+
+---
+
 ## 2026-08-22 — New project, CV-driven content refresh
 
 Two asks: find and add a new GitHub project as "in development," and bring

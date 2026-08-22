@@ -52,20 +52,31 @@
   margin: 1.5rem 0 0;
   font-family: "Agustina Regular";
   font-size: clamp(28px, 6vw, 56px);
+  letter-spacing: 0.02em;
   white-space: nowrap;
-  clip-path: inset(0 100% 0 0);
-  animation: signature-reveal 2.5s ease forwards 0.8s;
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(6px);
+  animation: signature-reveal 1.4s ease forwards 0.8s;
 }
 
+/* A hard clip-path wipe used to sweep across this connected cursive font,
+   slicing through mid-letter and making the name look cut off by a border
+   while it revealed. A plain fade avoids that entirely - the whole name
+   materializes together instead of being sliced open left to right. */
 @keyframes signature-reveal {
   to {
-    clip-path: inset(0 0% 0 0);
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .splash-signature {
     animation: none;
-    clip-path: inset(0 0% 0 0);
+    opacity: 1;
+    filter: none;
+    transform: none;
   }
 }
