@@ -104,7 +104,7 @@ const skills = {
         "⚡ Brukt AI med åpne LLM-er, Whisper ASR og transformer-pipelines",
         "⚡ Prediktiv modellering og tidsserieanalyse med scikit-learn og statsmodels",
         "⚡ AI-drevne dashbord og historiefortelling (Power BI, Streamlit, Notebooks)",
-        "⚡ Kjent med agentiske AI-mønstre og utforsker Semantic Kernel for orkestrering",
+        "⚡ Applikasjonseier for Claude Code hos Aibel — daglig bruk av agentiske AI-verktøy (Claude Code, GitHub Copilot) til koding, refaktorering, testgenerering og kodegjennomgang",
         "⚡ Eksempelkode: `norwegian-pronunciation-coach`, `electricity-forecast-xgboost`",
       ],
       softwareSkills: [
@@ -124,6 +124,15 @@ const skills = {
           skillName: "Streamlit",
           fontAwesomeClassname: "simple-icons:streamlit",
           style: { color: "#FF4B4B" },
+        },
+        {
+          skillName: "Claude Code",
+          fontAwesomeClassname: "simple-icons:anthropic",
+          style: { color: "#D97757" },
+        },
+        {
+          skillName: "GitHub Copilot",
+          fontAwesomeClassname: "simple-icons:githubcopilot",
         },
       ],
     },
@@ -277,10 +286,11 @@ const degrees = {
       alt_name: "NMBU",
       duration: "aug. 2022 – mai 2024",
       descriptions: [
-        "⚡ Masteroppgave: Semantiske forbedringer i bilde-tekst-generering (karakter A)",
+        "⚡ Masteroppgave: Semantiske forbedringer i bilde-tekst-generering (BLIP & GPT-2) – karakter A",
         "⚡ Emner: Maskinlæring, dyplæring, statistisk teori, databehandling",
       ],
-      website_link: "https://www.nmbu.no/",
+      website_link:
+        "https://nmbu.brage.unit.no/nmbu-xmlui/handle/11250/3147981",
     },
     {
       title: "National Institute of Engineering (NIE) – Mysore",
@@ -376,14 +386,14 @@ const experience = {
       work: true,
       experiences: [
         {
-          title: "IT‐konsulent (CAD/3D)",
+          title: "Programvareingeniør",
           company: "Aibel",
           company_url: "https://aibel.com/",
           logo_path: "aibel_logo.png",
           duration: "mai 2024 – nå",
           location: "Asker, Norge",
           description:
-            "Utvikle interne C#/.NET-verktøy og arbeidsflytautomatisering for 3D-ingeniørsystemer, med integrering av desktop- og Azure-skykomponenter.",
+            "Applikasjonseier for Claude Code (agentisk AI-koding) – designet og sikret utviklermiljøet (Docker, WSL2, Linux, nettverksisolasjon) for en sikker, selskapsomfattende utrulling, og driver bredere AI-adopsjon gjennom Copilot Studio-agenter og Power Automate-arbeidsflyter. Har også bygget en WPF/.NET CAD-portal for administrasjon av CAD-ingeniørprogramvare, og videreutviklet en intern Web3D-visningsløsning (React, Three.js) med ASP.NET Core-API-er på Azure.",
           color: "#0077B5",
         },
         {
@@ -405,7 +415,7 @@ const experience = {
           duration: "apr. 2023 – mai 2024",
           location: "Ski, Norge",
           description:
-            "Rasjonaliserte eldre data til relasjonelle datamodeller og bygde Power BI-dashbord for ledelsesrapportering.",
+            "Normaliserte fragmenterte CSV/Excel-kilder til en sentral SQL-database og reduserte datasiloer, og bygde Power BI-modeller (DAX, Power Query) med planlagt oppdatering for å standardisere KPI-er og effektivisere månedsavslutningsrapportering.",
           color: "#EA0016",
         },
         {
@@ -416,7 +426,7 @@ const experience = {
           duration: "jun. 2023 – aug. 2023",
           location: "Høvik, Norge",
           description:
-            "Utviklet et rammeverk for kostnadsprediksjon av belastning og utmattelse i offshore vindturbiner, og integrerte ML i Sesam Wind Manager.",
+            "Prototypet ML-modeller på lastenes tidsserier for å understøtte utmattelses- og bruddgrensevurderinger, og integrerte parametriske bølgelast-prediksjoner i Sesam-arbeidsflyter, som forkortet tiden for scenarioevaluering.",
           color: "#00457C",
         },
         {

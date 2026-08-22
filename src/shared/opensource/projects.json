@@ -1,6 +1,55 @@
 {
   "data": [
-
+    {
+      "id": "home_360_tour_18",
+      "name": "360° Home Tour",
+      "createdAt": "2026-08-22T00:00:00Z",
+      "url": "https://github.com/SushantSriv/3d-home-view",
+      "liveUrl": "https://sushantsriv.github.io/3d-home-view/tour.html?demo=1",
+      "description": "Free web app for property sellers and brokers: record one slow phone pan per room, upload it with a floor plan, and the app stitches each video into a 360° panorama and links them into one navigable tour behind a single shareable URL — buyers need no login and no app. This is not a continuous 3D scan like Matterport; it's multiple linked 360° panoramas, one per room, navigated via the floor plan. The static frontend on GitHub Pages talks directly to a free-tier Supabase backend (Postgres + Storage); only the panorama-stitching step needs real compute, which runs as a background worker rather than a 24/7 paid server — everything else runs on free tiers. Currently closed-source/proprietary; the repo is public only because GitHub Pages on a free account requires it.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "JavaScript",
+          "iconifyClass": "simple-icons:javascript",
+          "color": "#F7DF1E"
+        },
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "HTML",
+          "iconifyClass": "simple-icons:html5",
+          "color": "#E34F26"
+        },
+        {
+          "name": "CSS",
+          "iconifyClass": "simple-icons:css3",
+          "color": "#1572B6"
+        },
+        {
+          "name": "Supabase",
+          "iconifyClass": "simple-icons:supabase",
+          "color": "#3ECF8E"
+        },
+        {
+          "name": "PowerShell",
+          "iconifyClass": "simple-icons:powershell",
+          "color": "#5391FE"
+        }
+      ],
+      "dataSources": [],
+      "demoUrl": "",
+      "technologies": [
+        "Pannellum",
+        "360-spherical-stitching",
+        "GitHub Pages",
+        "GitHub Actions"
+      ],
+      "inProgress": true
+    },
     {
       "id": "semantic_kernel_agent_03",
       "name": "AI Knowledge Agent – Semantic Kernel Edition",
@@ -41,7 +90,6 @@
       ],
       "inProgress": true
     },
-
     {
       "id": "job_tracker_app_01",
       "name": "Job Tracker App",
@@ -117,7 +165,6 @@
       ],
       "inProgress": false
     },
-
     {
       "id": "ai_feedback_analyst_01",
       "name": "AI Feedback Analyst Copilot",
@@ -163,7 +210,6 @@
       ],
       "inProgress": false
     },
-
     {
       "id": "norwegian_pronunciation_coach_12",
       "name": "Norwegian Pronunciation Coach",
@@ -237,9 +283,7 @@
         "uvicorn"
       ],
       "inProgress": true
-
     },
-
     {
       "id": "explain_public_services_01",
       "name": "Explain My Document",
@@ -316,7 +360,6 @@
         "stqdm"
       ]
     },
-
     {
       "id": "electric_10",
       "name": "Electricity Price Forecast",
@@ -383,7 +426,6 @@
         "vega_datasets"
       ]
     },
-
     {
       "id": "R_kgDOO7jbdg_1",
       "name": "Geo-Risk Prediction Dashboard",
@@ -458,9 +500,7 @@
         "react-leaflet",
         "axios"
       ]
-
     },
-
     {
       "id": "resume_builder_terraform_17",
       "name": "Terraform Resume Generator",
@@ -504,7 +544,6 @@
         "Node.js"
       ]
     },
-
     {
       "id": "R_kgDObzB2KQ_2",
       "name": "Housing-Price Prediction API",
@@ -546,11 +585,8 @@
         }
       ],
       "demoUrl": "https://www.youtube.com/embed/kSOjQf3MPO8",
-      "technologies": [
-
-      ]
+      "technologies": []
     },
-
     {
       "id": "R_kgDOc8nVFA_3",
       "name": "COVID-19 Data Lake on AWS",
@@ -620,7 +656,6 @@
         "pyarrow"
       ]
     },
-
     {
       "id": "R_kgDOc8nVFA_423",
       "name": "Norge Population Analytics",
@@ -644,13 +679,11 @@
           "iconifyClass": "simple-icons:pandas",
           "color": "#150458"
         },
-
         {
           "name": "Databricks",
           "iconifyClass": "simple-icons:databricks",
           "color": "#ff3621"
         }
-
       ],
       "dataSources": [
         {
@@ -664,9 +697,6 @@
         "openpyxl"
       ]
     },
-
-
-
     {
       "id": "R_kgDOc8nVFA_4",
       "name": "Traffic Accident Data Analysis Norway",
@@ -723,9 +753,7 @@
         "seaborn",
         "geopandas"
       ]
-
     },
-
     {
       "id": "R_kgDOc8nVFA_6",
       "name": "Power BI report on Injuries & Accidents",
@@ -762,14 +790,12 @@
         "bilde3.png",
         "bilde4.png",
         "bilde5.png"
-
       ],
       "technologies": [
         "seaborn",
         "gdown"
       ]
     },
-
     {
       "id": "semantic_image_captioning_11",
       "name": "Semantic Image Captioning Enhancements",
@@ -838,7 +864,6 @@
           "name": "Flickr30k Dataset",
           "imageSrc": "flickr_logo.png"
         }
-
       ],
       "demoUrl": "",
       "technologies": [
@@ -846,7 +871,6 @@
         "pycocotools"
       ]
     },
-
     {
       "id": "customer_churn_nordea_13",
       "name": "Customer Churn Prediction",
@@ -984,7 +1008,6 @@
         "NGO"
       ]
     },
-
     {
       "id": "threat_ripper_16",
       "name": "ThreatRipper (HPE)",
@@ -1021,7 +1044,6 @@
         "malware-check"
       ]
     },
-
     {
       "id": "R_kgDOdk7Yhg_8",
       "name": "Text Summarizer (Thesis)",
@@ -1056,7 +1078,6 @@
         "rouge-score"
       ]
     },
-
     {
       "id": "R_kgDObR5ysg_7",
       "name": "EXE Files Auto-Remover",
@@ -1079,6 +1100,5 @@
       "dataSources": [],
       "demoUrl": ""
     }
-
   ]
 }

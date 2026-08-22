@@ -84,6 +84,7 @@
 .repo-btn-row {
   margin-top: 12px;
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 .main-button {

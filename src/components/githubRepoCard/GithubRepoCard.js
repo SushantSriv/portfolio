@@ -136,6 +136,15 @@ export default function GithubRepoCard({ repo, theme }) {
               <div className="repo-btn-row">
                 <Button text="Code" href={repo.url} newTab theme={theme} />
 
+                {repo.liveUrl && (
+                  <Button
+                    text={language === "no" ? "Live demo" : "Live Demo"}
+                    href={repo.liveUrl}
+                    newTab
+                    theme={theme}
+                  />
+                )}
+
                 {(hasVideo || hasImgs || hasPdfs) && (
                   <button
                     type="button"

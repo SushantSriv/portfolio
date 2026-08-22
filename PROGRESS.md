@@ -5,6 +5,66 @@ the top.
 
 ---
 
+## 2026-08-22 — New project, CV-driven content refresh
+
+Two asks: find and add a new GitHub project as "in development," and bring
+experience/skills content up to date using the user's current CV.
+
+### New project: 360° Home Tour
+
+Found `SushantSriv/3d-home-view` via the GitHub API (not previously known to
+this repo) — a free web app for property brokers that stitches per-room
+phone videos into a navigable 360° tour, on a static GitHub Pages + Supabase
+free-tier stack. Confirmed its GitHub Pages demo is actually live
+(`tour.html?demo=1` returns 200) before linking to it.
+
+Added it to `src/shared/opensource/projects.json` with `inProgress: true`
+(renders the existing "In development" badge). Its demo is a live
+interactive page, not a video, so the existing `demoUrl` field (which always
+renders a YouTube-styled modal iframe) was the wrong fit — added a new
+`liveUrl` field instead: `GithubRepoCard.js` now renders an extra "Live
+Demo" button that opens it directly in a new tab when present, alongside
+"Code". Verified with an actual click test that it opens the right URL.
+Noted in the description that the repo itself is closed-source/
+proprietary (public only because GitHub Pages requires it), since the
+Projects page's own header text says "open-source unless otherwise noted."
+
+### CV-driven content refresh (`portfolio_en.js` + `portfolio_no.js`)
+
+The user's current CV showed the Aibel role had evolved substantially since
+what was on the site — updated both language files in parallel:
+
+- **Aibel**: title changed from "IT Consultant (CAD/3D)" to "Software
+  Engineer"; description replaced entirely to reflect the current scope —
+  Claude Code application ownership (hardening the dev environment for a
+  company-wide rollout), Copilot Studio/Power Automate AI adoption work, a
+  WPF/.NET CAD portal, and the Web3D/Azure viewer work.
+- **DNV** and **Bosch Rexroth**: descriptions refined to match the CV's more
+  precise technical framing (load time-series/ultimate-strength assessments
+  and parametric wave-load predictions for DNV; DAX/Power Query models with
+  scheduled refresh for Bosch).
+- **Skills**: added a bullet + two new `softwareSkills` icons (Claude Code,
+  GitHub Copilot) to the existing "AI Applications & Data Science" section,
+  rather than standing up a whole new category — smaller, safer change that
+  still surfaces what's now the headline part of the day job. Verified the
+  new iconify slugs (`simple-icons:anthropic`, `simple-icons:githubcopilot`,
+  `simple-icons:supabase`) actually resolve before using them.
+- **NMBU degree**: swapped the "Visit Website" link from the university
+  homepage to the actual thesis repository page the CV cited — more useful
+  evidence for a portfolio than a generic university link.
+- Left the HPE entries and certifications alone — the CV's 1-page format
+  visibly condenses/merges things the site already covers in more (accurate)
+  detail; no factual conflict there, just different levels of granularity
+  for different mediums.
+
+### Verification
+
+Full mobile overflow sweep (clean), production build (clean), and click
+tests confirming both the new project's "Live Demo" button and the existing
+"Code" button open the correct URLs.
+
+---
+
 ## 2026-08-21 — Three real regressions from the redesign, caught by the user
 
 The user flagged three concrete bugs from screenshots after the previous

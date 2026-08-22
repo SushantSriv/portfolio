@@ -111,7 +111,7 @@ const skills = {
         "⚡ Applied AI with open-source LLMs, Whisper ASR, and transformer pipelines",
         "⚡ Predictive modeling & time-series analysis with scikit-learn and statsmodels",
         "⚡ AI-enhanced dashboards & storytelling (Power BI, Streamlit, Notebooks)",
-        "⚡ Familiar with agentic AI patterns and exploring Semantic Kernel for orchestration scenarios",
+        "⚡ Application owner for Claude Code at Aibel — daily use of agentic AI tooling (Claude Code, GitHub Copilot) for coding, refactoring, test generation, and code review",
         "⚡ Sample repos: `norwegian-pronunciation-coach`, `electricity-forecast-xgboost`",
       ],
       softwareSkills: [
@@ -131,6 +131,15 @@ const skills = {
           skillName: "Streamlit",
           fontAwesomeClassname: "simple-icons:streamlit",
           style: { color: "#FF4B4B" },
+        },
+        {
+          skillName: "Claude Code",
+          fontAwesomeClassname: "simple-icons:anthropic",
+          style: { color: "#D97757" },
+        },
+        {
+          skillName: "GitHub Copilot",
+          fontAwesomeClassname: "simple-icons:githubcopilot",
         },
       ],
     },
@@ -294,10 +303,11 @@ const degrees = {
       alt_name: "NMBU",
       duration: "Aug 2022 – May 2024",
       descriptions: [
-        "⚡ Thesis: Semantic Enhancements in Image Captioning (Grade A)",
+        "⚡ Thesis: Semantic Enhancements in Image Captioning (BLIP & GPT-2) — Grade A",
         "⚡ Core courses: Machine Learning, Deep Learning, Statistical Theory & Data Processing",
       ],
-      website_link: "https://www.nmbu.no/",
+      website_link:
+        "https://nmbu.brage.unit.no/nmbu-xmlui/handle/11250/3147981",
     },
     {
       title: "National Institute of Engineering (NIE)",
@@ -393,14 +403,14 @@ const experience = {
       work: true,
       experiences: [
         {
-          title: "IT Consultant (CAD/3D)",
+          title: "Software Engineer",
           company: "Aibel",
           company_url: "https://aibel.com/",
           logo_path: "aibel_logo.png",
           duration: "May 2024 – Present",
           location: "Asker, Norway",
           description:
-            "Develop internal C#/.NET tools and workflow automation for 3D engineering systems, integrating desktop and Azure cloud components.",
+            "Application owner for Claude Code (agentic AI coding) — designed and hardened the developer environment (Docker, WSL2, Linux, network isolation) for a secure, company-wide rollout, and drive broader AI adoption via Copilot Studio knowledge agents and Power Automate workflows. Also built a WPF/.NET CAD portal for managing CAD engineering software deployment, and extended an internal Web3D viewer (React, Three.js) with ASP.NET Core APIs on Azure.",
           color: "#0077B5",
         },
         {
@@ -422,7 +432,7 @@ const experience = {
           duration: "Apr 2023 – May 2024",
           location: "Ski, Norway",
           description:
-            "Rationalised legacy data into relational schemas and built Power BI dashboards for management reporting.",
+            "Normalised fragmented CSV/Excel sources into a central SQL database, reducing data silos, and built Power BI models (DAX, Power Query) with scheduled refresh to standardise KPIs and speed up month-end reporting.",
           color: "#EA0016",
         },
         {
@@ -433,7 +443,7 @@ const experience = {
           duration: "Jun 2023 – Aug 2023",
           location: "Høvik, Norway",
           description:
-            "Developed cost-prediction framework for offshore wind turbine fatigue and integrated ML into Sesam Wind Manager.",
+            "Prototyped ML models on load time-series to inform fatigue and ultimate-strength assessments, and integrated parametric wave-load predictions into Sesam engineering workflows, shortening scenario evaluation time.",
           color: "#00457C",
         },
         {
