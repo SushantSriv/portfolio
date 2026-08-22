@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.2f00c890.chunk.css",
-    "main.js": "/portfolio/static/js/main.9188af61.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.9188af61.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.8bea6686.chunk.css",
+    "main.js": "/portfolio/static/js/main.22678456.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.22678456.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.d6dab199.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.d6dab199.js.map",
     "static/js/2.5ac90053.chunk.js": "/portfolio/static/js/2.5ac90053.chunk.js",
@@ -12,9 +12,9 @@
     "static/js/4.94559fbf.chunk.js": "/portfolio/static/js/4.94559fbf.chunk.js",
     "static/js/4.94559fbf.chunk.js.map": "/portfolio/static/js/4.94559fbf.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.957a3b487f90182cb38d18f70f09a23f.js": "/portfolio/precache-manifest.957a3b487f90182cb38d18f70f09a23f.js",
+    "precache-manifest.ed97c42c84c13ac33458ab0a48257f84.js": "/portfolio/precache-manifest.ed97c42c84c13ac33458ab0a48257f84.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.2f00c890.chunk.css.map": "/portfolio/static/css/main.2f00c890.chunk.css.map",
+    "static/css/main.8bea6686.chunk.css.map": "/portfolio/static/css/main.8bea6686.chunk.css.map",
     "static/media/index.css": "/portfolio/static/media/Montserrat-Regular.ee653992.ttf",
     "static/media/JohnsHopkins.png": "/portfolio/static/media/JohnsHopkins.6a77a572.png",
     "static/media/UC_davis_logo.png": "/portfolio/static/media/UC_davis_logo.a8a9460f.png",
@@ -68,7 +68,7 @@
   "entrypoints": [
     "static/js/runtime-main.d6dab199.js",
     "static/js/2.5ac90053.chunk.js",
-    "static/css/main.2f00c890.chunk.css",
-    "static/js/main.9188af61.chunk.js"
+    "static/css/main.8bea6686.chunk.css",
+    "static/js/main.22678456.chunk.js"
   ]
 }
