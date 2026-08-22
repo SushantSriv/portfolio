@@ -29,12 +29,19 @@ now. Attempting the upgrade documented the reason:
 So `whileInView` is hand-rolled instead: `src/hooks/useInView.js` is a small
 IntersectionObserver hook, which is all `whileInView` wraps anyway.
 
-**Second v2 gotcha:** framer-motion 2.9.4 does not reliably propagate a
+**Second v2 gotcha:** framer-motion 2.9.4 does not _reliably_ propagate a
 parent's variant label to child `motion` components. The skills cards showed
 this clearly — the parent reached `show` while every child sat at `opacity: 0`
 forever. `RevealGroup` therefore publishes its in-view state through React
 context and each `RevealItem` animates itself, with the stagger applied as an
 explicit per-item delay rather than `staggerChildren`.
+
+"Reliably" is doing real work in that sentence: `AnimatedHeading` still uses
+ordinary parent→child variant propagation with `staggerChildren`, and it does
+work — verified on a below-the-fold heading going `opacity: 0` → `1` with its
+transform reset on scroll. Only the `RevealGroup` shape failed. So don't
+"fix" `AnimatedHeading` to match `RevealGroup`; it isn't broken, and the two
+having different mechanics is deliberate rather than an oversight.
 
 ### New motion primitives (`src/components/motion/`)
 
