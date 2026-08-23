@@ -5,6 +5,51 @@ the top.
 
 ---
 
+## 2026-08-23 — Fix blank page after the splash screen
+
+Regression from the motion layer added earlier today. On a first visit the
+splash played, the URL changed to `/home`, and then nothing rendered — a white
+page until you reloaded. Reproduced it headlessly (clear `sessionStorage`, load
+`/`, wait 7s: URL `/home`, `document.body.innerText` empty) before touching
+anything.
+
+**Cause.** `<AnimatePresence exitBeforeEnter>` holds the incoming route until
+the outgoing one reports that its exit animation finished. Every page was
+wrapped in `PageTransition`, which supplies that exit — except the splash,
+which I'd deliberately left unwrapped. With no exit to report, the swap never
+completed and the app rendered nothing at all.
+
+The same trap was waiting for anyone with `prefers-reduced-motion` set:
+`PageTransition` returned a plain `<div>` in that branch, so _every_
+navigation would have dead-ended on a blank page. That path is now covered
+too, and is what the reduced-motion checks below are for.
+
+**Fixes.**
+
+- `PageTransition` always renders a `motion.div` carrying an `exit`. Under
+  reduced motion it's a zero-duration `opacity: 1` no-op — visually inert, but
+  it still resolves so `AnimatePresence` can proceed.
+- Both splash routes are wrapped in `PageTransition` like every other route.
+- `Splash` navigates with `history.replace("/home")` instead of rendering
+  `<Redirect>`. Because `AnimatePresence` keeps the outgoing subtree mounted
+  while it animates out, a `<Redirect>` would still be rendering — pointing at
+  the route we'd just arrived at — after the navigation had already happened.
+  `replace` also keeps the splash out of history, so Back from `/home` leaves
+  the site rather than replaying the intro.
+
+Also fixed the React warnings the repro surfaced in `LoaderLogo.js` (`class` →
+`className`, `stroke-width` → `strokeWidth`). Harmless — React passes unknown
+attributes through, which is why the hexagon still animated — but they were
+the only console noise left on load.
+
+**Verified:** first visit plays the splash then lands on a rendered `/home`;
+repeat visit in the same session skips straight there; reduced motion skips
+the splash _and_ navigates between pages without blanking; Back after the
+splash goes to `/home`, not the intro. Plus the usual clean production build
+and no horizontal overflow at 390/768px on any route.
+
+---
+
 ## 2026-08-23 — Motion layer: scroll reveals, page transitions, aurora hero
 
 Brief was to make the site genuinely striking, with more animation and

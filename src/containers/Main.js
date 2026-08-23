@@ -36,7 +36,9 @@ export default class Main extends Component {
                 exact
                 render={(props) =>
                   settings.isSplash ? (
-                    <Splash {...props} theme={theme} />
+                    <PageTransition>
+                      <Splash {...props} theme={theme} />
+                    </PageTransition>
                   ) : (
                     <PageTransition>
                       <Home {...props} theme={theme} portfolio={portfolio} />
@@ -92,7 +94,11 @@ export default class Main extends Component {
               {settings.isSplash && (
                 <Route
                   path="/splash"
-                  render={(props) => <Splash {...props} theme={theme} />}
+                  render={(props) => (
+                    <PageTransition>
+                      <Splash {...props} theme={theme} />
+                    </PageTransition>
+                  )}
                 />
               )}
               <Route
