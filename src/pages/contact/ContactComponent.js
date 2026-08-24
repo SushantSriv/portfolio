@@ -18,11 +18,9 @@ class Contact extends Component {
     const { theme, portfolio } = this.props;
     const { language } = this.context;
 
-    const greeting = portfolio.greeting;
     const contactSection = portfolio.contactPageData.contactSection;
     const addressSection = portfolio.contactPageData.addressSection;
 
-    const resumeBtnText = language === "no" ? "Se min CV" : "See My Resume";
     const mapsBtnText =
       language === "no" ? "Åpne i Google Maps" : "Visit on Google Maps";
 
@@ -51,12 +49,6 @@ class Contact extends Component {
                 <SocialMedia theme={theme} />
 
                 <div className="resume-btn-div">
-                  <Button
-                    text={resumeBtnText}
-                    newTab={true}
-                    href={greeting.resumeLink}
-                    theme={theme}
-                  />
                   <ContactForm theme={theme} language={language} />
                 </div>
               </div>
