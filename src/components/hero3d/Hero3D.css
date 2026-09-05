@@ -26,8 +26,22 @@
   }
 }
 
+/* Below the hero's stacking breakpoint the image column no longer stretches to
+   match the text column, so it has no definite height of its own - it is sized
+   by this element. That makes `height: 100%` here resolve against `auto`, and
+   react-three-fiber's canvas then falls back to its intrinsic 300x150 default,
+   rendering the crystal at half height. An explicit height gives the canvas
+   something real to fill. */
 @media (max-width: 768px) {
   .hero3d-canvas-wrap {
-    min-height: 280px;
+    height: 340px;
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero3d-canvas-wrap {
+    height: 300px;
+    min-height: 300px;
   }
 }

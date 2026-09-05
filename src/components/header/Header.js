@@ -7,6 +7,7 @@ import { NavLink, Link } from "react-router-dom";
 import { greeting, settings } from "../../portfolio.js";
 import SeoHeader from "../seoHeader/SeoHeader";
 import { LanguageContext } from "../../LanguageContext";
+import ThemePicker from "../themePicker/ThemePicker";
 
 // Flaggbilder – plasser no.svg + gb.svg i src/assets/flags/
 import noFlag from "../../assets/flags/no.png";
@@ -153,6 +154,10 @@ class Header extends Component {
                   </li>
                 </ul>
               )}
+            </li>
+
+            <li className="theme-item">
+              <ThemePicker />
             </li>
           </ul>
         </header>

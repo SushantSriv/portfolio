@@ -7,6 +7,7 @@ import { Fade } from "react-reveal";
 import Hero3D from "../../components/hero3d/Hero3D";
 import { LanguageContext } from "../../LanguageContext";
 import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
+import { ensureLight } from "../../styles/color";
 
 const heroEase = [0.22, 1, 0.36, 1];
 
@@ -27,6 +28,8 @@ const heroItemVariants = {
 export default function Greeting(props) {
   const theme = props.theme;
   const greeting = props.greeting;
+  // Accent guaranteed to read against the always-dark hero panel.
+  const heroAccent = ensureLight(theme.highlight, 0.75);
   const { language } = useContext(LanguageContext);
   const reduced = usePrefersReducedMotion();
 
@@ -69,7 +72,12 @@ export default function Greeting(props) {
                 variants={heroItemVariants}
                 className="greeting-text"
                 style={{
-                  backgroundImage: `linear-gradient(115deg, #FFFFFF 0%, ${theme.highlight} 30%, #FFFFFF 50%, ${theme.highlight} 70%, #FFFFFF 100%)`,
+                  // The hero panel is always dark, but a palette's raw
+                  // highlight can be a mid grey (Midnight, Graphite), which
+                  // made the shimmer's colour stops disappear into the
+                  // background mid-word. ensureLight lifts only the ones that
+                  // need it, so light palettes keep their exact hue.
+                  backgroundImage: `linear-gradient(115deg, #FFFFFF 0%, ${heroAccent} 30%, #FFFFFF 50%, ${heroAccent} 70%, #FFFFFF 100%)`,
                 }}
               >
                 {greeting.title}
@@ -100,11 +108,16 @@ export default function Greeting(props) {
                 variants={heroItemVariants}
                 className="portfolio-repo-btn-div"
               >
+                {/* Button paints itself with theme.text on theme.body. On the
+                    always-dark hero that leaves light palettes drawing a dark
+                    navy button on a dark panel. Swapping in the lifted accent
+                    and the dark base keeps this CTA high-contrast in all 14
+                    palettes without changing Button for everyone else. */}
                 <Button
                   text={starText}
                   newTab={true}
                   href={greeting.portfolio_repository}
-                  theme={theme}
+                  theme={{ ...theme, text: heroAccent, body: theme.dark }}
                   className="portfolio-repo-btn"
                 />
               </motion.div>

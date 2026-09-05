@@ -1,0 +1,97 @@
+.theme-picker {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.theme-picker-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.6rem;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.theme-picker-btn:hover {
+  transform: translateY(-1px);
+}
+
+.theme-picker-dot {
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  display: block;
+}
+
+.theme-picker-caret {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.theme-picker-pop {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 10000;
+  padding: 0.75rem;
+  border: 1px solid;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.45);
+  /* Wide enough for 7 swatches per row; keeps the popover a tidy 2x7 block. */
+  width: 15.5rem;
+}
+
+.theme-picker-title {
+  margin: 0 0 0.55rem;
+  font-family: "Google Sans Regular", sans-serif;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.theme-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.45rem;
+}
+
+.theme-swatch {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  /* aspect-ratio is unsupported in the older browsers this CRA build targets;
+     the min-height keeps the swatches square-ish there instead of collapsing. */
+  min-height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s ease;
+}
+
+.theme-swatch:hover {
+  transform: scale(1.18);
+}
+
+.theme-swatch.is-active {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .theme-picker-pop {
+    /* Anchored right would overflow the viewport inside the mobile menu. */
+    right: auto;
+    left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-picker-btn,
+  .theme-swatch {
+    transition: none;
+  }
+}

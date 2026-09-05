@@ -5,6 +5,87 @@ the top.
 
 ---
 
+## 2026-08-23 — Live theme switcher, stats band, real footer, contrast fixes
+
+Brief was to push the site substantially further. Started by surveying every
+route at desktop and mobile in a headless browser rather than guessing, which
+made the actual weaknesses obvious: the hero was strong and everything below it
+fell off a cliff — near-invisible cards, no rhythm, a one-line footer — and the
+3D centrepiece shrank to a token on mobile.
+
+### Live palette switcher (the headline change)
+
+`theme.js` defined **14 full palettes** that were completely unreachable: the
+app imported `chosenTheme` directly, so switching meant editing source, and the
+old `ToggleSwitch` was commented out. They're now a real, persisted user choice
+via a swatch picker in the header.
+
+- `ThemeContext.js` holds the active palette, persists to `localStorage`
+  (wrapped in try/catch — blocked storage in private mode must not break
+  rendering), and exposes the ordered `THEME_OPTIONS` list.
+- `App.js` reads it and passes it down as the same plain `theme` prop as
+  before, so **no component below had to change** — the whole site, including
+  the WebGL crystal, recolors.
+- Each swatch previews itself in _its own_ palette rather than the active one,
+  so the choice is made visually.
+- Colour transitions are scoped to colour properties only in `global.js`. A
+  blanket `transition: all` would also catch layout/transform changes and make
+  every interaction feel laggy.
+
+### Two contrast bugs the switcher exposed
+
+Worth recording, because both were invisible while only one palette shipped:
+
+1. **The hero title faded out mid-word.** Its shimmer gradient interpolated
+   through `theme.highlight`, which is a mid grey in Midnight/Graphite — so the
+   colour stops dissolved into the always-dark hero panel.
+2. **The hero CTA was dark-on-dark.** `Button` paints itself `theme.text` on
+   `theme.body`; on light palettes that's a dark navy button on a dark panel.
+
+Fixed with `styles/color.js` (`ensureLight` lifts a colour toward white only as
+far as needed to clear a brightness floor, so light palettes keep their exact
+hue and only the problem ones change). The hero CTA gets the lifted accent
+swapped in locally rather than changing `Button` for every other caller.
+
+### The cards were invisible for a structural reason
+
+`getGlassStyle` tinted cards with `theme.body` — on a `theme.body` page. Same
+colour on same colour, so every card on the site read as a faint outline.
+Cards now lean _away_ from the page colour (accent wash on light palettes, a
+lift toward white on dark ones) with a two-part shadow: a tight contact shadow
+to seat the card plus a wide soft one for depth, since a single large blur just
+reads as a smudge. One helper, so every card site-wide improved at once.
+
+### Mobile 3D hero was rendering at half size
+
+Measured rather than eyeballed, which is the only reason this was caught: the
+canvas was **150px tall inside a 300px container** — exactly the HTML canvas
+intrinsic default, meaning `height: 100%` had silently failed. Below the hero's
+stacking breakpoint the image column has no definite height of its own (it's
+sized _by_ this element), so the percentage resolved against `auto` and
+react-three-fiber fell back to 300x150. Fixed with an explicit height at those
+breakpoints.
+
+### Also
+
+- **Stats band** under the hero, with counts derived from repo content
+  (projects, unique technologies, certifications) and years from a single
+  constant — nothing hardcoded that can drift. Counts animate up on scroll via
+  one observer for the row, with the stagger as a CSS `transition-delay`.
+- **Real footer** replacing the single "Made with ❤" line: brand, nav with a
+  left-growing underline, compact social row, dynamic copyright year.
+- **Visible keyboard focus rings** — the UA default was invisible on several
+  of the darker palettes.
+
+### Verified
+
+All 5 routes at 390/768/1440: no horizontal overflow, no console or page
+errors. Reduced motion: zero elements stuck invisible and navigation still
+renders. All 14 palettes apply cleanly and produce 14 distinct backgrounds.
+Clean production build.
+
+---
+
 ## 2026-08-23 — Fix blank page after the splash screen
 
 Regression from the motion layer added earlier today. On a first visit the

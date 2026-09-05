@@ -79,6 +79,22 @@
   list-style: none;
 }
 
+/* Fargetema‐velger */
+.menu .theme-item {
+  position: relative;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  /* In the mobile drawer the nav links carry their own 20px padding, so the
+     picker needs matching insets to line up with them. */
+  .menu .theme-item {
+    padding: 12px 20px 20px;
+  }
+}
+
 .menu .lang-btn {
   background: transparent;
   border: 1px solid currentColor;
@@ -126,8 +142,13 @@
 }
 
 @keyframes langHintBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Flaggbilder */
@@ -147,7 +168,7 @@
   padding: 4px 0;
   border: 1px solid currentColor;
   border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   min-width: 140px;
   z-index: 9999;
   background: inherit;
@@ -163,7 +184,7 @@
 }
 
 .menu .lang-dropdown li:hover {
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Hamburger */
@@ -201,8 +222,12 @@
   transition: all 0.3s ease-out;
 }
 
-.header .navicon::before { top: -8px; }
-.header .navicon::after { bottom: -8px; }
+.header .navicon::before {
+  top: -8px;
+}
+.header .navicon::after {
+  bottom: -8px;
+}
 
 .menu-btn:checked + .menu-icon .navicon {
   background: transparent;
@@ -217,4 +242,3 @@
   transform: rotate(45deg);
   bottom: 0;
 }
-

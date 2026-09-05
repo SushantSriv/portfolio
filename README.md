@@ -15,8 +15,16 @@ showcasing experience, education, projects, and open-source activity.
 - **Glassmorphism + tilt cards** — certification, project, degree, and
   experience cards use a translucent glass treatment with mouse-tilt and
   glare (`react-parallax-tilt`), all colored from the active theme.
-- **13 swappable color themes** (`src/theme.js`) — every gradient, glass
-  panel, and 3D material is theme-token driven, not hardcoded.
+- **14 live color themes** — pick a palette from the header and the whole site
+  recolors, including the WebGL scene, and the choice persists across visits.
+  Every gradient, glass panel and 3D material is theme-token driven, so
+  palettes need no per-component work.
+- **Motion layer** — scroll-triggered reveals, word-by-word heading reveals,
+  cross-faded route transitions, a scroll-progress bar and an ambient cursor
+  glow, all disabled under `prefers-reduced-motion`.
+- **At-a-glance stats** — counts derived from the content in the repo (project
+  entries, unique technologies, certifications) rather than hardcoded, so they
+  can't drift out of date.
 - **English / Norwegian language toggle** — content is fully translated via
   `src/portfolio_en.js` / `src/portfolio_no.js` and a `LanguageContext`
   provider.
@@ -92,8 +100,12 @@ The site is configured to deploy to
 All personal content lives in `src/portfolio.js` (site settings),
 `src/portfolio_en.js` and `src/portfolio_no.js` (English/Norwegian content:
 greeting, skills, education, certifications, experience, projects, contact
-info). Color themes live in `src/theme.js` — set `chosenTheme` to any of the
-13 exported theme objects, or add your own following the same token shape.
+info).
+
+Color palettes live in `src/theme.js`. To add one, export a new theme object
+following the same token shape and register it in the `THEME_OPTIONS` list in
+`src/ThemeContext.js` — that list is what the header's palette picker renders,
+and the first entry is the default for new visitors.
 
 ## Project structure
 
@@ -105,6 +117,7 @@ src/
 ├── portfolio.js        Site settings (splash screen toggle, etc.)
 ├── portfolio_en.js     English content
 ├── portfolio_no.js     Norwegian content
-├── theme.js             Color theme definitions
+├── theme.js             Color palette definitions
+├── ThemeContext.js     Active palette + persistence (drives the picker)
 └── LanguageContext.js  English/Norwegian language provider
 ```

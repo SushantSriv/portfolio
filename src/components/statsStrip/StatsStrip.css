@@ -1,0 +1,71 @@
+.stats-strip-wrap {
+  width: 90%;
+  margin: 2.5rem auto 0;
+}
+
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1.75rem 1.5rem;
+  border-radius: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  /* Revealed by the parent's .is-visible class rather than per-item observers:
+     one IntersectionObserver drives the whole row, and the stagger comes from
+     an inline transition-delay. */
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stats-strip.is-visible .stat-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-value {
+  font-family: "Google Sans Medium", sans-serif;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  /* Tabular figures stop the number jittering horizontally while it counts. */
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-suffix {
+  font-size: 1.6rem;
+  margin-left: 0.1rem;
+}
+
+.stat-label {
+  margin-top: 0.35rem;
+  font-family: "Google Sans Regular", sans-serif;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
