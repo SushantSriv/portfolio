@@ -34,20 +34,7 @@
           "color": "#646CFF"
         }
       ],
-      "dataSources": [
-        {
-          "name": "MET Norway",
-          "imageSrc": "met_norway.png"
-        },
-        {
-          "name": "Statens vegvesen",
-          "imageSrc": "vegvesen.png"
-        },
-        {
-          "name": "Entur / NVE / SSB",
-          "iconifyClass": "mdi:map-marker-path"
-        }
-      ],
+      "dataSources": [],
       "demoUrl": "",
       "technologies": [
         "Weather-window day-splitting (DP)",

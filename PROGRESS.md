@@ -73,6 +73,30 @@ a Live Demo button and it opens mynorwaytrips.com; no YouTube embed on the page;
 no overflow and no console errors at 390/768/1440 across all five routes; clean
 production build.
 
+### Follow-up: borrowed logos, and an audit of the remaining live demos
+
+The Trip Planner card had been given the MET Norway and Statens Vegvesen logos.
+The README does list those as data sources, but the image files belong to the
+Risikoprediksjon project's card and reusing them there read as that project's
+branding on someone else's card. Removed — the card now carries no data-source
+imagery.
+
+Then audited every remaining project for a live deployment worth linking.
+GitHub's `homepage` field only names the two already linked, so the READMEs
+were grepped for deployment URLs and each candidate opened in a real browser
+rather than trusted on a 200:
+
+| Candidate                                    | Result                                                                                 | Linked? |
+| -------------------------------------------- | -------------------------------------------------------------------------------------- | ------- |
+| `electricity-forecast-sushant.streamlit.app` | 200, but the page is Streamlit's "Zzzz — this app has gone to sleep, wake it back up?" | No      |
+| `9qndjl.csb.app` (housing price UI)          | HTTP 400 behind a CodeSandbox "do you trust this url?" interstitial                    | No      |
+| `boligprediksjon-fastapi.onrender.com/docs`  | 200 but ~53s cold start, and it is raw Swagger rather than a demo                      | No      |
+
+None were linked. A "Live Demo" button that lands a recruiter on a sleep
+screen, a trust warning or a minute of loading is worse than no button, and all
+three projects already have working YouTube demos. Four projects have genuine
+live sites and all four are linked.
+
 ---
 
 ## 2026-08-23 — Live theme switcher, stats band, real footer, contrast fixes
