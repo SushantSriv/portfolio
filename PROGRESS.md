@@ -5,6 +5,76 @@ the top.
 
 ---
 
+## 2026-09-05 — Refresh projects: add Norway Trip Planner, rewrite the uttale card
+
+Asked to surface recent projects first, drop the stale YouTube demo on the
+Norwegian app, and add the travel planner.
+
+### Card copy was drafted from the READMEs, then fact-checked
+
+Both projects have long READMEs (964 and 367 lines), so the copy was drafted by
+one agent per project and then **adversarially checked by a second agent against
+the same README**. That pass earned its place — it caught overclaims in both:
+
+- The trip planner draft said "no accounts and no stored state". The README's
+  claim is specifically _server_-side; the plan, images and roadbook are
+  explicitly stored on the device. Corrected to "no server holding state — the
+  whole trip lives in the URL".
+- The uttale draft said recognition runs on-device "so the recording stays in
+  the page", full stop. There is now an opt-in browser-speech mode, so that is
+  only true by default. Also dropped "WebAssembly" as a listed language, which
+  the README does not present that way.
+
+Portfolio copy that overstates is a credibility risk on exactly the page meant
+to establish credibility, so this is worth doing rather than trusting a first
+draft.
+
+### Norway Trip Planner (new)
+
+Live at **mynorwaytrips.com** (Cloudflare Worker, custom domain — found in
+`wrangler.toml`, not guessed). Verified 200 before linking.
+
+The repo is **private**, which surfaced two real bugs in `GithubRepoCard`:
+
+1. The card click handler called `openRepo(repo.url)` unconditionally — with no
+   repo that is `window.open(undefined)`.
+2. A "Code" button rendered with `href={undefined}`, producing an `<a>` with no
+   href: a button that looks live and does nothing.
+
+Both fixed: the click falls back to `liveUrl` (and is inert with neither), and
+the Code button only renders when there is a repo to open.
+
+Note: the project is MIT-licensed but simply not published yet — so the card
+deliberately claims nothing about source availability rather than calling it
+closed-source.
+
+### Norsk uttale — Pronunciation Trainer (rewritten card)
+
+The old card described the retired React + FastAPI + Whisper-**server** stack,
+and its `demoUrl` pointed at a YouTube walkthrough of an interface the app no
+longer has. The app is now a client-side PWA running a quantized whisper-base on
+ONNX Runtime Web. Card fully replaced: new description, languages
+(TypeScript/ONNX/Whisper/Vite/Playwright), technologies, and the live GitHub
+Pages URL. YouTube embed removed — verified no `youtube.com/embed` reference
+remains anywhere on the Projects page.
+
+### Ordering
+
+Array order is display order, so cards are now ranked by **real last activity**
+(git and GitHub push dates) rather than the loosely-maintained `createdAt`:
+Trip Planner (2026-09-05), uttale (2026-09-03), 360° Home Tour and the Risk
+Predictor (2026-08-22), then the remainder by `createdAt` descending.
+`createdAt` is left truthful as the project start date.
+
+### Verified
+
+First four cards render in the intended order; the Trip Planner card shows only
+a Live Demo button and it opens mynorwaytrips.com; no YouTube embed on the page;
+no overflow and no console errors at 390/768/1440 across all five routes; clean
+production build.
+
+---
+
 ## 2026-08-23 — Live theme switcher, stats band, real footer, contrast fixes
 
 Brief was to push the site substantially further. Started by surveying every

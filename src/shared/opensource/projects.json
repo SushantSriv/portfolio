@@ -1,6 +1,110 @@
 {
   "data": [
     {
+      "id": "norway_trip_planner_19",
+      "name": "Norway Trip Planner",
+      "createdAt": "2026-08-25T00:00:00Z",
+      "liveUrl": "https://mynorwaytrips.com",
+      "description": "Plans a Norway trip across seven corridors and 118 curated stops, folding in MET forecasts, ferry sailings, mountain-pass closures, avalanche warnings, daylight and hike lengths. The core trick is weather-window planning: it scores every stop on every candidate date and re-cuts the day boundaries by dynamic programming so viewpoints land on clear days and cities on wet ones, without changing the route. Beyond MET's roughly nine days it falls back to ECMWF, then to 1991-2020 climate normals. It runs as a single Cloudflare Worker with no accounts and no server holding state - the whole trip lives in the URL.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "TypeScript",
+          "iconifyClass": "simple-icons:typescript",
+          "color": "#3178C6"
+        },
+        {
+          "name": "React",
+          "iconifyClass": "simple-icons:react",
+          "color": "#61DAFB"
+        },
+        {
+          "name": "Cloudflare Workers",
+          "iconifyClass": "simple-icons:cloudflareworkers",
+          "color": "#F38020"
+        },
+        {
+          "name": "MapLibre",
+          "iconifyClass": "simple-icons:maplibre",
+          "color": "#295DAA"
+        },
+        {
+          "name": "Vite",
+          "iconifyClass": "simple-icons:vite",
+          "color": "#646CFF"
+        }
+      ],
+      "dataSources": [
+        {
+          "name": "MET Norway",
+          "imageSrc": "met_norway.png"
+        },
+        {
+          "name": "Statens vegvesen",
+          "imageSrc": "vegvesen.png"
+        },
+        {
+          "name": "Entur / NVE / SSB",
+          "iconifyClass": "mdi:map-marker-path"
+        }
+      ],
+      "demoUrl": "",
+      "technologies": [
+        "Weather-window day-splitting (DP)",
+        "MapLibre GL 3D terrain",
+        "Entur GraphQL journey planner",
+        "Cloudflare Workers AI",
+        "5-language UI"
+      ],
+      "inProgress": false
+    },
+    {
+      "id": "norwegian_pronunciation_coach_12",
+      "name": "Norsk uttale - Pronunciation Trainer",
+      "createdAt": "2025-07-07T00:00:00Z",
+      "url": "https://github.com/SushantSriv/norwegian-pronunciation-app",
+      "description": "A browser app for practising Norwegian out loud: you record a phrase, it scores each word and draws your pitch contour against the melody that word should carry. Recognition runs on-device by default - a quantized whisper-base on ONNX Runtime Web - so the recording stays in the page unless you opt into the browser's own speech service. The interesting part is melody: pitch is normalised to semitones and time-warped against both tonelag shapes, so a decisive attempt is named as the accent it actually fits rather than only marked down. Thirteen tracks cover A1 to B2 plus eight occupation vocabularies.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "TypeScript",
+          "iconifyClass": "simple-icons:typescript",
+          "color": "#3178C6"
+        },
+        {
+          "name": "ONNX Runtime",
+          "iconifyClass": "simple-icons:onnx",
+          "color": "#8A2BE2"
+        },
+        {
+          "name": "Whisper",
+          "iconifyClass": "simple-icons:openai",
+          "color": "#412991"
+        },
+        {
+          "name": "Vite",
+          "iconifyClass": "simple-icons:vite",
+          "color": "#646CFF"
+        },
+        {
+          "name": "Playwright",
+          "iconifyClass": "simple-icons:playwright",
+          "color": "#2EAD33"
+        }
+      ],
+      "dataSources": [],
+      "demoUrl": "",
+      "technologies": [
+        "On-device whisper-base in a web worker",
+        "Needleman-Wunsch word alignment",
+        "DTW pitch/tonelag scoring",
+        "NB Uttale lexicon (CC0)",
+        "Installable PWA, offline after first load"
+      ],
+      "inProgress": false,
+      "liveUrl": "https://sushantsriv.github.io/norwegian-pronunciation-app/"
+    },
+    {
       "id": "home_360_tour_18",
       "name": "360° Home Tour",
       "createdAt": "2026-08-22T00:00:00Z",
@@ -49,6 +153,113 @@
         "GitHub Actions"
       ],
       "inProgress": true
+    },
+    {
+      "id": "R_kgDOO7jbdg_1",
+      "name": "Weather-Based Risk Predictor (Traffic & Agriculture)",
+      "createdAt": "2025-06-14T12:39:30Z",
+      "url": "https://github.com/SushantSriv/Risikoprediksjon_for_Transport_og_Landbruk",
+      "liveUrl": "https://risikoprediksjon-for-transport-og-l.vercel.app",
+      "description": "Click any point on a map of Norway for live traffic-accident risk: current MET Norway weather scored against 34 years of accident history, normalised by real vehicle-km exposure (Statens Vegvesen NVDB traffic-volume data) rather than raw counts, so the ranking reflects genuine local danger instead of just kommune size. Also includes a 7-day temperature forecast (Random Forest regressor, MAE 1.37°C) and a Landbruk (agriculture) view with frost warnings and spraying windows. Deliberately replaced its original Random Forest risk classifiers with an exact climatology lookup table after validating the models were barely beating chance once the exposure confound was removed — full methodology and validation numbers are on the live site at /?metode=1.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "FastAPI",
+          "iconifyClass": "simple-icons:fastapi",
+          "color": "#009688"
+        },
+        {
+          "name": "React",
+          "iconifyClass": "simple-icons:react",
+          "color": "#61DAFB"
+        },
+        {
+          "name": "Vite",
+          "iconifyClass": "simple-icons:vite",
+          "color": "#646CFF"
+        },
+        {
+          "name": "Leaflet",
+          "iconifyClass": "simple-icons:leaflet",
+          "color": "#199900"
+        },
+        {
+          "name": "Vercel",
+          "iconifyClass": "simple-icons:vercel",
+          "color": "#000000"
+        }
+      ],
+      "dataSources": [
+        {
+          "name": "MET Norway API",
+          "imageSrc": "met_norway.png"
+        },
+        {
+          "name": "Statens vegvesen (NVDB)",
+          "imageSrc": "vegvesen.png"
+        },
+        {
+          "name": "Kartverket",
+          "iconifyClass": "mdi:map-outline"
+        }
+      ],
+      "demoUrl": "",
+      "technologies": [
+        "Groq LLM summary",
+        "MET Frost & Locationforecast APIs",
+        "NVDB AADT vehicle-km normalisation",
+        "NO/EN i18n"
+      ]
+    },
+    {
+      "id": "ai_feedback_analyst_01",
+      "name": "AI Feedback Analyst Copilot",
+      "createdAt": "2025-07-30T00:00:00Z",
+      "url": "https://github.com/SushantSriv/ai-feedback-analyst_Azure_AI_Foundry",
+      "description": "Transforms raw customer comments into summarised themes, sentiment, and actionable next steps using a three-stage Azure AI Foundry prompt-flow pipeline. Includes offline evaluation configs (BLEU, embedding-sim, GPT-Judge) and a GitHub Actions gate.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "Azure AI Foundry",
+          "iconifyClass": "simple-icons:azuredevops",
+          "color": "#0078D4"
+        },
+        {
+          "name": "YAML",
+          "iconifyClass": "simple-icons:yaml",
+          "color": "#CB171E"
+        },
+        {
+          "name": "GitHub Actions",
+          "iconifyClass": "simple-icons:githubactions",
+          "color": "#2088FF"
+        },
+        {
+          "name": "Docker",
+          "iconifyClass": "simple-icons:docker",
+          "color": "#2496ED"
+        }
+      ],
+      "dataSources": [],
+      "demoUrl": "",
+      "technologies": [
+        "prompt-flow",
+        "embedding-similarity",
+        "BLEU",
+        "GPT-Judge",
+        "CI quality-gate"
+      ],
+      "inProgress": false
     },
     {
       "id": "semantic_kernel_agent_03",
@@ -166,123 +377,47 @@
       "inProgress": false
     },
     {
-      "id": "ai_feedback_analyst_01",
-      "name": "AI Feedback Analyst Copilot",
-      "createdAt": "2025-07-30T00:00:00Z",
-      "url": "https://github.com/SushantSriv/ai-feedback-analyst_Azure_AI_Foundry",
-      "description": "Transforms raw customer comments into summarised themes, sentiment, and actionable next steps using a three-stage Azure AI Foundry prompt-flow pipeline. Includes offline evaluation configs (BLEU, embedding-sim, GPT-Judge) and a GitHub Actions gate.",
+      "id": "resume_builder_terraform_17",
+      "name": "Terraform Resume Generator",
+      "createdAt": "2025-07-15T00:00:00Z",
+      "url": "https://github.com/SushantSriv/resume-builder-terraform",
+      "description": "A fully automated, code-driven resume builder using Terraform, Markdown, and headless Chrome. Define your experience, skills, and projects in `variables.tf`, generate Markdown with `templatefile()`, convert to HTML using Showdown.js, and export to PDF using Chromium. Includes build scripts for Windows and Unix.",
       "isFork": false,
       "languages": [
         {
-          "name": "Python",
-          "iconifyClass": "logos:python",
-          "color": "#3776AB"
+          "name": "Terraform",
+          "iconifyClass": "simple-icons:terraform",
+          "color": "#623CE4"
         },
         {
-          "name": "Azure AI Foundry",
+          "name": "Azure Container Registry",
           "iconifyClass": "simple-icons:azuredevops",
           "color": "#0078D4"
         },
         {
-          "name": "YAML",
-          "iconifyClass": "simple-icons:yaml",
-          "color": "#CB171E"
+          "name": "Markdown",
+          "iconifyClass": "simple-icons:markdown",
+          "color": "#000000"
         },
         {
-          "name": "GitHub Actions",
-          "iconifyClass": "simple-icons:githubactions",
-          "color": "#2088FF"
+          "name": "JavaScript",
+          "iconifyClass": "simple-icons:javascript",
+          "color": "#F7DF1E"
         },
         {
-          "name": "Docker",
-          "iconifyClass": "simple-icons:docker",
-          "color": "#2496ED"
+          "name": "Shell",
+          "iconifyClass": "simple-icons:gnubash",
+          "color": "#4EAA25"
         }
       ],
       "dataSources": [],
       "demoUrl": "",
+      "inProgress": false,
       "technologies": [
-        "prompt-flow",
-        "embedding-similarity",
-        "BLEU",
-        "GPT-Judge",
-        "CI quality-gate"
-      ],
-      "inProgress": false
-    },
-    {
-      "id": "norwegian_pronunciation_coach_12",
-      "name": "Norwegian Pronunciation Coach",
-      "createdAt": "2025-07-07T00:00:00Z",
-      "url": "https://github.com/SushantSriv/norwegian-pronunciation-app",
-      "description": "Light-weight, Dockerised web app that lets learners record themselves, get instant Whisper-based feedback on Norwegian pronunciation, and level-up sentence by sentence. Built because, while learning Norwegian, I found pronunciation especially challenging and existing apps offered no phrase-level, real-time feedback—so I created this tool for myself and other international learners. React + Vite frontend with framer-motion animations; FastAPI backend running a local Whisper-medium ASR model and an IPA-hint pipeline.",
-      "isFork": false,
-      "languages": [
-        {
-          "name": "Python",
-          "iconifyClass": "logos:python",
-          "color": "#3776AB"
-        },
-        {
-          "name": "Azure",
-          "iconifyClass": "simple-icons:azuredevops",
-          "color": "#0078D4"
-        },
-        {
-          "name": "FastAPI",
-          "iconifyClass": "simple-icons:fastapi",
-          "color": "#009688"
-        },
-        {
-          "name": "React",
-          "iconifyClass": "simple-icons:react",
-          "color": "#61DAFB"
-        },
-        {
-          "name": "TypeScript",
-          "iconifyClass": "simple-icons:typescript",
-          "color": "#3178C6"
-        },
-        {
-          "name": "Vite",
-          "iconifyClass": "simple-icons:vite",
-          "color": "#646CFF"
-        },
-        {
-          "name": "Framer Motion",
-          "iconifyClass": "simple-icons:framermotion",
-          "color": "#0055FF"
-        },
-        {
-          "name": "PyTorch",
-          "iconifyClass": "simple-icons:pytorch",
-          "color": "#EE4C2C"
-        },
-        {
-          "name": "OpenAI",
-          "iconifyClass": "simple-icons:openai",
-          "color": "#412991"
-        },
-        {
-          "name": "FFmpeg",
-          "iconifyClass": "simple-icons:ffmpeg",
-          "color": "#007808"
-        },
-        {
-          "name": "Docker",
-          "iconifyClass": "simple-icons:docker",
-          "color": "#2496ED"
-        }
-      ],
-      "dataSources": [],
-      "demoUrl": "https://www.youtube.com/embed/fOIoMYNXhQE",
-      "technologies": [
-        "openai-whisper",
-        "jiwer",
-        "phonemizer",
-        "uvicorn"
-      ],
-      "inProgress": true
+        "Showdown.js",
+        "Yarn",
+        "Node.js"
+      ]
     },
     {
       "id": "explain_public_services_01",
@@ -427,108 +562,50 @@
       ]
     },
     {
-      "id": "R_kgDOO7jbdg_1",
-      "name": "Weather-Based Risk Predictor (Traffic & Agriculture)",
-      "createdAt": "2025-06-14T12:39:30Z",
-      "url": "https://github.com/SushantSriv/Risikoprediksjon_for_Transport_og_Landbruk",
-      "liveUrl": "https://risikoprediksjon-for-transport-og-l.vercel.app",
-      "description": "Click any point on a map of Norway for live traffic-accident risk: current MET Norway weather scored against 34 years of accident history, normalised by real vehicle-km exposure (Statens Vegvesen NVDB traffic-volume data) rather than raw counts, so the ranking reflects genuine local danger instead of just kommune size. Also includes a 7-day temperature forecast (Random Forest regressor, MAE 1.37°C) and a Landbruk (agriculture) view with frost warnings and spraying windows. Deliberately replaced its original Random Forest risk classifiers with an exact climatology lookup table after validating the models were barely beating chance once the exposure confound was removed — full methodology and validation numbers are on the live site at /?metode=1.",
+      "id": "jpmc_codeforgood_anthill_15",
+      "name": "JPMC Code for Good: Anthill Creations Website",
+      "createdAt": "2025-06-20T00:00:00Z",
+      "url": "https://github.com/bengaluru19/team-7",
+      "description": "Team 7’s contribution to JPMorgan Chase’s Code for Good hackathon: a website for Anthill Creations—an Indian NGO that builds sustainable playscapes using upcycled materials. Highlights include community stories, image galleries, responsive design, and a contact form to support their mission..",
       "isFork": false,
       "languages": [
-        {
-          "name": "Python",
-          "iconifyClass": "logos:python",
-          "color": "#3776AB"
-        },
-        {
-          "name": "FastAPI",
-          "iconifyClass": "simple-icons:fastapi",
-          "color": "#009688"
-        },
-        {
-          "name": "React",
-          "iconifyClass": "simple-icons:react",
-          "color": "#61DAFB"
-        },
-        {
-          "name": "Vite",
-          "iconifyClass": "simple-icons:vite",
-          "color": "#646CFF"
-        },
-        {
-          "name": "Leaflet",
-          "iconifyClass": "simple-icons:leaflet",
-          "color": "#199900"
-        },
-        {
-          "name": "Vercel",
-          "iconifyClass": "simple-icons:vercel",
-          "color": "#000000"
-        }
-      ],
-      "dataSources": [
-        {
-          "name": "MET Norway API",
-          "imageSrc": "met_norway.png"
-        },
-        {
-          "name": "Statens vegvesen (NVDB)",
-          "imageSrc": "vegvesen.png"
-        },
-        {
-          "name": "Kartverket",
-          "iconifyClass": "mdi:map-outline"
-        }
-      ],
-      "demoUrl": "",
-      "technologies": [
-        "Groq LLM summary",
-        "MET Frost & Locationforecast APIs",
-        "NVDB AADT vehicle-km normalisation",
-        "NO/EN i18n"
-      ]
-    },
-    {
-      "id": "resume_builder_terraform_17",
-      "name": "Terraform Resume Generator",
-      "createdAt": "2025-07-15T00:00:00Z",
-      "url": "https://github.com/SushantSriv/resume-builder-terraform",
-      "description": "A fully automated, code-driven resume builder using Terraform, Markdown, and headless Chrome. Define your experience, skills, and projects in `variables.tf`, generate Markdown with `templatefile()`, convert to HTML using Showdown.js, and export to PDF using Chromium. Includes build scripts for Windows and Unix.",
-      "isFork": false,
-      "languages": [
-        {
-          "name": "Terraform",
-          "iconifyClass": "simple-icons:terraform",
-          "color": "#623CE4"
-        },
-        {
-          "name": "Azure Container Registry",
-          "iconifyClass": "simple-icons:azuredevops",
-          "color": "#0078D4"
-        },
-        {
-          "name": "Markdown",
-          "iconifyClass": "simple-icons:markdown",
-          "color": "#000000"
-        },
         {
           "name": "JavaScript",
           "iconifyClass": "simple-icons:javascript",
           "color": "#F7DF1E"
         },
         {
-          "name": "Shell",
-          "iconifyClass": "simple-icons:gnubash",
-          "color": "#4EAA25"
+          "name": "HTML",
+          "iconifyClass": "simple-icons:html5",
+          "color": "#E34F26"
+        },
+        {
+          "name": "CSS",
+          "iconifyClass": "simple-icons:css3",
+          "color": "#1572B6"
+        },
+        {
+          "name": "React",
+          "iconifyClass": "simple-icons:react",
+          "color": "#61DAFB"
         }
       ],
-      "dataSources": [],
+      "dataSources": [
+        {
+          "name": "Anthill Creations (internett)",
+          "imageSrc": "anthill_logo.png"
+        },
+        {
+          "name": "JP Morgan & Chase",
+          "imageSrc": "jpmc_logo.png"
+        }
+      ],
       "demoUrl": "",
       "inProgress": false,
       "technologies": [
-        "Showdown.js",
-        "Yarn",
-        "Node.js"
+        "responsive-design",
+        "community-stories",
+        "NGO"
       ]
     },
     {
@@ -573,6 +650,171 @@
       ],
       "demoUrl": "https://www.youtube.com/embed/kSOjQf3MPO8",
       "technologies": []
+    },
+    {
+      "id": "semantic_image_captioning_11",
+      "name": "Semantic Image Captioning Enhancements",
+      "createdAt": "2024-01-12T00:00:00Z",
+      "url": "https://github.com/SushantSriv/Semantic-Enhancements-in-Image-Captioning-Leveraging-Neural-Networks-to-Improve-BLIP-and-GPT-2",
+      "description": "Master-thesis codebase that augments BLIP and GPT-2 for image captioning via “Weighted Summarization”. Includes notebooks for COCO & Flickr30k, evaluation scripts and result JSON-files.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "PyTorch",
+          "iconifyClass": "simple-icons:pytorch",
+          "color": "#EE4C2C"
+        },
+        {
+          "name": "Hugging Face",
+          "iconifyClass": "simple-icons:huggingface",
+          "color": "#FFBF00"
+        },
+        {
+          "name": "OpenAI",
+          "iconifyClass": "simple-icons:openai",
+          "color": "#412991"
+        },
+        {
+          "name": "Jupyter Notebook",
+          "iconifyClass": "simple-icons:jupyter",
+          "color": "#F37626"
+        },
+        {
+          "name": "Matplotlib",
+          "iconifyClass": "simple-icons:matplotlib",
+          "color": "#11557C"
+        },
+        {
+          "name": "NumPy",
+          "iconifyClass": "simple-icons:numpy",
+          "color": "#013243"
+        },
+        {
+          "name": "Pandas",
+          "iconifyClass": "simple-icons:pandas",
+          "color": "#150458"
+        },
+        {
+          "name": "scikit-learn",
+          "iconifyClass": "simple-icons:scikitlearn",
+          "color": "#F7931E"
+        },
+        {
+          "name": "tqdm",
+          "iconifyClass": "simple-icons:tqdm",
+          "color": "#29D17E"
+        }
+      ],
+      "dataSources": [
+        {
+          "name": "COCO Dataset",
+          "imageSrc": "coco_logo.png"
+        },
+        {
+          "name": "Flickr30k Dataset",
+          "imageSrc": "flickr_logo.png"
+        }
+      ],
+      "demoUrl": "",
+      "technologies": [
+        "language_tool_python",
+        "pycocotools"
+      ]
+    },
+    {
+      "id": "customer_churn_nordea_13",
+      "name": "Customer Churn Prediction",
+      "createdAt": "2023-11-18T00:00:00Z",
+      "url": "https://github.com/SushantSriv/Customer-Churn-Prediction",
+      "description": "Logistic regression-based churn prediction system built using real-world anonymised bank data (Nordea) to identify customers likely to leave. Includes exploratory data analysis, feature engineering, model evaluation and interpretability using SHAP. Designed to help banks proactively retain customers.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "Jupyter Notebook",
+          "iconifyClass": "simple-icons:jupyter",
+          "color": "#F37626"
+        },
+        {
+          "name": "scikit-learn",
+          "iconifyClass": "simple-icons:scikitlearn",
+          "color": "#F7931E"
+        },
+        {
+          "name": "Pandas",
+          "iconifyClass": "simple-icons:pandas",
+          "color": "#150458"
+        },
+        {
+          "name": "SHAP",
+          "iconifyClass": "simple-icons:plotly",
+          "color": "#3F4B58"
+        }
+      ],
+      "dataSources": [
+        {
+          "name": "Nordea Bank (anonymised dataset)",
+          "imageSrc": "nordea_logo.png"
+        }
+      ],
+      "demoPdfs": [
+        "https://raw.githubusercontent.com/SushantSriv/Customer-Churn-Prediction/main/vertopal.com_XYZ%20Bank%20Customer%20Churn%20-Sushant%20.pdf",
+        "https://raw.githubusercontent.com/SushantSriv/Customer-Churn-Prediction/main/XYZ%20Business%20Use%20case%20-Sushant%20Srivastava.pptx"
+      ],
+      "inProgress": false,
+      "technologies": [
+        "logistic-regression",
+        "seaborn",
+        "shap",
+        "imbalanced-learn",
+        "classification-report"
+      ]
+    },
+    {
+      "id": "ecommerce_scraper_amazon_14",
+      "name": "E-Commerce Scraper (Amazon)",
+      "createdAt": "2023-10-03T00:00:00Z",
+      "url": "https://github.com/SushantSriv/E-Commerce-Scraper",
+      "description": "Web scraper built with Python and BeautifulSoup to extract product details from Amazon, including title, price, rating, and reviews. Designed for structured e-commerce data collection, trend analysis, and price tracking.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python",
+          "color": "#3776AB"
+        },
+        {
+          "name": "Pandas",
+          "iconifyClass": "simple-icons:pandas",
+          "color": "#150458"
+        },
+        {
+          "name": "Jupyter Notebook",
+          "iconifyClass": "simple-icons:jupyter",
+          "color": "#F37626"
+        }
+      ],
+      "dataSources": [
+        {
+          "name": "Amazon Web Store",
+          "imageSrc": "amazon_logo.png"
+        }
+      ],
+      "demoUrl": "",
+      "inProgress": false,
+      "technologies": [
+        "beautiful-soup",
+        "user-agent rotation"
+      ]
     },
     {
       "id": "R_kgDOc8nVFA_3",
@@ -784,215 +1026,59 @@
       ]
     },
     {
-      "id": "semantic_image_captioning_11",
-      "name": "Semantic Image Captioning Enhancements",
-      "createdAt": "2024-01-12T00:00:00Z",
-      "url": "https://github.com/SushantSriv/Semantic-Enhancements-in-Image-Captioning-Leveraging-Neural-Networks-to-Improve-BLIP-and-GPT-2",
-      "description": "Master-thesis codebase that augments BLIP and GPT-2 for image captioning via “Weighted Summarization”. Includes notebooks for COCO & Flickr30k, evaluation scripts and result JSON-files.",
+      "id": "R_kgDObR5ysg_7",
+      "name": "EXE Files Auto-Remover",
+      "createdAt": "2022-12-15T14:17:44Z",
+      "url": "https://github.com/SushantSriv/exe-files-automatic-remover",
+      "description": "Tiny desktop utility written in C# + PowerShell that scans engineering PCs and deletes obsolete binaries to free disk space.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "C#",
+          "iconifyClass": "simple-icons:csharp",
+          "color": "#239120"
+        },
+        {
+          "name": "PowerShell",
+          "iconifyClass": "simple-icons:powershell",
+          "color": "#5391FE"
+        }
+      ],
+      "dataSources": [],
+      "demoUrl": ""
+    },
+    {
+      "id": "R_kgDOdk7Yhg_8",
+      "name": "Text Summarizer (Thesis)",
+      "createdAt": "2021-05-10T09:02:55Z",
+      "url": "https://drive.google.com/file/d/1GvvxxNht4rp2MKw5ImC9OtXaLiz37W4C/view?usp=sharing",
+      "description": "Bachelor thesis project: extractive summaries for news & research using TextRank and Gensim; evaluated with ROUGE metrics.",
       "isFork": false,
       "languages": [
         {
           "name": "Python",
-          "iconifyClass": "logos:python",
-          "color": "#3776AB"
+          "iconifyClass": "logos:python"
         },
         {
-          "name": "PyTorch",
-          "iconifyClass": "simple-icons:pytorch",
-          "color": "#EE4C2C"
+          "name": "Gensim",
+          "iconifyClass": "simple-icons:gensim",
+          "color": "#FFCA0F"
         },
         {
-          "name": "Hugging Face",
-          "iconifyClass": "simple-icons:huggingface",
-          "color": "#FFBF00"
-        },
-        {
-          "name": "OpenAI",
-          "iconifyClass": "simple-icons:openai",
-          "color": "#412991"
-        },
-        {
-          "name": "Jupyter Notebook",
-          "iconifyClass": "simple-icons:jupyter",
-          "color": "#F37626"
-        },
-        {
-          "name": "Matplotlib",
-          "iconifyClass": "simple-icons:matplotlib",
-          "color": "#11557C"
-        },
-        {
-          "name": "NumPy",
-          "iconifyClass": "simple-icons:numpy",
-          "color": "#013243"
-        },
-        {
-          "name": "Pandas",
-          "iconifyClass": "simple-icons:pandas",
-          "color": "#150458"
-        },
-        {
-          "name": "scikit-learn",
-          "iconifyClass": "simple-icons:scikitlearn",
-          "color": "#F7931E"
-        },
-        {
-          "name": "tqdm",
-          "iconifyClass": "simple-icons:tqdm",
-          "color": "#29D17E"
+          "name": "NLTK",
+          "iconifyClass": "simple-icons:nltk",
+          "color": "#3CB371"
         }
       ],
       "dataSources": [
         {
-          "name": "COCO Dataset",
-          "imageSrc": "coco_logo.png"
-        },
-        {
-          "name": "Flickr30k Dataset",
-          "imageSrc": "flickr_logo.png"
+          "name": "BBC News Corpus",
+          "iconifyClass": "simple-icons:bbc"
         }
       ],
-      "demoUrl": "",
+      "demoUrl": "https://www.youtube.com/embed/2B3p0kF2xlE",
       "technologies": [
-        "language_tool_python",
-        "pycocotools"
-      ]
-    },
-    {
-      "id": "customer_churn_nordea_13",
-      "name": "Customer Churn Prediction",
-      "createdAt": "2023-11-18T00:00:00Z",
-      "url": "https://github.com/SushantSriv/Customer-Churn-Prediction",
-      "description": "Logistic regression-based churn prediction system built using real-world anonymised bank data (Nordea) to identify customers likely to leave. Includes exploratory data analysis, feature engineering, model evaluation and interpretability using SHAP. Designed to help banks proactively retain customers.",
-      "isFork": false,
-      "languages": [
-        {
-          "name": "Python",
-          "iconifyClass": "logos:python",
-          "color": "#3776AB"
-        },
-        {
-          "name": "Jupyter Notebook",
-          "iconifyClass": "simple-icons:jupyter",
-          "color": "#F37626"
-        },
-        {
-          "name": "scikit-learn",
-          "iconifyClass": "simple-icons:scikitlearn",
-          "color": "#F7931E"
-        },
-        {
-          "name": "Pandas",
-          "iconifyClass": "simple-icons:pandas",
-          "color": "#150458"
-        },
-        {
-          "name": "SHAP",
-          "iconifyClass": "simple-icons:plotly",
-          "color": "#3F4B58"
-        }
-      ],
-      "dataSources": [
-        {
-          "name": "Nordea Bank (anonymised dataset)",
-          "imageSrc": "nordea_logo.png"
-        }
-      ],
-      "demoPdfs": [
-        "https://raw.githubusercontent.com/SushantSriv/Customer-Churn-Prediction/main/vertopal.com_XYZ%20Bank%20Customer%20Churn%20-Sushant%20.pdf",
-        "https://raw.githubusercontent.com/SushantSriv/Customer-Churn-Prediction/main/XYZ%20Business%20Use%20case%20-Sushant%20Srivastava.pptx"
-      ],
-      "inProgress": false,
-      "technologies": [
-        "logistic-regression",
-        "seaborn",
-        "shap",
-        "imbalanced-learn",
-        "classification-report"
-      ]
-    },
-    {
-      "id": "ecommerce_scraper_amazon_14",
-      "name": "E-Commerce Scraper (Amazon)",
-      "createdAt": "2023-10-03T00:00:00Z",
-      "url": "https://github.com/SushantSriv/E-Commerce-Scraper",
-      "description": "Web scraper built with Python and BeautifulSoup to extract product details from Amazon, including title, price, rating, and reviews. Designed for structured e-commerce data collection, trend analysis, and price tracking.",
-      "isFork": false,
-      "languages": [
-        {
-          "name": "Python",
-          "iconifyClass": "logos:python",
-          "color": "#3776AB"
-        },
-        {
-          "name": "Pandas",
-          "iconifyClass": "simple-icons:pandas",
-          "color": "#150458"
-        },
-        {
-          "name": "Jupyter Notebook",
-          "iconifyClass": "simple-icons:jupyter",
-          "color": "#F37626"
-        }
-      ],
-      "dataSources": [
-        {
-          "name": "Amazon Web Store",
-          "imageSrc": "amazon_logo.png"
-        }
-      ],
-      "demoUrl": "",
-      "inProgress": false,
-      "technologies": [
-        "beautiful-soup",
-        "user-agent rotation"
-      ]
-    },
-    {
-      "id": "jpmc_codeforgood_anthill_15",
-      "name": "JPMC Code for Good: Anthill Creations Website",
-      "createdAt": "2025-06-20T00:00:00Z",
-      "url": "https://github.com/bengaluru19/team-7",
-      "description": "Team 7’s contribution to JPMorgan Chase’s Code for Good hackathon: a website for Anthill Creations—an Indian NGO that builds sustainable playscapes using upcycled materials. Highlights include community stories, image galleries, responsive design, and a contact form to support their mission..",
-      "isFork": false,
-      "languages": [
-        {
-          "name": "JavaScript",
-          "iconifyClass": "simple-icons:javascript",
-          "color": "#F7DF1E"
-        },
-        {
-          "name": "HTML",
-          "iconifyClass": "simple-icons:html5",
-          "color": "#E34F26"
-        },
-        {
-          "name": "CSS",
-          "iconifyClass": "simple-icons:css3",
-          "color": "#1572B6"
-        },
-        {
-          "name": "React",
-          "iconifyClass": "simple-icons:react",
-          "color": "#61DAFB"
-        }
-      ],
-      "dataSources": [
-        {
-          "name": "Anthill Creations (internett)",
-          "imageSrc": "anthill_logo.png"
-        },
-        {
-          "name": "JP Morgan & Chase",
-          "imageSrc": "jpmc_logo.png"
-        }
-      ],
-      "demoUrl": "",
-      "inProgress": false,
-      "technologies": [
-        "responsive-design",
-        "community-stories",
-        "NGO"
+        "rouge-score"
       ]
     },
     {
@@ -1030,62 +1116,6 @@
         "ssl",
         "malware-check"
       ]
-    },
-    {
-      "id": "R_kgDOdk7Yhg_8",
-      "name": "Text Summarizer (Thesis)",
-      "createdAt": "2021-05-10T09:02:55Z",
-      "url": "https://drive.google.com/file/d/1GvvxxNht4rp2MKw5ImC9OtXaLiz37W4C/view?usp=sharing",
-      "description": "Bachelor thesis project: extractive summaries for news & research using TextRank and Gensim; evaluated with ROUGE metrics.",
-      "isFork": false,
-      "languages": [
-        {
-          "name": "Python",
-          "iconifyClass": "logos:python"
-        },
-        {
-          "name": "Gensim",
-          "iconifyClass": "simple-icons:gensim",
-          "color": "#FFCA0F"
-        },
-        {
-          "name": "NLTK",
-          "iconifyClass": "simple-icons:nltk",
-          "color": "#3CB371"
-        }
-      ],
-      "dataSources": [
-        {
-          "name": "BBC News Corpus",
-          "iconifyClass": "simple-icons:bbc"
-        }
-      ],
-      "demoUrl": "https://www.youtube.com/embed/2B3p0kF2xlE",
-      "technologies": [
-        "rouge-score"
-      ]
-    },
-    {
-      "id": "R_kgDObR5ysg_7",
-      "name": "EXE Files Auto-Remover",
-      "createdAt": "2022-12-15T14:17:44Z",
-      "url": "https://github.com/SushantSriv/exe-files-automatic-remover",
-      "description": "Tiny desktop utility written in C# + PowerShell that scans engineering PCs and deletes obsolete binaries to free disk space.",
-      "isFork": false,
-      "languages": [
-        {
-          "name": "C#",
-          "iconifyClass": "simple-icons:csharp",
-          "color": "#239120"
-        },
-        {
-          "name": "PowerShell",
-          "iconifyClass": "simple-icons:powershell",
-          "color": "#5391FE"
-        }
-      ],
-      "dataSources": [],
-      "demoUrl": ""
     }
   ]
 }

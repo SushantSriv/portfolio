@@ -17,12 +17,17 @@ export default function GithubRepoCard({ repo, theme, index = 0 }) {
     const win = window.open(url, "_blank", "noopener,noreferrer");
     if (win) win.focus();
   };
+  // Not every project has a public repo - a closed-source one may ship only a
+  // live site. Fall back to that rather than calling window.open(undefined),
+  // and leave the card inert if there is nothing at all to open.
+  const cardTarget = repo.url || repo.liveUrl || null;
   const handleCardClick = useCallback(
     (e) => {
       if (e.target.closest(".repo-btn-row")) return; // unngå knapper
-      openRepo(repo.url);
+      if (!cardTarget) return;
+      openRepo(cardTarget);
     },
-    [repo.url]
+    [cardTarget]
   );
 
   /* ---------- modal-state ---------- */
@@ -88,7 +93,10 @@ export default function GithubRepoCard({ repo, theme, index = 0 }) {
         >
           <div
             onClick={handleCardClick}
-            style={{ cursor: "pointer", height: "100%" }}
+            style={{
+              cursor: cardTarget ? "pointer" : "default",
+              height: "100%",
+            }}
           >
             <div>
               {/* Tittel & beskrivelse */}
@@ -145,7 +153,12 @@ export default function GithubRepoCard({ repo, theme, index = 0 }) {
 
               {/* Knapper */}
               <div className="repo-btn-row">
-                <Button text="Code" href={repo.url} newTab theme={theme} />
+                {/* Omitted for closed-source projects: rendering it with an
+                    undefined href produces an <a> with no href, which looks
+                    like a button but does nothing when clicked. */}
+                {repo.url && (
+                  <Button text="Code" href={repo.url} newTab theme={theme} />
+                )}
 
                 {repo.liveUrl && (
                   <Button

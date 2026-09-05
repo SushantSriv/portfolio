@@ -31,6 +31,11 @@ showcasing experience, education, projects, and open-source activity.
 - **Fully responsive** — verified down to 375px with no horizontal overflow.
 - **Live GitHub activity** — pull request and issue charts, org list, and
   repo cards pulled from the GitHub GraphQL API via `git_data_fetcher.mjs`.
+- **Project cards** — curated in `src/shared/opensource/projects.json`, ordered
+  most-recently-worked-on first. Each card takes an optional `liveUrl` (a
+  deployed site, opened in a new tab) alongside `demoUrl` (a video, opened in a
+  modal). `url` is optional too: a project whose repo isn't public renders
+  without a Code button rather than a dead link.
 - **"Write to Me" contact form** — a zero-backend `mailto:` form (no
   third-party mailer, no secrets to manage) since this is a static site.
 - **Animated splash intro** — a signature-draw + iris-reveal loading screen,
