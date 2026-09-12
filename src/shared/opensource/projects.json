@@ -96,7 +96,7 @@
       "name": "360° Home Tour",
       "createdAt": "2026-08-22T00:00:00Z",
       "url": "https://github.com/SushantSriv/3d-home-view",
-      "liveUrl": "https://sushantsriv.github.io/3d-home-view/tour.html?demo=1",
+      "liveUrl": "https://sushantsriv.github.io/3d-home-view/",
       "description": "Free web app for property sellers and brokers: record one slow phone pan per room, upload it with a floor plan, and the app stitches each video into a 360° panorama and links them into one navigable tour behind a single shareable URL — buyers need no login and no app. This is not a continuous 3D scan like Matterport; it's multiple linked 360° panoramas, one per room, navigated via the floor plan. The static frontend on GitHub Pages talks directly to a free-tier Supabase backend (Postgres + Storage); only the panorama-stitching step needs real compute, which runs as a background worker rather than a 24/7 paid server — everything else runs on free tiers. Currently closed-source/proprietary; the repo is public only because GitHub Pages on a free account requires it.",
       "isFork": false,
       "languages": [
